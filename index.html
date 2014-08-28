@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>AEC Membership Management</title>
+
+	<link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
+	<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="assets/css/angular-motion.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-additions.min.css" rel="stylesheet">
+	<link href="assets/css/aec.css" rel="stylesheet">
+
+	<script type="text/javascript" src="assets/js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="assets/js/angular.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular-animate.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular-strap.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular-strap.tpl.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular-disqus.min.js"></script>
+	<script type="text/javascript" src="assets/js/marked.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular-marked.min.js"></script>
+	<script type="text/javascript" src="assets/js/aec.js"></script>
+
+	<!--[if lte IE 7]>
+	<script src="assets/js/json3.min.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+	<![endif]-->
+
+</head>
+
+<body ng-app="aecApp" id="ng-app">
+	<div id="background">
+		<div ui-view="background" class="am-fade"></div>
+	</div>
+	<div id="foreground" class="page-{{$state.$current.name}}">
+		<div id="main">
+			<div class="container">
+				<div class="row">
+					<div ui-view="main" class="am-fade"></div>
+					<p class="text-center text-clear am-fade" ng-show="loading"><i class="fa fa-circle-o-notch fa-2x fa-spin"></i></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

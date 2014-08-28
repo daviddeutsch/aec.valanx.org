@@ -1,0 +1,17 @@
+[
+	{
+		"title": "Welcome",
+		"handle": "welcome",
+		"path": "00-welcome.md",
+		"keywords": []
+	},
+	{
+		"title": "Setup",
+		"handle": "setup",
+		"path": "01-setup.md",
+		"keywords":
+			[
+				"installation", "install", "requirements", "joomla", "package"
+			]
+	}
+]
