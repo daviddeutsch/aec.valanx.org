@@ -1,7 +1,9 @@
 (function () {
 
 	angular.module('aecApp', [
-		'ngAnimate', 'ui.router', 'mgcrea.ngStrap', 'ngDisqus', 'hc.marked'
+		'ngAnimate', 'ui.router',
+		'ct.ui.router.extras', 'mgcrea.ngStrap',
+		'ngDisqus', 'hc.marked'
 	]);
 
 
@@ -30,9 +32,16 @@
 				views: {
 					"main": {
 						templateUrl: '/partials/doc.html'
+					},
+					"background": {
+						templateUrl: '/partials/empty.html',
+						controller: 'DocAsideCtrl'
 					}
-				}
+				},
+				deepStateRedirect: true,
+				sticky: true
 			})
+
 		;
 
 		$disqusProvider.setShortname('valanx');
@@ -53,7 +62,7 @@
 
 		$rootScope.$on(
 			'$stateChangeStart',
-			function(event, toState, toParams, fromState, fromParams){
+			function(event, toState, toParams, fromState, fromParams) {
 				$rootScope.loading = true;
 			});
 	}
@@ -81,20 +90,8 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function DocCtrl( $scope, $rootScope, $stateParams, $aside, $http )
+	function DocCtrl( $scope, $rootScope, $stateParams, $http )
 	{
-		var docsNav = $aside(
-			{
-				scope: $scope,
-				template: 'partials/doc.aside.html',
-				placement: 'left',
-				animation: 'am-fade-and-slide-left',
-				backdrop: false,
-				keyboard: false,
-				container: '#background'
-			}
-		);
-
 		if ( $stateParams.id == '' ) {
 			$stateParams.id = 'welcome';
 		}
@@ -125,7 +122,7 @@
 		$rootScope.loading = false;
 	}
 
-	DocCtrl.$inject = ['$scope', '$rootScope', '$stateParams', '$aside', '$http'];
+	DocCtrl.$inject = ['$scope', '$rootScope', '$stateParams', '$http'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 
@@ -134,12 +131,12 @@
 	 *
 	 * @desc Controls Behavior on the side naviation for docs
 	 */
-	function DocAsideCtrl( $scope, $rootScope, $state, $aside )
+	function DocAsideCtrl( $scope, $http, $aside )
 	{
 		var docsNav = $aside(
 			{
 				scope: $scope,
-				template: 'partials/doc.aside.tpl.html',
+				template: 'partials/doc.aside.html',
 				placement: 'left',
 				animation: 'am-fade-and-slide-left',
 				backdrop: false,
@@ -147,9 +144,14 @@
 				container: '#background'
 			}
 		);
+
+		$http.get('docs/index.json')
+			.then(function(index){
+				$scope.pages = index.data;
+			});
 	}
 
-	DocAsideCtrl.$inject = ['$scope', '$rootScope', '$state', '$aside'];
+	DocAsideCtrl.$inject = ['$scope', '$http', '$aside'];
 	angular.module('aecApp').controller('DocAsideCtrl', DocAsideCtrl);
 
 

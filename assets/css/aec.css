@@ -6290,6 +6290,7 @@ legend {
 }
 .aside {
   background: #aaa;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .aside .aside-dialog .aside-header {
   background: #eee;
@@ -6300,4 +6301,41 @@ legend {
 }
 .aside .aside-dialog .aside-header h4 img {
   vertical-align: top;
+}
+.aside .aside-dialog .aside-header h4 span {
+  color: #222;
+}
+.aside .aside-dialog .aside-header h4 a {
+  text-decoration: none;
+  -webkit-transition: 400ms ease-in-out;
+  -o-transition: 400ms ease-in-out;
+  transition: 400ms ease-in-out;
+}
+.aside .aside-dialog .aside-header h4 a:hover {
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+.aside .aside-dialog .aside-body {
+  padding: 24px 42px;
+}
+.aside .aside-dialog .aside-body ul {
+  font-size: 120%;
+}
+.aside .aside-dialog .aside-body ul li {
+  margin-bottom: 12px;
+}
+.aside .aside-dialog .aside-body a {
+  text-decoration: none;
+  -webkit-transition: 400ms ease-in-out;
+  -o-transition: 400ms ease-in-out;
+  transition: 400ms ease-in-out;
+}
+.aside .aside-dialog .aside-body a:hover {
+  text-decoration: none;
+}
+a {
+  color: #222;
+}
+a:hover {
+  color: #d43f3a;
 }

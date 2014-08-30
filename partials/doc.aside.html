@@ -3,14 +3,27 @@
 		<div class="aside-content">
 			<div class="aside-header">
 				<h4 class="aside-title">
-					<img src="/assets/img/aec-logo-red-small.png" alt="AEC"/> .<img src="/assets/img/valanx-logo-red-v-small.png" alt="Valanx"/>/docs
-
+					<a href="http://valanx.org">
+						<img src="/assets/img/valanx-logo-red-v-small.png" alt="Valanx"/>
+					</a>
+					<span>/</span>
+					<a href="http://aec.valanx.org">
+						<img src="/assets/img/aec-logo-red-small.png" alt="AEC"/>
+					</a>
+					<a href="http://aec.valanx.org/docs">
+						/docs
+					</a>
 				</h4>
 			</div>
 			<div class="aside-body">
-				<h4>Topics</h4>
 				<ul class="list-unstyled">
-					<li ng-repeat="page in pages"><a ui-sref="{id:page.handle}">{{page.title}}</a></li>
+					<li ng-repeat="page in pages">
+						<a ui-sref="{id:page.handle}" ng-class="{active: $state.includes(page.handle)}">{{$index}} - {{page.title}}</a>
+						<ul ng-if="page.children">
+							<li ng-repeat="child in page.children">
+							</li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</div>

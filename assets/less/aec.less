@@ -3,6 +3,7 @@
 
 .aside {
 	background: #aaa;
+	font-family: @font-family-sans-serif;
 	& &-dialog &-header {
 		background: #eee;
 		h4 {
@@ -11,6 +12,40 @@
 			img {
 				vertical-align: top;
 			}
+			span {
+				color: #222;
+			}
+			a {
+				text-decoration: none;
+				.transition(400ms ease-in-out);
+				&:hover {
+					text-decoration: none;
+					margin-bottom: 2px;
+				}
+			}
 		}
+	}
+	& &-dialog &-body {
+		padding: 24px 42px;
+		ul {
+			font-size: 120%;
+			li {
+				margin-bottom: 12px;
+			}
+		}
+		a {
+			text-decoration: none;
+			.transition(400ms ease-in-out);
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+a {
+	color: #222;
+	&:hover {
+		color: #d43f3a;
 	}
 }

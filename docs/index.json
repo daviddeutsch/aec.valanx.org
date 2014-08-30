@@ -13,5 +13,32 @@
 			[
 				"installation", "install", "requirements", "joomla", "package"
 			]
+	},
+	{
+		"title": "Basic Concepts",
+		"handle": "overview",
+		"path": "02-overview.md",
+		"keywords":
+			[
+				"home"
+			]
+	},
+	{
+		"title": "Settings",
+		"handle": "settings",
+		"path": "03-settings.md",
+		"keywords":
+			[
+				"settings"
+			]
+	},
+	{
+		"title": "Joomla",
+		"handle": "joomla",
+		"path": "04-joomla.md",
+		"keywords":
+			[
+				"system"
+			]
 	}
 ]
