@@ -6316,7 +6316,7 @@ legend {
   margin-bottom: 2px;
 }
 .aside .aside-dialog .aside-body {
-  padding: 24px 42px;
+  padding: 24px 24px;
 }
 .aside .aside-dialog .aside-body ul {
   font-size: 120%;
@@ -6338,4 +6338,9 @@ a {
 }
 a:hover {
   color: #d43f3a;
+}
+.index-page-index {
+  display: inline-block;
+  text-align: right;
+  width: 2em;
 }

@@ -33,12 +33,12 @@
 			]
 	},
 	{
-		"title": "Joomla",
+		"title": "In Joomla",
 		"handle": "joomla",
 		"path": "04-joomla.md",
 		"keywords":
 			[
-				"system"
+				"system", "menu", "menu item"
 			]
 	}
 ]

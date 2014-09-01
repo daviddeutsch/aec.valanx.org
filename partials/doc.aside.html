@@ -18,7 +18,12 @@
 			<div class="aside-body">
 				<ul class="list-unstyled">
 					<li ng-repeat="page in pages">
-						<a ui-sref="{id:page.handle}" ng-class="{active: $state.includes(page.handle)}">{{$index}} - {{page.title}}</a>
+						<a ui-sref="{id:page.handle}" ng-class="{active: $state.includes(page.handle)}">
+							<span class="index-page-index">{{$index}}</span>
+							<span> - </span>
+							<span class="index-page-title">{{page.title}}</span>
+						</a>
+						<!-- TODO: Display popover of children on hover -->
 						<ul ng-if="page.children">
 							<li ng-repeat="child in page.children">
 							</li>
