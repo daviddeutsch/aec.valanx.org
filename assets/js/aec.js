@@ -23,6 +23,9 @@
 				views: {
 					"main": {
 						templateUrl: '/partials/home.html'
+					},
+					"background": {
+						templateUrl: '/partials/carina.html'
 					}
 				}
 			})
@@ -131,7 +134,7 @@
 	 *
 	 * @desc Controls Behavior on the side naviation for docs
 	 */
-	function DocAsideCtrl( $scope, $http, $aside )
+	function DocAsideCtrl( $scope, $http, $timeout, $state, $aside )
 	{
 		var docsNav = $aside(
 			{
@@ -145,13 +148,34 @@
 			}
 		);
 
+		var list = [],
+			keepalive,
+			id = 0;
+
+		$scope.$state = $state;
+
+		$scope.pages = [];
+
+		var tick = function () {
+			$scope.pages.push(list[id]);
+
+			id++;
+
+			if ( list.length > id ) {
+				keepalive = $timeout(tick, 40);
+			}
+		};
+
 		$http.get('docs/index.json')
 			.then(function(index){
-				$scope.pages = index.data;
+				list = index.data;
+
+				keepalive = $timeout(tick, 400);
 			});
+
 	}
 
-	DocAsideCtrl.$inject = ['$scope', '$http', '$aside'];
+	DocAsideCtrl.$inject = ['$scope', '$http', '$timeout', '$state', '$aside'];
 	angular.module('aecApp').controller('DocAsideCtrl', DocAsideCtrl);
 
 

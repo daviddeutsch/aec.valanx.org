@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Raleway:400,700");
+@import url("//fonts.googleapis.com/css?family=Raleway:100,200,400,700,900");
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -6333,6 +6333,9 @@ legend {
 .aside .aside-dialog .aside-body a:hover {
   text-decoration: none;
 }
+.aside .aside-dialog .aside-body a.active {
+  font-weight: 700;
+}
 a {
   color: #222;
 }
@@ -6343,4 +6346,62 @@ a:hover {
   display: inline-block;
   text-align: right;
   width: 2em;
+}
+#home-top {
+  padding-top: 25%;
+  color: #fff !important;
+  text-shadow: 0 2px 2px #000000;
+}
+#home-top img {
+  display: inline-block;
+}
+#home-top h1 {
+  font-weight: 400;
+}
+#home-top ul {
+  margin-top: 48px;
+  width: 100%;
+  text-align: left;
+}
+#home-top ul li {
+  display: inline-block;
+  text-align: center;
+  width: 180px;
+  padding: 24px 12px;
+  float: left;
+  margin-right: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.9);
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  transition: 400ms;
+  border-radius: 4px;
+}
+#home-top ul li:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+#home-top ul li img {
+  margin-bottom: 24px;
+}
+#home-top ul li a {
+  display: inline-block;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+}
+#home-top ul li a:hover {
+  text-decoration: none;
+}
+.carina-full {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/carina-nebula-dark.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #000;
 }
