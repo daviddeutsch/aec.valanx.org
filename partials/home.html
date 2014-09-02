@@ -1,33 +1,70 @@
-<div ng-controller="HomeCtrl" id="home-top">
-	<div class="col-md-2 col-md-offset-1">
-		<p class="text-center">
-			<img src="/assets/img/aec-logo-white-dropshadow.png" alt=""/>
-		</p>
+<div id="main">
+	<div class="container">
+		<div class="row">
+			<div ng-controller="HomeCtrl" id="home-top">
+				<div class="col-lg-2 col-lg-offset-1 col-md-offset-0">
+					<p class="text-center">
+						<img src="/assets/img/aec-logo-white-dropshadow.png" alt=""/>
+					</p>
+				</div>
+				<div class="col-lg-7 col-lg-offset-1">
+					<h1>The <strong>most advanced membership management system</strong> for Joomla!</h1>
+					<ul>
+						<li>
+							<a scroll-on-click href="#start" offset="-80">
+								<img src="/assets/img/icon-down.png" alt=""/>
+								<br/>
+								Learn more
+							</a>
+						</li>
+						<li>
+							<a ui-sref="docs">
+								<img src="/assets/img/icon-manual.png" alt=""/>
+								<br/>
+								Manual
+							</a>
+						</li>
+						<li>
+							<a href="http://valanx.org/index.php?option=com_acctexp&amp;task=subscribe">
+								<img src="/assets/img/icon-manual.png" alt=""/>
+								<br/>
+								Get it now
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-7 col-md-offset-1">
-		<h1>The most advanced <strong>membership management system</strong> for Joomla!</h1>
-		<ul>
-			<li>
-				<a ui-sref="docs">
-					<img src="/assets/img/icon-down.png" alt=""/>
-					<br/>
-					Tour
-				</a>
-			</li>
-			<li>
-				<a ui-sref="docs">
-					<img src="/assets/img/icon-manual.png" alt=""/>
-					<br/>
-					Documentation
-				</a>
-			</li>
-			<li>
-				<a href="http://valanx.org/index.php?option=com_acctexp&amp;task=subscribe">
-					<img src="/assets/img/icon-manual.png" alt=""/>
-					<br/>
-					Get it now
-				</a>
-			</li>
-		</ul>
+</div>
+
+<div id="start"></div>
+
+<div class="carina-inject-mystic-mt">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Integrate with other software and services</h2>
+		</div>
+		<div class="col-md-12">
+			<h2>Supported Payment Processors</h2>
+			<div class="col-md-6">
+				<h3>More than 80 Integrations</h3>
+				<p>...are already built into AEC. So whatever service you want to use - chances are that you can already dive in.</p>
+				<p>We have compiled a list of the services that we have currently integrated:</p>
+			</div>
+			<div class="col-md-6">
+				<h3>Offline Processing</h3>
+				<p>We also offer an integration called Offline Processing - with this, you can tell your customers where to send the money on a more traditional way (like mailing checks, or doing a wire transfer). Be advised that you will of course have some manual processing to do with that one.</p>
+			</div>
+		</div>
 	</div>
 </div>

@@ -27,6 +27,9 @@
 					"background": {
 						templateUrl: '/partials/carina.html'
 					}
+				},
+				onEnter: function(){
+					angular.element('.aside').remove();
 				}
 			})
 
@@ -72,6 +75,46 @@
 
 	AppRun.$inject = ['$rootScope', '$state'];
 	angular.module('aecApp').run(AppRun);
+
+
+	function scrollOnClickDirective($location) {
+		return {
+			restrict: 'A',
+			link: function(scope, $elm, attrs) {
+				var settings = angular.extend({
+					href: angular.element(),
+					offset: 0,
+					duration: 3200,
+					easing: 'easeOutExpo'
+				}, attrs);
+
+				settings.href = settings.href.replace('#','');
+
+				$elm.on('click', function(e) {
+					//e.preventDefault();
+
+					var scroll;
+
+					if (settings.href) {
+						scroll = $('#'+settings.href).offset().top + Number(settings.offset);
+
+						$location.hash(settings.href);
+					} else {
+						scroll = $elm.offset().top + Number(settings.offset);
+					}
+
+					$('html, body').animate(
+						{scrollTop: scroll},
+						settings.duration,
+						settings.easing
+					);
+				});
+			}
+		}
+	}
+
+	scrollOnClickDirective.$inject = ['$location'];
+	angular.module('aecApp').directive('scrollOnClick', scrollOnClickDirective);
 
 
 	/**
@@ -136,7 +179,7 @@
 	 */
 	function DocAsideCtrl( $scope, $http, $timeout, $state, $aside )
 	{
-		var docsNav = $aside(
+		$scope.aside = $aside(
 			{
 				scope: $scope,
 				template: 'partials/doc.aside.html',

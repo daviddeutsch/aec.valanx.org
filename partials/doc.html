@@ -1,9 +1,15 @@
-<div class="col-md-2 col-md-offset-2">
-	<div class="bs-sidebar hidden-print" role="complementary" data-offset-top="-80" bs-affix></div>
-</div>
-<div class="col-md-8">
-	<div ng-controller="DocCtrl">
-		<div marked ng-include="path"></div>
-		<div disqus="test"></div>
+<div id="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 col-md-offset-2">
+				<div class="bs-sidebar hidden-print" role="complementary" data-offset-top="-80" bs-affix></div>
+			</div>
+			<div class="col-md-8">
+				<div ng-controller="DocCtrl">
+					<div marked ng-include="path"></div>
+					<div disqus="test"></div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
