@@ -147,9 +147,13 @@
 		$scope.path = '';
 
 		var switchPage = function(id) {
+			$rootScope.loading = true;
+
 			angular.forEach($scope.pages, function(page){
 				if ( page.handle == id ) {
 					$scope.path = '/docs/' + page.path;
+
+					$rootScope.loading = false;
 				}
 			});
 		};
@@ -163,9 +167,9 @@
 				$scope.pages = index.data;
 
 				switchPage($stateParams.id);
-			});
 
-		$rootScope.loading = false;
+				$rootScope.loading = false;
+			});
 	}
 
 	DocCtrl.$inject = ['$scope', '$rootScope', '$stateParams', '$http'];

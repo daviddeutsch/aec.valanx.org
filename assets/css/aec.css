@@ -6362,6 +6362,7 @@ a:hover {
 }
 #home-top h1 {
   font-weight: 400;
+  text-align: center;
 }
 #home-top ul {
   margin-top: 24px;
@@ -6388,8 +6389,9 @@ a:hover {
   float: left;
   margin-right: 24px;
   margin-top: 24px;
+  margin-bottom: 0;
   background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5), 0 8px 12px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5), 0 -2px 0 rgba(255, 255, 255, 0.5) inset, 0 8px 12px rgba(255, 255, 255, 0.1);
   -webkit-transition: 400ms;
   -o-transition: 400ms;
   transition: 400ms;
@@ -6398,10 +6400,13 @@ a:hover {
 }
 #home-top ul li a:hover {
   text-decoration: none;
+  margin-top: 22px;
+  margin-bottom: 2px;
   background: rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-right: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5), 0 -3px 0 rgba(255, 255, 255, 0.5) inset, 0 8px 12px rgba(255, 255, 255, 0.1);
 }
 #home-top ul li:last-of-type a {
   margin-right: 0;
@@ -6411,27 +6416,47 @@ a:hover {
   width: 100%;
   height: 100%;
 }
-.carina-full {
+.fullwidth-background {
   position: absolute;
   width: 100%;
-  height: 100%;
-  background-image: url(../img/carina-nebula-dark-red.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-color: #000;
+  box-shadow: 0 0 48px rgba(0, 0, 0, 0.9) inset;
 }
-.carina-inject-mystic-mt {
-  width: 100%;
-  height: 460px;
+.carina-full {
+  height: 100%;
+  background-image: url(../img/carina-nebula-dark-red.jpg);
+}
+.content-bg-container {
   float: left;
+  position: relative;
   margin: 96px 0;
   left: 0;
   clear: both;
+  color: #fff;
+  text-shadow: 0 2px 2px #000000;
+}
+.content-bg-container h1.impact {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 103px;
+  font-weight: 900;
+  text-shadow: 0 4px 2px #000000;
+}
+.content-bg-container ul {
+  margin-top: 132px;
+}
+.content-bg-container ul li {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  list-style: none;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+.carina-inject-mystic-mt {
+  height: 460px;
   background-image: url(../img/carina-nebula-mystic-mt.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #000;
 }
