@@ -27,9 +27,6 @@
 					"background": {
 						templateUrl: '/partials/carina.html'
 					}
-				},
-				onEnter: function(){
-					angular.element('.aside').remove();
 				}
 			})
 
@@ -43,9 +40,7 @@
 						templateUrl: '/partials/empty.html',
 						controller: 'DocAsideCtrl'
 					}
-				},
-				deepStateRedirect: true,
-				sticky: true
+				}
 			})
 
 		;
@@ -125,6 +120,8 @@
 	function HomeCtrl( $scope, $rootScope, $state )
 	{
 		$rootScope.loading = false;
+
+		$rootScope.$broadcast('backHome');
 	}
 
 	HomeCtrl.$inject = ['$scope', '$rootScope', '$state'];
@@ -181,8 +178,12 @@
 	 *
 	 * @desc Controls Behavior on the side naviation for docs
 	 */
-	function DocAsideCtrl( $scope, $http, $timeout, $state, $aside )
+	function DocAsideCtrl( $rootScope, $scope, $http, $timeout, $state, $aside )
 	{
+		var list = [],
+			keepalive,
+			id = 0;
+
 		$scope.aside = $aside(
 			{
 				scope: $scope,
@@ -195,9 +196,9 @@
 			}
 		);
 
-		var list = [],
-			keepalive,
-			id = 0;
+		$rootScope.$on('backHome', function (event, data) {
+			$scope.aside.hide();
+		});
 
 		$scope.$state = $state;
 
@@ -222,7 +223,7 @@
 
 	}
 
-	DocAsideCtrl.$inject = ['$scope', '$http', '$timeout', '$state', '$aside'];
+	DocAsideCtrl.$inject = ['$rootScope', '$scope', '$http', '$timeout', '$state', '$aside'];
 	angular.module('aecApp').controller('DocAsideCtrl', DocAsideCtrl);
 
 

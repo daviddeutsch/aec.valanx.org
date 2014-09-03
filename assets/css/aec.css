@@ -6434,20 +6434,31 @@ a:hover {
   float: left;
   position: relative;
   margin: 96px 0;
+  padding-bottom: 42px;
   left: 0;
   clear: both;
   color: #fff;
   text-shadow: 0 2px 2px #000000;
 }
 .content-bg-container h1.impact {
-  margin-top: 1em;
+  margin-top: 0.6em;
   text-align: center;
   font-size: 103px;
   font-weight: 900;
-  text-shadow: 0 4px 2px #000000;
+  text-shadow: 0 4px 2px #000000, 0 2px 0 #000000;
+}
+.content-bg-container h1.superimpact {
+  margin-top: 0.2em;
+  text-align: center;
+  font-size: 164px;
+  font-weight: 900;
+  text-shadow: 0 6px 4px #000000, 0 2px 0 #000000;
+}
+.content-bg-container h3 {
+  text-align: center;
 }
 .content-bg-container ul {
-  margin-top: 132px;
+  margin-top: 96px;
 }
 .content-bg-container ul li {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -6457,6 +6468,8 @@ a:hover {
   font-weight: 700;
 }
 .carina-inject-mystic-mt {
-  height: 460px;
   background-image: url(../img/carina-nebula-mystic-mt.jpg);
+}
+.carina-inject-colorful {
+  background-image: url(../img/carina-nebula-colorful.jpg);
 }
