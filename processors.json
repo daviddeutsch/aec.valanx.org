@@ -1,0 +1,594 @@
+[
+	{
+		"name": "2CheckOut",
+		"description": "Instant credit card processing services accounts for merchants with internet businesses.",
+		"type": "redirect",
+		"handle": "2checkout"
+	},
+	{
+		"name": "Airtoy",
+		"description": "Pay with Airtoy",
+		"type": "direct",
+		"handle": "airtoy"
+	},
+	{
+		"name": "AlertPay",
+		"description": "Your money is safe with AlertPay's account safety policy. AlertPay is open to all businesses.",
+		"type": "redirect",
+		"handle": "alertpay"
+	},
+	{
+		"name": "Allopass",
+		"description": "AlloPass, European leader in its domain is a micropayment system and allows phone, sms and credit card billing.",
+		"type": "redirect",
+		"handle": "allopass"
+	},
+	{
+		"name": "Authorize.net",
+		"description": "Payment gateway enables internet merchants to accept online payments via credit card and e-check.",
+		"type": "redirect",
+		"handle": "authorize"
+	},
+	{
+		"name": "Authorize.net AIM",
+		"description": "Make on-site CreditCard payments with Authorize.net",
+		"type": "redirect",
+		"handle": "authorize_aim"
+	},
+	{
+		"name": "Authorize.net ARB",
+		"description": "Make recurring payments with Authorize.net",
+		"type": "redirect",
+		"handle": "authorize_arb"
+	},
+	{
+		"name": "Authorize.net CIM",
+		"description": "Make payments with Authorize.net",
+		"type": "redirect",
+		"handle": "authorize_cim"
+	},
+	{
+		"name": "beanstream",
+		"description": "Beanstream integration",
+		"handle": "beanstream"
+	},
+	{
+		"name": "BillSAFE",
+		"description": "BillSAFE - Rechnungskauf im Internet mit Zahlungsgarantie",
+		"type": "redirect",
+		"handle": "billsafe"
+	},
+	{
+		"name": "braintree",
+		"description": "Braintree integration",
+		"handle": "braintree"
+	},
+	{
+		"name": "CardSave",
+		"description": "Cardsave specialise in helping businesses to accept credit card payments. Merchant Services, Chip & PIN, Mail, Telephone and Online payments.",
+		"type": "redirect",
+		"handle": "cardsave"
+	},
+	{
+		"name": "cashu",
+		"description": "CashU integration",
+		"handle": "cashu"
+	},
+	{
+		"name": "ccavenue",
+		"description": "ccAvenue integration",
+		"handle": "ccavenue"
+	},
+	{
+		"name": "CCBill",
+		"description": "CCBill",
+		"type": "redirect",
+		"handle": "ccbill"
+	},
+	{
+		"name": "clickandbuy",
+		"description": "ClickandBuy integration",
+		"handle": "clickandbuy"
+	},
+	{
+		"name": "ClickBank",
+		"description": "Make payments with ClickBank",
+		"type": "redirect",
+		"handle": "clickbank"
+	},
+	{
+		"name": "cmcic",
+		"description": "CM-CIC p@iement integration",
+		"handle": "cmcic"
+	},
+	{
+		"name": "Cybermut",
+		"description": "Cybermut - Le groupe Crédit Mutuel",
+		"type": "redirect",
+		"handle": "cybermut"
+	},
+	{
+		"name": "deltapay",
+		"description": "Alpha Bank (DeltaPay) HTML method integration",
+		"handle": "deltapay"
+	},
+	{
+		"name": "Desjardins",
+		"description": "Desjardins Credit Card Processing",
+		"type": "redirect",
+		"handle": "desjardins"
+	},
+	{
+		"name": "dwolla",
+		"description": "Dwolla integration",
+		"handle": "dwolla"
+	},
+	{
+		"name": "ePay - Dit Online Betalingssystem",
+		"description": "ePay | Dit Online Betalingssystem is the most leading payment gateway in Denmark and the rest of Scandinavia, which provides payments over the internet for both small, medium and large companies.<br><br>ePay is a payment system with focus on security and stability and therefore ePay is developed by use of the most recent web technologies and security standards defined.<br><br>ePay is PCI certified by Visa\/MasterCVard according to the PCI standard (Payment Card Industry Data Security Standard). The PCI standard is developed with focus on raise the security to online payments. As the leading payment gateway in Denmark and Scandinavia it is important to maintain as high security level as possible concerning the payments.",
+		"type": "redirect",
+		"handle": "epay"
+	},
+	{
+		"name": "epaydk",
+		"description": "Akeeba Subscriptions integration with scandinavian payment gateway Epay.dk",
+		"handle": "epaydk"
+	},
+	{
+		"name": "epsNetpay",
+		"description": "Der eps ist das einfache, sichere und kostenlose Zahlungssystem der österreichischen Banken für Einkäufe im Internet.",
+		"type": "redirect",
+		"handle": "epsnetpay"
+	},
+	{
+		"name": "eselectplus",
+		"description": "eSELECTplus integration",
+		"handle": "eselectplus"
+	},
+	{
+		"name": "eWay",
+		"description": "eWAY is the easiest and most affordable payment gateway in Australia. Process credit card payments via eWAY's own secure Shared Payment Page in real-time.",
+		"type": "redirect",
+		"handle": "eway"
+	},
+	{
+		"name": "ewayrapid3",
+		"description": "eWay Rapid 3 Payment integration",
+		"handle": "ewayrapid3"
+	},
+	{
+		"name": "eWayXML",
+		"description": "eWAY is the easiest and most affordable payment gateway in Australia. Process credit card payments via eWAY's own secure Shared Payment Page in real-time.",
+		"type": "redirect",
+		"handle": "ewayxml"
+	},
+	{
+		"name": "Generic VPC",
+		"description": "Pay online now",
+		"type": "redirect",
+		"handle": "generic_vpc"
+	},
+	{
+		"name": "gocardless",
+		"description": "GoCardless integration",
+		"handle": "gocardless"
+	},
+	{
+		"name": "Google Checkout",
+		"description": "Google Checkout - a faster, safer, and more convenient way to shop online?",
+		"type": "redirect",
+		"handle": "google_checkout"
+	},
+	{
+		"name": "HSBC",
+		"description": "Products and services including current accounts, savings, investments, credit cards, mortgages, loans, and insurance.",
+		"type": "redirect",
+		"handle": "hsbc"
+	},
+	{
+		"name": "iATS Ticketmaster",
+		"description": "Make payments with Ticketmaster",
+		"type": "redirect",
+		"handle": "iats"
+	},
+	{
+		"name": "iDeal Advanced",
+		"description": "De veilige manier van betalen op internet.",
+		"type": "redirect",
+		"handle": "ideal_advanced"
+	},
+	{
+		"name": "iDeal",
+		"description": "De veilige manier van betalen op internet.",
+		"type": "redirect",
+		"handle": "ideal_basic"
+	},
+	{
+		"name": "iPayment",
+		"description": "Make on-site CreditCard payments with iPayment",
+		"type": "redirect",
+		"handle": "ipayment_silent"
+	},
+	{
+		"name": "Pagamento Certo Locaweb",
+		"description": "Pague de forma segura pelo Pagamento Certo Locaweb!",
+		"type": "redirect",
+		"handle": "locaweb_pgcerto"
+	},
+	{
+		"name": "Mobio.bg SMS payment",
+		"description": "Mobio.bg \/ SMS micropayments and SMS services",
+		"type": "redirect",
+		"handle": "mobio"
+	},
+	{
+		"name": "MoIP",
+		"description": "MoIP Payment Services - Seamless & secure payment solutions",
+		"type": "redirect",
+		"handle": "moip"
+	},
+	{
+		"name": "iDEAL via Mollie",
+		"description": "iDEAL via Mollie zonder vaste kosten of procedures",
+		"type": "redirect",
+		"handle": "mollie_ideal"
+	},
+	{
+		"name": "Wallie via Mollie",
+		"description": "Wallie is de populairste prepaidcard voor online betalingen die veel door ouders voor hun kinderen wordt gekocht.",
+		"type": "redirect",
+		"handle": "mollie_wallie"
+	},
+	{
+		"name": "moneris",
+		"description": "Moeris integration",
+		"handle": "moneris"
+	},
+	{
+		"name": "Moneybookers",
+		"description": "Moneybookers enables any business or consumer with an email address to securely and cost-effectively send and receive payments online - in real-time!",
+		"type": "redirect",
+		"handle": "moneybookers"
+	},
+	{
+		"name": "MoneyProxy",
+		"description": "Accept payments on a website in different digital currencies with a single merchant account.",
+		"type": "redirect",
+		"handle": "moneyproxy"
+	},
+	{
+		"name": "MultiSafepay",
+		"description": "Iedereen in uw webwinkel kan gebruik maken van MultiSafepay. Laat uw klanten betalen via iDEAL, Visa, Master Card, Bankoverboeking (NL en BE), Mister Cash of diverse buitenlandse betaalmethoden. Uiteraard worden uw MultiSafepay-transacties uitgevoerd volgens strikte veiligheidseisen.",
+		"type": "redirect",
+		"handle": "multisafepay"
+	},
+	{
+		"name": "Netcash.co.za",
+		"description": "Access all the services via the internet from anywhere, at any time, using any device with a browser",
+		"type": "redirect",
+		"handle": "netcash"
+	},
+	{
+		"name": "NetDebit",
+		"description": "Make payments with NetDebit",
+		"type": "redirect",
+		"handle": "netdebit"
+	},
+	{
+		"name": "Net Builder",
+		"description": "NetPay is the easiest and most affordable payment gateway in Malaysia. Process credit card payments via NetPay's own secure Shared Payment Page in real-time.",
+		"type": "redirect",
+		"handle": "netpay"
+	},
+	{
+		"name": "Nochex",
+		"description": "Leading independent UK based online payment company, specialising in providing smaller online businesses with simple, accessible, easy to use, online payment services.",
+		"type": "redirect",
+		"handle": "nochex"
+	},
+	{
+		"name": "Offline Payment",
+		"description": "You can use this option to not pay through the Internet",
+		"type": "redirect",
+		"handle": "offline_payment"
+	},
+	{
+		"name": "Ogone",
+		"description": "Ogone Payment Services - Seamless & secure payment solutions",
+		"type": "redirect",
+		"handle": "ogone"
+	},
+	{
+		"name": "OneBip",
+		"description": "OneBip Mobile Phone Payment",
+		"type": "redirect",
+		"handle": "onebip"
+	},
+	{
+		"name": "pagseguro",
+		"description": "PagSeguro integration",
+		"handle": "pagseguro"
+	},
+	{
+		"name": "Paybox.at",
+		"description": "paybox macht dein Handy zur Geldbörse: das weltweit erste massenfähige System zur einfachen und sicheren Zahlungsabwicklung über das Mobiltelefon.",
+		"type": "redirect",
+		"handle": "payboxat"
+	},
+	{
+		"name": "Paybox",
+		"description": "Paybox Services: solutions de paiement sur Internet; Terminal de paiement virtuel",
+		"type": "redirect",
+		"handle": "payboxfr"
+	},
+	{
+		"name": "Paycific",
+		"description": "Online Payment System - Paycific.com for secure and fast payments on the internet",
+		"type": "redirect",
+		"handle": "paycific"
+	},
+	{
+		"name": "paycom",
+		"description": "paycom",
+		"type": "redirect",
+		"handle": "paycom"
+	},
+	{
+		"name": "Payer",
+		"description": "Payer payment provider.",
+		"type": "redirect",
+		"handle": "payer"
+	},
+	{
+		"name": "Payfast.co.za",
+		"description": "Send and receive money securely and easily - Payments processing for South Africa",
+		"type": "redirect",
+		"handle": "payfast"
+	},
+	{
+		"name": "Payments Gateway",
+		"description": "Payments Gateway delivers with a complete line of solutions designed from the ground up to help organizations automate and manage their payment acceptance and disbursement needs.",
+		"type": "redirect",
+		"handle": "payments_gateway"
+	},
+	{
+		"name": "paymill",
+		"description": "Paymill integration",
+		"handle": "paymill"
+	},
+	{
+		"name": "Payone",
+		"description": "Your money is safe with Payone account safety policy. Payone is open to all businesses.",
+		"type": "redirect",
+		"handle": "payone"
+	},
+	{
+		"name": "payOS",
+		"description": "Make payments with payOS",
+		"type": "redirect",
+		"handle": "payos"
+	},
+	{
+		"name": "PayPal",
+		"description": "PayPal lets you send money to anyone with email. PayPal is free for consumers and works seamlessly with your existing credit card and checking account.",
+		"type": "redirect",
+		"handle": "paypal"
+	},
+	{
+		"name": "PayPal Payflow Link",
+		"description": "PayPal lets you send money to anyone with email. PayPal is free for consumers and works seamlessly with your existing credit card and checking account.",
+		"type": "redirect",
+		"handle": "paypal_payflow_link"
+	},
+	{
+		"name": "",
+		"description": "PayPal Subscription is the Subscription Service that will <strong>automatically bill your account each subscription period<\/strong>. You can cancel a subscription any time you want from your PayPal account. PayPal is free for consumers and works seamlessly with your existing credit card and checking account.",
+		"type": "redirect",
+		"handle": "paypal_subscription"
+	},
+	{
+		"name": "PayPal WPP",
+		"description": "PayPal lets you send money to anyone with email. PayPal is free for consumers and works seamlessly with your existing credit card and checking account.",
+		"type": "redirect",
+		"handle": "paypal_wpp"
+	},
+	{
+		"name": "Paysignet",
+		"description": "",
+		"type": "redirect",
+		"handle": "paysignet"
+	},
+	{
+		"name": "Paysite Cash",
+		"description": "Make payments with Paysite Cash",
+		"type": "redirect",
+		"handle": "paysite_cash"
+	},
+	{
+		"name": "Paystation",
+		"description": "Paystation's online credit card processing service provides merchants with a secure solution to send clients' online credit card payment information to a bank's internet credit card payment service for authorisation",
+		"type": "redirect",
+		"handle": "paystation"
+	},
+	{
+		"name": "payu",
+		"description": "Payu integration",
+		"handle": "payu"
+	},
+	{
+		"name": "Payza",
+		"description": "Your money is safe with Payza account safety policy. Payza is open to all businesses.",
+		"type": "redirect",
+		"handle": "payza"
+	},
+	{
+		"name": "postfinancech",
+		"description": "PostFinance.ch integration",
+		"handle": "postfinancech"
+	},
+	{
+		"name": "przelewy24",
+		"description": "Przelewy24 integration",
+		"handle": "przelewy24"
+	},
+	{
+		"name": "psigate",
+		"description": "PSIGate",
+		"type": "redirect",
+		"handle": "psigate"
+	},
+	{
+		"name": "rbkmoney",
+		"description": "RBK Money integration",
+		"handle": "rbkmoney"
+	},
+	{
+		"name": "Realex Redirect",
+		"description": "Leading payment service provider, Realex Payments provides a broad range of payment services to over 3,000 online businesses, corporate clients and financial institutions...",
+		"type": "redirect",
+		"handle": "realex_redirect"
+	},
+	{
+		"name": "Realex Remote",
+		"description": "Leading payment service provider, Realex Payments provides a broad range of payment services to over 3,000 online businesses, corporate clients and financial institutions...",
+		"type": "redirect",
+		"handle": "realex_remote"
+	},
+	{
+		"name": "RoboKassa",
+		"description": "RoboKassa - Russian Internet Payment System",
+		"type": "redirect",
+		"handle": "robokassa"
+	},
+	{
+		"name": "Sage Pay",
+		"description": "Sage Pay (formerly Protx) provides secure payment processing for businesses of all sizes. Accept card payments online, over the phone or via mail order.",
+		"type": "redirect",
+		"handle": "sagepay"
+	},
+	{
+		"name": "scnet",
+		"description": "SCNet integration",
+		"handle": "scnet"
+	},
+	{
+		"name": "scnetintegrated",
+		"description": "SCNet integration. This is the integrated version of SCNet payment which allows payments without leaving the website.",
+		"handle": "scnetintegrated"
+	},
+	{
+		"name": "SecureAndPay.com",
+		"description": "SecureAndPay.com",
+		"type": "redirect",
+		"handle": "secureandpay"
+	},
+	{
+		"name": "Skrill",
+		"description": "Skrill enables any business or consumer with an email address to securely and cost-effectively send and receive payments online - in real-time!",
+		"type": "redirect",
+		"handle": "skrill"
+	},
+	{
+		"name": "SMScoin",
+		"description": "SmsCoin provides micropayments via Premium SMS payment services in 88 countries for any commercial website.",
+		"type": "redirect",
+		"handle": "smscoin"
+	},
+	{
+		"name": "Sofort Gateway",
+		"description": "Online Zahlungsdienst Zahlsystem Payment Überweisung Online Überweisung.",
+		"type": "redirect",
+		"handle": "sofort"
+	},
+	{
+		"name": "Sofortüberweisung.de",
+		"description": "Online Zahlungsdienst Zahlsystem Payment Überweisung Online Überweisung.",
+		"type": "redirect",
+		"handle": "sofortueberweisung"
+	},
+	{
+		"name": "Sparkassen-Internetkasse Formularservice",
+		"description": "Die Sparkassen-Internetkasse ist ein Management-System für das E-Payment im Internet.",
+		"type": "redirect",
+		"handle": "sparkassen_internetkasse"
+	},
+	{
+		"name": "stripe",
+		"description": "Stripe integration",
+		"handle": "stripe"
+	},
+	{
+		"name": "MIGS",
+		"description": "Suncorp VPC MIGS",
+		"type": "redirect",
+		"handle": "suncorp_migs"
+	},
+	{
+		"name": "suomenverkkomaksut",
+		"description": "Suomen Verkkomaksut Oy integration",
+		"handle": "suomenverkkomaksut"
+	},
+	{
+		"name": "upay",
+		"description": "uPay (https:\/\/www.upay.co.uk) integration",
+		"handle": "upay"
+	},
+	{
+		"name": "USAepay",
+		"description": "USAepay",
+		"type": "redirect",
+		"handle": "usaepay"
+	},
+	{
+		"name": "Virtual Card Services",
+		"description": "Card processing systems for South African merchants.",
+		"type": "redirect",
+		"handle": "vcs"
+	},
+	{
+		"name": "Verotel",
+		"description": "Verotel offers a range of billing methods for your website, including VISA\/MasterCard\/JCB, Chinese debit, Direct Debit in European countries, pay per phonecall, pay per minute, SMS billing and more!",
+		"type": "redirect",
+		"handle": "verotel"
+	},
+	{
+		"name": "Viaklix",
+		"description": "Provides integrated credit and debit card payment processing, electronic check conversion and related software applications..",
+		"type": "redirect",
+		"handle": "viaklix"
+	},
+	{
+		"name": "VirtualMerchant",
+		"description": "Virtual Merchant is your global source for innovative payment solutions - the one company that clients and partners everywhere trust to securely and reliably manage their payments business.",
+		"type": "redirect",
+		"handle": "virtualmerchant"
+	},
+	{
+		"name": "viva",
+		"description": "VivaPayments integration",
+		"handle": "viva"
+	},
+	{
+		"name": "WorldPay",
+		"description": "Accept payments on the internet, by phone, fax or mail. Credit and debit cards, bank transfers and instalments. In any language and most currencies",
+		"type": "redirect",
+		"handle": "worldpay"
+	},
+	{
+		"name": "WorldPay Futurepay",
+		"description": "Accepts payments on the internet, by phone, fax or mail. Credit and debit cards, bank transfers and instalments. In any language and most currencies",
+		"type": "redirect",
+		"handle": "worldpay_futurepay"
+	},
+	{
+		"name": "zarinpal",
+		"description": "ZarinPal integration",
+		"handle": "zarinpal"
+	},
+	{
+		"name": "ZipZap",
+		"description": "ZipZap Payment Gateway provides real-time credit card processing through our robust credit card payment gateway.",
+		"type": "redirect",
+		"handle": "zipzap"
+	}
+]

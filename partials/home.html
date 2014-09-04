@@ -13,7 +13,7 @@
 						<br/>membership management
 					</h1>
 					<h3>
-						for <i class="fa fa-joomla"></i> <strong>1.5 &bull; 2.&times; &bull; 3.&times;</strong>
+						for <i class="fa fa-joomla"></i> <strong>1.5 - 3.&times;</strong>
 					</h3>
 					<ul>
 						<li>
@@ -45,6 +45,26 @@
 </div>
 
 <div id="start"></div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<img class="fullwidth" src="/assets/img/aec-admin-home-faded.png" alt=""/>
+		</div>
+		<div class="col-md-12">
+			<h2>Supported Payment Processors</h2>
+			<div class="col-md-6">
+				<h3>More than 80 Integrations</h3>
+				<p>...are already built into AEC. So whatever service you want to use - chances are that you can already dive in.</p>
+				<p>We have compiled a list of the services that we have currently integrated:</p>
+			</div>
+			<div class="col-md-6">
+				<h3>Offline Processing</h3>
+				<p>We also offer an integration called Offline Processing - with this, you can tell your customers where to send the money on a more traditional way (like mailing checks, or doing a wire transfer). Be advised that you will of course have some manual processing to do with that one.</p>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div class="fullwidth-background content-bg-container carina-inject-mystic-mt">
 	<div class="container">
@@ -100,6 +120,68 @@
 			<div class="col-md-6">
 				<h3>Offline Processing</h3>
 				<p>We also offer an integration called Offline Processing - with this, you can tell your customers where to send the money on a more traditional way (like mailing checks, or doing a wire transfer). Be advised that you will of course have some manual processing to do with that one.</p>
+			</div>
+			</div>
+		<div class="col-md-12" ng-controller="ProcessorsCtrl">
+			<div class="col-md-6 col-md-offset-3 clearfix">
+				<br/><br/>
+				<div class="form-group form-focus">
+					<div class="input-group">
+						<div class="input-group-addon"><i class="fa fa-search"></i></div>
+						<input type="text"
+							   class="text-center form-control"
+							   delayed-model="searchText"
+							   placeholder="search" />
+					</div>
+				</div>
+				<br/>
+			</div>
+			<div class="col-md-12">
+				<ul id="processorlist">
+					<li ng-repeat="processor in processors | filter:searchText" class="am-fade-and-slide-top">
+						<div class="processor-sprite processor-sprite-pos-{{processor.handle}}"></div>
+						<h4>{{processor.name}}</h4>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="fullwidth-background content-bg-container carina-inject-mystic-mt">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<h1 class="impact">No<br/>Limits</h1>
+			</div>
+			<div class="col-md-7 col-md-offset-1">
+				<ul>
+					<li>&hellip;on membership plans</li>
+					<li>&hellip;on memberships per user</li>
+					<li>&hellip;on how many users you have</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="fullwidth-background content-bg-container carina-inject-colorful">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="impact">Integrate with</h1>
+			</div>
+			<div class="col-md-4">
+				<h1 class="superimpact">50+</h1>
+				<h3>components</h3>
+			</div>
+			<div class="col-md-4">
+				<h1 class="superimpact">30+</h1>
+				<h3>services</h3>
+			</div>
+			<div class="col-md-4">
+				<h1 class="superimpact">80+</h1>
+				<h3>payment processors</h3>
 			</div>
 		</div>
 	</div>
