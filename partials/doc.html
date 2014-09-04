@@ -7,7 +7,13 @@
 			<div class="col-md-8">
 				<div ng-controller="DocCtrl">
 					<div marked ng-include="path"></div>
-					<div disqus="'http://aec.valanx.org/docs/' + docsid.value"></div>
+
+					<div id="comments">
+						<hr/>
+						<h4>Any Questions?</h4>
+						<p>Please join the discussion if you're stuck on this topic and need us to clarify something or improve the documentation for you.</p>
+						<div disqus="'http://aec.valanx.org/docs/' + id"></div>
+					</div>
 				</div>
 			</div>
 		</div>

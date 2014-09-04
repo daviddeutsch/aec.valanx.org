@@ -3,7 +3,8 @@
 	angular.module('aecApp', [
 		'ngAnimate', 'ui.router',
 		'ct.ui.router.extras', 'mgcrea.ngStrap',
-		'ngDisqus', 'hc.marked'
+		'ngDisqus', 'hc.marked',
+		'fox.scrollReveal'
 	]);
 
 
@@ -12,7 +13,7 @@
 	 *
 	 * @desc Set up the Application
 	 */
-	function AppCfg( $urlRouterProvider, $stateProvider, $disqusProvider )
+	function AppCfg( $urlRouterProvider, $stateProvider, $locationProvider, $disqusProvider )
 	{
 		$urlRouterProvider
 			.otherwise('/');
@@ -37,8 +38,7 @@
 						templateUrl: '/partials/doc.html'
 					},
 					"background": {
-						templateUrl: '/partials/empty.html',
-						controller: 'DocAsideCtrl'
+						templateUrl: '/partials/empty.html'
 					}
 				}
 			})
@@ -46,9 +46,11 @@
 		;
 
 		$disqusProvider.setShortname('valanx');
+
+		$locationProvider.hashPrefix('!')
 	}
 
-	AppCfg.$inject = ['$urlRouterProvider', '$stateProvider', '$disqusProvider'];
+	AppCfg.$inject = ['$urlRouterProvider', '$stateProvider', '$locationProvider', '$disqusProvider'];
 	angular.module('aecApp').config(AppCfg);
 
 
@@ -66,6 +68,12 @@
 			function(event, toState, toParams, fromState, fromParams) {
 				$rootScope.loading = true;
 			});
+
+		$rootScope.$on(
+			'$stateChangeSuccess',
+			function(event, toState, toParams, fromState, fromParams) {
+				$rootScope.loading = false;
+			});
 	}
 
 	AppRun.$inject = ['$rootScope', '$state'];
@@ -79,8 +87,8 @@
 				var settings = angular.extend({
 					href: angular.element(),
 					offset: 0,
-					duration: 3200,
-					easing: 'easeOutExpo'
+					duration: 1600,
+					easing: 'easeInOutQuint'
 				}, attrs);
 
 				settings.href = settings.href.replace('#','');
@@ -133,43 +141,97 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function DocCtrl( $scope, $rootScope, $stateParams, $http )
+	function DocCtrl( $scope, $rootScope, $q, $timeout, $http, $stateParams, $aside )
 	{
-		if ( $stateParams.id == '' ) {
-			$stateParams.id = 'welcome';
+		var list = [],
+			keepalive,
+			id = 0;
+
+		$scope.path = '';
+
+		$scope.pages = [];
+
+		$scope.map = {};
+
+		if ( typeof $stateParams.id == 'undefined' || $stateParams.id == '' ) {
+			$stateParams.id = 'welcome'
 		}
 
 		$scope.id = $stateParams.id;
 
-		$scope.path = '';
-
 		var switchPage = function(id) {
-			$rootScope.loading = true;
+			$scope.path = '/docs/' + $scope.pages[$scope.map[id]].path;
 
-			angular.forEach($scope.pages, function(page){
-				if ( page.handle == id ) {
-					$scope.path = '/docs/' + page.path;
+			$timeout(function(){
+				$rootScope.loading = false;
+			}, 100);
+		};
 
-					$rootScope.loading = false;
-				}
+		var mapPages = function() {
+			var deferred = $q.defer(),
+				promises = [];
+
+			angular.forEach(list, function(page, key){
+				var deferred = $q.defer();
+
+				$scope.map[page.handle] = key;
+
+				deferred.resolve();
+
+				promises.push(deferred.promise);
 			});
+
+			$q.all(promises).then(function(item){
+				deferred.resolve();
+			});
+
+			return deferred.promise;
 		};
 
 		$scope.$watch('id', function(newVal, oldVal) {
 			if (newVal !== oldVal) switchPage(newVal);
 		});
 
+		var tick = function () {
+			$scope.pages.push(list[id]);
+
+			id++;
+
+			if ( list.length > id ) {
+				keepalive = $timeout(tick, 40);
+			} else {
+				switchPage($scope.id);
+			}
+		};
+
 		$http.get('docs/index.json')
 			.then(function(index){
-				$scope.pages = index.data;
+				list = index.data;
 
-				switchPage($stateParams.id);
-
-				$rootScope.loading = false;
+				mapPages()
+					.then(function() {
+						keepalive = $timeout(tick, 400);
+					});
 			});
+
+		var aside = $aside(
+			{
+				scope: $scope,
+				template: 'partials/doc.aside.html',
+				placement: 'left',
+				animation: 'am-fade-and-slide-left',
+				backdrop: false,
+				keyboard: false,
+				container: '#background'
+			}
+		);
+
+		$rootScope.$on('backHome', function (event, data) {
+			aside.hide();
+		});
 	}
 
-	DocCtrl.$inject = ['$scope', '$rootScope', '$stateParams', '$http'];
+	DocCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', '$http', '$stateParams', '$aside'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 
@@ -178,11 +240,22 @@
 	 *
 	 * @desc Controls Behavior on the side naviation for docs
 	 */
-	function DocAsideCtrl( $rootScope, $scope, $http, $timeout, $state, $aside )
+	function DocAsideCtrl( $rootScope, $scope, $http, $timeout, $aside )
 	{
 		var list = [],
 			keepalive,
 			id = 0;
+
+		$scope.pages = [];
+
+		$scope.id = { id: $rootScope.docsid.value };
+
+		$http.get('docs/index.json')
+			.then(function(index){
+				list = index.data;
+
+				keepalive = $timeout(tick, 400);
+			});
 
 		$scope.aside = $aside(
 			{
@@ -199,31 +272,9 @@
 		$rootScope.$on('backHome', function (event, data) {
 			$scope.aside.hide();
 		});
-
-		$scope.$state = $state;
-
-		$scope.pages = [];
-
-		var tick = function () {
-			$scope.pages.push(list[id]);
-
-			id++;
-
-			if ( list.length > id ) {
-				keepalive = $timeout(tick, 40);
-			}
-		};
-
-		$http.get('docs/index.json')
-			.then(function(index){
-				list = index.data;
-
-				keepalive = $timeout(tick, 400);
-			});
-
 	}
 
-	DocAsideCtrl.$inject = ['$rootScope', '$scope', '$http', '$timeout', '$state', '$aside'];
+	DocAsideCtrl.$inject = ['$rootScope', '$scope', '$http', '$timeout', '$aside'];
 	angular.module('aecApp').controller('DocAsideCtrl', DocAsideCtrl);
 
 

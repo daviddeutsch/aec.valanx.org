@@ -18,7 +18,7 @@
 			<div class="aside-body">
 				<ul class="list-unstyled">
 					<li ng-repeat="page in pages" class="am-fade-and-slide-right">
-						<a href ui-sref="{id:page.handle}" ui-sref-active="active">
+						<a href ui-sref="{id:page.handle}" ng-class="{active: $parent.id.value === page.handle}">
 							<span class="index-page-index">{{$index}}</span>
 							<span> - </span>
 							<span class="index-page-title">{{page.title}}</span>

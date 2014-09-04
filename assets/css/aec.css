@@ -6350,6 +6350,9 @@ a:hover {
 .page-home {
   height: 100%;
 }
+.fa {
+  vertical-align: middle;
+}
 #home-top {
   padding-top: 30%;
   margin-bottom: 70%;
@@ -6361,8 +6364,22 @@ a:hover {
   display: inline-block;
 }
 #home-top h1 {
+  font-size: 52px;
   font-weight: 400;
   text-align: center;
+}
+#home-top h3 {
+  font-size: 27px;
+  text-align: center;
+  font-weight: 200;
+  margin-top: 12px;
+  opacity: 0.85;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  transition: 400ms;
+}
+#home-top h3:hover {
+  opacity: 1;
 }
 #home-top ul {
   margin-top: 24px;
@@ -6472,4 +6489,8 @@ a:hover {
 }
 .carina-inject-colorful {
   background-image: url(../img/carina-nebula-colorful.jpg);
+}
+#comments {
+  margin-top: 120px;
+  min-height: 400px;
 }
