@@ -6719,6 +6719,10 @@ img.fullwidth {
   border-radius: 2px;
   overflow: hidden;
 }
+#integrations-list .panel {
+  height: 180px;
+  overflow: hidden;
+}
 .form-focus {
   opacity: 0.5;
 }

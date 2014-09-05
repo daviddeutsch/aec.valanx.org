@@ -48,20 +48,10 @@
 		"handle": "authorize_cim"
 	},
 	{
-		"name": "beanstream",
-		"description": "Beanstream integration",
-		"handle": "beanstream"
-	},
-	{
 		"name": "BillSAFE",
 		"description": "BillSAFE - Rechnungskauf im Internet mit Zahlungsgarantie",
 		"type": "redirect",
 		"handle": "billsafe"
-	},
-	{
-		"name": "braintree",
-		"description": "Braintree integration",
-		"handle": "braintree"
 	},
 	{
 		"name": "CardSave",
@@ -70,25 +60,10 @@
 		"handle": "cardsave"
 	},
 	{
-		"name": "cashu",
-		"description": "CashU integration",
-		"handle": "cashu"
-	},
-	{
-		"name": "ccavenue",
-		"description": "ccAvenue integration",
-		"handle": "ccavenue"
-	},
-	{
 		"name": "CCBill",
 		"description": "CCBill",
 		"type": "redirect",
 		"handle": "ccbill"
-	},
-	{
-		"name": "clickandbuy",
-		"description": "ClickandBuy integration",
-		"handle": "clickandbuy"
 	},
 	{
 		"name": "ClickBank",
@@ -97,20 +72,10 @@
 		"handle": "clickbank"
 	},
 	{
-		"name": "cmcic",
-		"description": "CM-CIC p@iement integration",
-		"handle": "cmcic"
-	},
-	{
 		"name": "Cybermut",
 		"description": "Cybermut - Le groupe Crédit Mutuel",
 		"type": "redirect",
 		"handle": "cybermut"
-	},
-	{
-		"name": "deltapay",
-		"description": "Alpha Bank (DeltaPay) HTML method integration",
-		"handle": "deltapay"
 	},
 	{
 		"name": "Desjardins",
@@ -119,20 +84,10 @@
 		"handle": "desjardins"
 	},
 	{
-		"name": "dwolla",
-		"description": "Dwolla integration",
-		"handle": "dwolla"
-	},
-	{
 		"name": "ePay - Dit Online Betalingssystem",
 		"description": "ePay | Dit Online Betalingssystem is the most leading payment gateway in Denmark and the rest of Scandinavia, which provides payments over the internet for both small, medium and large companies.<br><br>ePay is a payment system with focus on security and stability and therefore ePay is developed by use of the most recent web technologies and security standards defined.<br><br>ePay is PCI certified by Visa\/MasterCVard according to the PCI standard (Payment Card Industry Data Security Standard). The PCI standard is developed with focus on raise the security to online payments. As the leading payment gateway in Denmark and Scandinavia it is important to maintain as high security level as possible concerning the payments.",
 		"type": "redirect",
 		"handle": "epay"
-	},
-	{
-		"name": "epaydk",
-		"description": "Akeeba Subscriptions integration with scandinavian payment gateway Epay.dk",
-		"handle": "epaydk"
 	},
 	{
 		"name": "epsNetpay",
@@ -141,20 +96,10 @@
 		"handle": "epsnetpay"
 	},
 	{
-		"name": "eselectplus",
-		"description": "eSELECTplus integration",
-		"handle": "eselectplus"
-	},
-	{
 		"name": "eWay",
 		"description": "eWAY is the easiest and most affordable payment gateway in Australia. Process credit card payments via eWAY's own secure Shared Payment Page in real-time.",
 		"type": "redirect",
 		"handle": "eway"
-	},
-	{
-		"name": "ewayrapid3",
-		"description": "eWay Rapid 3 Payment integration",
-		"handle": "ewayrapid3"
 	},
 	{
 		"name": "eWayXML",
@@ -167,11 +112,6 @@
 		"description": "Pay online now",
 		"type": "redirect",
 		"handle": "generic_vpc"
-	},
-	{
-		"name": "gocardless",
-		"description": "GoCardless integration",
-		"handle": "gocardless"
 	},
 	{
 		"name": "Google Checkout",
@@ -238,11 +178,6 @@
 		"description": "Wallie is de populairste prepaidcard voor online betalingen die veel door ouders voor hun kinderen wordt gekocht.",
 		"type": "redirect",
 		"handle": "mollie_wallie"
-	},
-	{
-		"name": "moneris",
-		"description": "Moeris integration",
-		"handle": "moneris"
 	},
 	{
 		"name": "Moneybookers",
@@ -352,11 +287,6 @@
 		"handle": "payments_gateway"
 	},
 	{
-		"name": "paymill",
-		"description": "Paymill integration",
-		"handle": "paymill"
-	},
-	{
 		"name": "Payone",
 		"description": "Your money is safe with Payone account safety policy. Payone is open to all businesses.",
 		"type": "redirect",
@@ -411,36 +341,16 @@
 		"handle": "paystation"
 	},
 	{
-		"name": "payu",
-		"description": "Payu integration",
-		"handle": "payu"
-	},
-	{
 		"name": "Payza",
 		"description": "Your money is safe with Payza account safety policy. Payza is open to all businesses.",
 		"type": "redirect",
 		"handle": "payza"
 	},
 	{
-		"name": "postfinancech",
-		"description": "PostFinance.ch integration",
-		"handle": "postfinancech"
-	},
-	{
-		"name": "przelewy24",
-		"description": "Przelewy24 integration",
-		"handle": "przelewy24"
-	},
-	{
 		"name": "psigate",
 		"description": "PSIGate",
 		"type": "redirect",
 		"handle": "psigate"
-	},
-	{
-		"name": "rbkmoney",
-		"description": "RBK Money integration",
-		"handle": "rbkmoney"
 	},
 	{
 		"name": "Realex Redirect",
@@ -465,16 +375,6 @@
 		"description": "Sage Pay (formerly Protx) provides secure payment processing for businesses of all sizes. Accept card payments online, over the phone or via mail order.",
 		"type": "redirect",
 		"handle": "sagepay"
-	},
-	{
-		"name": "scnet",
-		"description": "SCNet integration",
-		"handle": "scnet"
-	},
-	{
-		"name": "scnetintegrated",
-		"description": "SCNet integration. This is the integrated version of SCNet payment which allows payments without leaving the website.",
-		"handle": "scnetintegrated"
 	},
 	{
 		"name": "SecureAndPay.com",
@@ -513,25 +413,10 @@
 		"handle": "sparkassen_internetkasse"
 	},
 	{
-		"name": "stripe",
-		"description": "Stripe integration",
-		"handle": "stripe"
-	},
-	{
 		"name": "MIGS",
 		"description": "Suncorp VPC MIGS",
 		"type": "redirect",
 		"handle": "suncorp_migs"
-	},
-	{
-		"name": "suomenverkkomaksut",
-		"description": "Suomen Verkkomaksut Oy integration",
-		"handle": "suomenverkkomaksut"
-	},
-	{
-		"name": "upay",
-		"description": "uPay (https:\/\/www.upay.co.uk) integration",
-		"handle": "upay"
 	},
 	{
 		"name": "USAepay",
@@ -564,11 +449,6 @@
 		"handle": "virtualmerchant"
 	},
 	{
-		"name": "viva",
-		"description": "VivaPayments integration",
-		"handle": "viva"
-	},
-	{
 		"name": "WorldPay",
 		"description": "Accept payments on the internet, by phone, fax or mail. Credit and debit cards, bank transfers and instalments. In any language and most currencies",
 		"type": "redirect",
@@ -579,11 +459,6 @@
 		"description": "Accepts payments on the internet, by phone, fax or mail. Credit and debit cards, bank transfers and instalments. In any language and most currencies",
 		"type": "redirect",
 		"handle": "worldpay_futurepay"
-	},
-	{
-		"name": "zarinpal",
-		"description": "ZarinPal integration",
-		"handle": "zarinpal"
 	},
 	{
 		"name": "ZipZap",

@@ -52,16 +52,6 @@
 			<img class="fullwidth" src="/assets/img/aec-admin-home-faded.png" alt=""/>
 		</div>
 		<div class="col-md-12">
-			<h2>Supported Payment Processors</h2>
-			<div class="col-md-6">
-				<h3>More than 80 Integrations</h3>
-				<p>...are already built into AEC. So whatever service you want to use - chances are that you can already dive in.</p>
-				<p>We have compiled a list of the services that we have currently integrated:</p>
-			</div>
-			<div class="col-md-6">
-				<h3>Offline Processing</h3>
-				<p>We also offer an integration called Offline Processing - with this, you can tell your customers where to send the money on a more traditional way (like mailing checks, or doing a wire transfer). Be advised that you will of course have some manual processing to do with that one.</p>
-			</div>
 		</div>
 	</div>
 </div>
@@ -98,7 +88,7 @@
 				<h3>services</h3>
 			</div>
 			<div class="col-md-4">
-				<h1 class="superimpact">80+</h1>
+				<h1 class="superimpact">70+</h1>
 				<h3>payment processors</h3>
 			</div>
 		</div>
@@ -109,19 +99,55 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h2>Integrate with other software and services</h2>
+			<div class="col-md-6">
+				<h3>More than 80 Integrations</h3>
+				<p>With MIs, you can attach additional functionality to your plans and groups. Like a Plugin system, they carry out actions on certain points during a subscription.</p>
+			</div>
+			<div class="col-md-6">
+				<h3>Endless Flexibility</h3>
+				<p>With locally controlled Instances of MIs, additional functionality is simple to set up and easy to maintain.</p>
+				<p>Below is an overview of existing Integrations:</p>
+			</div>
+		</div>
+		<div id="integrations-list">
+			<div class="col-md-12" ng-controller="IntegrationsCtrl">
+				<div class="col-md-6 col-md-offset-3 clearfix">
+					<br/><br/>
+					<div class="form-group form-focus">
+						<div class="input-group">
+							<div class="input-group-addon"><i class="fa fa-search"></i></div>
+							<input type="text"
+								   class="text-center form-control"
+								   ng-model="searchText"
+								   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 180, 'blur': 0} }"
+								   placeholder="search" />
+							<div class="input-group-addon">{{(mis|filter:searchText).length}} Integrations</div>
+						</div>
+					</div>
+					<br/>
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-3 am-fade-and-slide-top" ng-repeat="mi in mis | filter:searchText">
+						<div class="panel panel-default">
+							<div class="panel-heading">{{mi.name}}</div>
+							<div class="panel-body">{{mi.desc}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-12">
 			<h2>Supported Payment Processors</h2>
 			<div class="col-md-6">
-				<h3>More than 80 Integrations</h3>
+				<h3>More than 70 Processors</h3>
 				<p>...are already built into AEC. So whatever service you want to use - chances are that you can already dive in.</p>
-				<p>We have compiled a list of the services that we have currently integrated:</p>
+				<p>We have compiled a list of processors that we have currently integrated:</p>
 			</div>
 			<div class="col-md-6">
 				<h3>Offline Processing</h3>
 				<p>We also offer an integration called Offline Processing - with this, you can tell your customers where to send the money on a more traditional way (like mailing checks, or doing a wire transfer). Be advised that you will of course have some manual processing to do with that one.</p>
 			</div>
-			</div>
+		</div>
 		<div class="col-md-12" ng-controller="ProcessorsCtrl">
 			<div class="col-md-6 col-md-offset-3 clearfix">
 				<br/><br/>
@@ -130,8 +156,10 @@
 						<div class="input-group-addon"><i class="fa fa-search"></i></div>
 						<input type="text"
 							   class="text-center form-control"
-							   delayed-model="searchText"
+							   ng-model="searchText"
+							   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 180, 'blur': 0} }"
 							   placeholder="search" />
+						<div class="input-group-addon">{{(processors|filter:searchText).length}} Processors</div>
 					</div>
 				</div>
 				<br/>
@@ -160,28 +188,6 @@
 					<li>&hellip;on memberships per user</li>
 					<li>&hellip;on how many users you have</li>
 				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="fullwidth-background content-bg-container carina-inject-colorful">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h1 class="impact">Integrate with</h1>
-			</div>
-			<div class="col-md-4">
-				<h1 class="superimpact">50+</h1>
-				<h3>components</h3>
-			</div>
-			<div class="col-md-4">
-				<h1 class="superimpact">30+</h1>
-				<h3>services</h3>
-			</div>
-			<div class="col-md-4">
-				<h1 class="superimpact">80+</h1>
-				<h3>payment processors</h3>
 			</div>
 		</div>
 	</div>

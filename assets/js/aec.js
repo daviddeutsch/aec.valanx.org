@@ -119,40 +119,6 @@
 	scrollOnClickDirective.$inject = ['$location'];
 	angular.module('aecApp').directive('scrollOnClick', scrollOnClickDirective);
 
-	// Hat-tip to: http://stackoverflow.com/a/21090800
-	function delayedModelDirective($timeout) {
-		return {
-			scope: {
-				model: '=delayedModel'
-			},
-			link: function(scope, element, attrs) {
-
-				element.val(scope.model);
-
-				scope.$watch('model', function(newVal, oldVal) {
-					if (newVal !== oldVal) {
-						element.val(scope.model);
-					}
-				});
-
-				var timeout;
-
-				element.on('keyup paste search', function() {
-					$timeout.cancel(timeout);
-
-					timeout = $timeout(function() {
-						scope.model = element[0].value;
-						element.val(scope.model);
-						scope.$apply();
-					}, attrs.delay || 180);
-				});
-			}
-		};
-	}
-
-	delayedModelDirective.$inject = ['$timeout'];
-	angular.module('aecApp').directive('delayedModel', delayedModelDirective);
-
 	/**
 	 * @name HomeCtrl
 	 *
@@ -172,7 +138,7 @@
 	/**
 	 * @name ProcessorsCtrl
 	 *
-	 * @desc Controls Behavior on a processor section
+	 * @desc Controls Behavior on the processor section
 	 */
 	function ProcessorsCtrl( $scope, $http )
 	{
@@ -186,6 +152,25 @@
 
 	ProcessorsCtrl.$inject = ['$scope', '$http'];
 	angular.module('aecApp').controller('ProcessorsCtrl', ProcessorsCtrl);
+
+
+	/**
+	 * @name IntegrationsCtrl
+	 *
+	 * @desc Controls Behavior on the mi section
+	 */
+	function IntegrationsCtrl( $scope, $http )
+	{
+		$scope.processors = [];
+
+		$http.get('mis.json')
+			.then(function(mis){
+				$scope.mis = mis.data;
+			});
+	}
+
+	IntegrationsCtrl.$inject = ['$scope', '$http'];
+	angular.module('aecApp').controller('IntegrationsCtrl', IntegrationsCtrl);
 
 
 	/**
