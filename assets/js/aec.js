@@ -221,7 +221,7 @@
 
 			$timeout(function(){
 				$rootScope.loading = false;
-			}, 100);
+			}, 500);
 		};
 
 		var mapPages = function() {
