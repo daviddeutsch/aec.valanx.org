@@ -212,7 +212,7 @@
 			scope    : {
 				id : '=disqus'
 			},
-			template : '<div id="disqus_thread"><p class="text-center">preparing to load comments...</p></div>',
+			template : '<div id="disqus_thread"><p class="text-center pulse">preparing to load comments...</p></div>',
 			link: function link(scope, element) {
 				scope.$watch('id', function(id) {
 					if (angular.isDefined(id)) {
