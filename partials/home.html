@@ -147,17 +147,19 @@
 								</li>
 							</ul>
 						</div>
-					</div>
-				</div>
 
-				<div class="col-md-12">
-					<div class="col-md-3 am-fade-and-slide-top" ng-repeat="mi in mis | filter:{type: type} | filter:searchText">
-						<div class="panel panel-default">
-							<div class="panel-heading">{{mi.name}}</div>
-							<div class="panel-body">{{mi.desc}}</div>
+						<div class="col-md-12">
+							<div class="col-md-3 am-fade-and-slide-top" ng-repeat="mi in mis | filter:{type: type} | filter:searchText">
+								<div>
+									<h6>{{mi.name}}</h6>
+									<p>{{mi.desc}}</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
+
+
 			</div>
 		</div>
 		<div class="col-md-12">

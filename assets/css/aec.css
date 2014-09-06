@@ -6718,9 +6718,13 @@ img.fullwidth {
   border-radius: 2px;
   overflow: hidden;
 }
-#integrations-list div.col-md-3 .panel {
+#integrations-list div.col-md-3 div {
   height: 180px;
   overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  margin: 4px 0;
+  padding: 6px;
 }
 .form-focus {
   opacity: 0.5;
