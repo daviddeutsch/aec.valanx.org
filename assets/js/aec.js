@@ -3,8 +3,7 @@
 	angular.module('aecApp', [
 		'ngAnimate', 'ui.router',
 		'ct.ui.router.extras', 'mgcrea.ngStrap',
-		'ngDisqus', 'hc.marked',
-		'fox.scrollReveal'
+		'ngDisqus', 'hc.marked'
 	]);
 
 
@@ -217,6 +216,8 @@
 		$scope.id = $stateParams.id;
 
 		var switchPage = function(id) {
+			$rootScope.loading = true;
+
 			$scope.path = '/docs/' + $scope.pages[$scope.map[id]].path;
 
 			$timeout(function(){

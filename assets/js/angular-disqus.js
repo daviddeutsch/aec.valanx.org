@@ -212,54 +212,55 @@
 			scope    : {
 				id : '=disqus'
 			},
-			template : '<div id="disqus_thread"></div>',
+			template : '<div id="disqus_thread"><p class="text-center">preparing to load comments...</p></div>',
 			link: function link(scope, element) {
-				var displayed = false,
-					window = angular.element($window ),
-					start = true;
+				scope.$watch('id', function(id) {
+					if (angular.isDefined(id)) {
+						var displayed = false,
+							window = angular.element($window ),
+							start = true;
 
-				var display = function() {
-					scope.$watch('id', function(id) {
-						if (angular.isDefined(id)) {
+						var display = function() {
+
 							$disqus.commit(id);
-						}
-					});
 
-					window.off('scroll', onScroll);
+							window.off('scroll', onScroll);
 
-					displayed = true;
-				};
+							displayed = true;
+						};
 
 
-				var onScroll = function () {
-					var height = "innerHeight" in window[0] ?
-						window[0].innerHeight
-						: document.documentElement.clientHeight,
-						doDisplay = false;
+						var onScroll = function () {
+							var height = "innerHeight" in window[0] ?
+								window[0].innerHeight
+								: document.documentElement.clientHeight,
+								doDisplay = false;
 
-					// https://developer.mozilla.org/en-US/docs/Web/API/window.scrollY
-					var scroll = (window[0].pageYOffset !== undefined) ? window[0].pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+							// https://developer.mozilla.org/en-US/docs/Web/API/window.scrollY
+							var scroll = (window[0].pageYOffset !== undefined) ? window[0].pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
-					doDisplay = ((element[0].offsetTop - (height + scroll)) <= 20);
+							doDisplay = ((element[0].offsetTop - (height + scroll)) <= 20);
 
-					if (doDisplay && !displayed) {
-						if ( start ) {
-							$timeout(function(){
-								display();
-							}, 3200);
-						} else {
-							display();
-						}
+							if (doDisplay && !displayed) {
+								if ( start ) {
+									$timeout(function(){
+										display();
+									}, 3200);
+								} else {
+									display();
+								}
+							}
+
+							start = false;
+						};
+
+						window.on('scroll', onScroll);
+
+						$timeout(function(){
+							onScroll(true);
+						}, 1600);
 					}
-
-					start = false;
-				};
-
-				window.on('scroll', onScroll);
-
-				$timeout(function(){
-					onScroll(true);
-				}, 1600);
+				});
 			}
 		};
 	}]);
