@@ -104,30 +104,54 @@
 				<p>With MIs, you can attach additional functionality to your plans and groups. Like a Plugin system, they carry out actions on certain points during a subscription.</p>
 			</div>
 			<div class="col-md-6">
-				<h3>Endless Flexibility</h3>
+				<h3>Boundless Flexibility</h3>
 				<p>With locally controlled Instances of MIs, additional functionality is simple to set up and easy to maintain.</p>
 				<p>Below is an overview of existing Integrations:</p>
 			</div>
 		</div>
 		<div id="integrations-list">
 			<div class="col-md-12" ng-controller="IntegrationsCtrl">
-				<div class="col-md-6 col-md-offset-3 clearfix">
-					<br/><br/>
-					<div class="form-group form-focus">
-						<div class="input-group">
-							<div class="input-group-addon"><i class="fa fa-search"></i></div>
-							<input type="text"
-								   class="text-center form-control"
-								   ng-model="searchText"
-								   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 180, 'blur': 0} }"
-								   placeholder="search" />
-							<div class="input-group-addon">{{(mis|filter:searchText).length}} Integrations</div>
+				<div class="panel panel-info">
+					<div class="panel-heading">Narrow down your results</div>
+					<div class="panel-body">
+						<div class="col-md-6">
+							<ul class="nav nav-pills">
+								<li ng-repeat="node in types" ng-class="{'active': node.handle == type}">
+									<a href="#" ng-click="toggleType(node.handle)">{{node.handle}}</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-6">
+							<br/>
+							<div class="form-group form-focus">
+								<div class="input-group">
+									<div class="input-group-addon"><i class="fa fa-search"></i></div>
+									<input type="text"
+										   class="text-center form-control"
+										   ng-model="searchText"
+										   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 180, 'blur': 0} }"
+										   placeholder="search" />
+									<div class="input-group-addon">{{(mis | filter:{type: type} | filter:searchText).length}} Integrations</div>
+								</div>
+							</div>
+							<br/>
+							<ul class="nav nav-pills">
+								<li ng-if="type">
+									<a href="#" ng-click="toggleType('')">{{type}} &times;</a>
+								</li>
+								<li ng-if="type && searchText">
+									<a href="">+</a>
+								</li>
+								<li ng-if="searchText">
+									<a href="#" ng-click="eraseSearch()">{{searchText}} &times;</a>
+								</li>
+							</ul>
 						</div>
 					</div>
-					<br/>
 				</div>
+
 				<div class="col-md-12">
-					<div class="col-md-3 am-fade-and-slide-top" ng-repeat="mi in mis | filter:searchText">
+					<div class="col-md-3 am-fade-and-slide-top" ng-repeat="mi in mis | filter:{type: type} | filter:searchText">
 						<div class="panel panel-default">
 							<div class="panel-heading">{{mi.name}}</div>
 							<div class="panel-body">{{mi.desc}}</div>

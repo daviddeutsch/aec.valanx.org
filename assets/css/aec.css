@@ -6372,7 +6372,6 @@ img.fullwidth {
   text-align: center;
 }
 #home-top h3 {
-  font-size: 27px;
   text-align: center;
   font-weight: 400;
   margin-top: 12px;
@@ -6719,7 +6718,7 @@ img.fullwidth {
   border-radius: 2px;
   overflow: hidden;
 }
-#integrations-list .panel {
+#integrations-list div.col-md-3 .panel {
   height: 180px;
   overflow: hidden;
 }

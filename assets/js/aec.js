@@ -161,12 +161,32 @@
 	 */
 	function IntegrationsCtrl( $scope, $http )
 	{
-		$scope.processors = [];
+		$scope.types = {};
+		$scope.searchText = '';
+		$scope.type = 'communication';
+		$scope.mis = [];
 
-		$http.get('mis.json')
-			.then(function(mis){
-				$scope.mis = mis.data;
+		$http.get('mitypes.json')
+			.then(function(types){
+				$scope.types = types.data;
+
+				$http.get('mis.json')
+					.then(function(mis){
+						$scope.mis = mis.data;
+					});
 			});
+
+		$scope.toggleType = function(type) {
+			if ( $scope.type == type ) {
+				$scope.type = '';
+			} else {
+				$scope.type = type;
+			}
+		};
+
+		$scope.eraseSearch = function(type) {
+			$scope.searchText = '';
+		};
 	}
 
 	IntegrationsCtrl.$inject = ['$scope', '$http'];
