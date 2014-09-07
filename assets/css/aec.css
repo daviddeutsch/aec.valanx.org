@@ -6736,7 +6736,7 @@ img.fullwidth {
 }
 @-webkit-keyframes pulse {
   from {
-    opacity: 0;
+    opacity: 0.1;
   }
   10% {
     opacity: 0.3;
@@ -6757,12 +6757,12 @@ img.fullwidth {
     opacity: 0.3;
   }
   to {
-    opacity: 0;
+    opacity: 0.1;
   }
 }
 @-moz-keyframes pulse {
   from {
-    opacity: 0;
+    opacity: 0.1;
   }
   10% {
     opacity: 0.3;
@@ -6783,12 +6783,12 @@ img.fullwidth {
     opacity: 0.3;
   }
   to {
-    opacity: 0;
+    opacity: 0.1;
   }
 }
 @-ms-keyframes pulse {
   from {
-    opacity: 0;
+    opacity: 0.1;
   }
   10% {
     opacity: 0.3;
@@ -6809,12 +6809,12 @@ img.fullwidth {
     opacity: 0.3;
   }
   to {
-    opacity: 0;
+    opacity: 0.1;
   }
 }
 @-o-keyframes pulse {
   from {
-    opacity: 0;
+    opacity: 0.1;
   }
   10% {
     opacity: 0.3;
@@ -6835,12 +6835,12 @@ img.fullwidth {
     opacity: 0.3;
   }
   to {
-    opacity: 0;
+    opacity: 0.1;
   }
 }
 @keyframes pulse {
   from {
-    opacity: 0;
+    opacity: 0.1;
   }
   10% {
     opacity: 0.3;
@@ -6861,11 +6861,11 @@ img.fullwidth {
     opacity: 0.3;
   }
   to {
-    opacity: 0;
+    opacity: 0.1;
   }
 }
 .pulse {
-  -webkit-animation: text-shadow-pulse 2s infinite;
-  -o-animation: text-shadow-pulse 2s infinite;
-  animation: text-shadow-pulse 2s infinite;
+  -webkit-animation: pulse 2s infinite;
+  -o-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
 }
