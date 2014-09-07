@@ -1,44 +1,97 @@
 [
 	{
-		"title": "Welcome",
-		"handle": "welcome",
-		"path": "00-welcome.md",
-		"keywords": []
+		"title": "Get Started",
+		"handle": "get-started",
+		"path": "00-start/00-welcome.md",
+		"keywords": [],
+		"children": [
+			{
+				"title": "Setup",
+				"handle": "setup",
+				"path": "00-start/01-setup.md",
+				"keywords":
+					[
+						"installation", "install", "requirements", "joomla", "package"
+					]
+			},
+			{
+				"title": "Basic Concepts",
+				"handle": "overview",
+				"path": "00-start/02-overview.md",
+				"keywords":
+					[
+						"home"
+					]
+			},
+			{
+				"title": "Settings",
+				"handle": "settings",
+				"path": "00-start/03-settings.md",
+				"keywords":
+					[
+						"settings"
+					]
+			},
+			{
+				"title": "In Joomla",
+				"handle": "joomla",
+				"path": "00-start/04-joomla.md",
+				"keywords":
+					[
+						"system", "menu", "menu item"
+					]
+			}
+		]
 	},
 	{
-		"title": "Setup",
-		"handle": "setup",
-		"path": "01-setup.md",
-		"keywords":
-			[
-				"installation", "install", "requirements", "joomla", "package"
-			]
+		"title": "Customizing AEC",
+		"handle": "customizing",
+		"path": "00-start/00-welcome.md",
+		"keywords": [],
+		"children": [
+			{
+				"title": "Database",
+				"handle": "database",
+				"path": "15-hacking/01-setup.md",
+				"keywords":
+					[
+						"installation", "install", "requirements", "joomla", "package"
+					]
+			}
+		]
 	},
 	{
-		"title": "Basic Concepts",
-		"handle": "overview",
-		"path": "02-overview.md",
-		"keywords":
-			[
-				"home"
-			]
+		"title": "Troubleshooting",
+		"handle": "troubleshooting",
+		"path": "00-start/00-welcome.md",
+		"keywords": [],
+		"children": [
+			{
+				"title": "Database",
+				"handle": "database",
+				"path": "15-hacking/01-setup.md",
+				"keywords":
+					[
+						"installation", "install", "requirements", "joomla", "package"
+					]
+			}
+		]
 	},
 	{
-		"title": "Settings",
-		"handle": "settings",
-		"path": "03-settings.md",
-		"keywords":
-			[
-				"settings"
-			]
-	},
-	{
-		"title": "In Joomla",
-		"handle": "joomla",
-		"path": "04-joomla.md",
-		"keywords":
-			[
-				"system", "menu", "menu item"
-			]
+		"title": "Hacking AEC",
+		"handle": "hacking-aec",
+		"path": "00-start/00-welcome.md",
+		"keywords": [],
+		"children": [
+			{
+				"title": "Database",
+				"handle": "database",
+				"path": "15-hacking/01-setup.md",
+				"keywords":
+					[
+						"installation", "install", "requirements", "joomla", "package"
+					]
+			}
+		]
 	}
 ]

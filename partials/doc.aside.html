@@ -26,6 +26,11 @@
 						<!-- TODO: Display popover of children on hover -->
 						<ul ng-if="page.children">
 							<li ng-repeat="child in page.children">
+								<a href ui-sref="{id:page.handle}" ng-class="{active: $parent.id.value === child.handle}">
+									<span class="index-page-index">{{$index}}</span>
+									<span> - </span>
+									<span class="index-page-title">{{child.title}}</span>
+								</a>
 							</li>
 						</ul>
 					</li>
