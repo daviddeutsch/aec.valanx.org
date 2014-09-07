@@ -6324,7 +6324,10 @@ legend {
 .aside .aside-dialog .aside-body ul li {
   margin-bottom: 12px;
 }
-.aside .aside-dialog .aside-body ul li li {
+.aside .aside-dialog .aside-body ul li ul {
+  overflow: hidden;
+}
+.aside .aside-dialog .aside-body ul li ul li {
   list-style-type: none;
 }
 .aside .aside-dialog .aside-body a {
