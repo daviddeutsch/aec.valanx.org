@@ -18,17 +18,13 @@
 			<div class="aside-body">
 				<ul class="list-unstyled">
 					<li ng-repeat="page in pages" class="am-fade-and-slide-right">
-						<a href ui-sref="{path:child.path.split('/')[0],doc:child.path.split('/')[1]}" ng-class="{active: $parent.id.value === page.handle}">
-							<span class="index-page-index">{{$index}}</span>
-							<span> - </span>
+						<a href ui-sref="{path:child.path.split('/')[0], doc:child.path.split('/')[1]}" ng-class="{active: path === $parent.path}">
 							<span class="index-page-title">{{page.title}}</span>
 						</a>
 						<!-- TODO: Display popover of children on hover -->
 						<ul ng-if="page.children">
 							<li ng-repeat="child in page.children">
-								<a href ui-sref="{path:child.path.split('/')[0],doc:child.path.split('/')[1]}" ng-class="{active: $parent.id.value === child.handle}">
-									<span class="index-page-index">{{$index}}</span>
-									<span> - </span>
+								<a href ui-sref="{path:child.path.split('/')[0], doc:child.path.split('/')[1]}" ng-class="{active: child.path === $parent.path}">
 									<span class="index-page-title">{{child.title}}</span>
 								</a>
 							</li>

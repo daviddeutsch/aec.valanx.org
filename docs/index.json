@@ -1,13 +1,11 @@
 [
 	{
 		"title": "Get Started",
-		"handle": "get-started",
 		"path": "start/welcome",
 		"keywords": [],
 		"children": [
 			{
 				"title": "Setup",
-				"handle": "setup",
 				"path": "start/01-setup",
 				"keywords":
 					[
@@ -16,7 +14,6 @@
 			},
 			{
 				"title": "Basic Concepts",
-				"handle": "overview",
 				"path": "start/02-overview",
 				"keywords":
 					[
@@ -25,7 +22,6 @@
 			},
 			{
 				"title": "Settings",
-				"handle": "settings",
 				"path": "start/03-settings",
 				"keywords":
 					[
@@ -34,7 +30,6 @@
 			},
 			{
 				"title": "In Joomla",
-				"handle": "joomla",
 				"path": "start/04-joomla",
 				"keywords":
 					[
@@ -45,55 +40,47 @@
 	},
 	{
 		"title": "Customizing AEC",
-		"handle": "customizing",
 		"path": "customizing/customizing",
 		"keywords": [],
 		"children": [
 			{
 				"title": "Settings",
-				"handle": "settings",
 				"path": "customizing/01-settings",
 				"keywords":
 					[]
 			},
 			{
 				"title": "Price Formatting",
-				"handle": "price-formatting",
 				"path": "customizing/02-price-formatting",
 				"keywords":
 					[]
 			},
 			{
 				"title": "Processor Buttons",
-				"handle": "processor-buttons",
 				"path": "customizing/03-processor-buttons",
 				"keywords":
 					[]
 			},
 			{
 				"title": "CSS Stylesheet",
-				"handle": "css",
 				"path": "customizing/04-css",
 				"keywords":
 					[]
 			},
 			{
 				"title": "Translations",
-				"handle": "i18n",
 				"path": "customizing/05-i18n",
 				"keywords":
 					[]
 			},
 			{
 				"title": "Template Overrides",
-				"handle": "template-overrides",
 				"path": "customizing/06-template-overrides",
 				"keywords":
 					[]
 			},
 			{
 				"title": "Signup Page",
-				"handle": "signup-page",
 				"path": "customizing/07-signup-page",
 				"keywords":
 					[]
@@ -102,13 +89,11 @@
 	},
 	{
 		"title": "Troubleshooting",
-		"handle": "troubleshooting",
 		"path": "troubleshooting/troubleshooting",
 		"keywords": [],
 		"children": [
 			{
 				"title": "Database",
-				"handle": "database",
 				"path": "troubleshooting/01-routing",
 				"keywords":
 					[
@@ -119,13 +104,11 @@
 	},
 	{
 		"title": "Hacking AEC",
-		"handle": "hacking-aec",
 		"path": "start/welcome",
 		"keywords": [],
 		"children": [
 			{
 				"title": "Database",
-				"handle": "database",
 				"path": "hacking/01-setup",
 				"keywords":
 					[

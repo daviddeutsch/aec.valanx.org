@@ -273,41 +273,14 @@
 	 *
 	 * @desc Controls Behavior on the side naviation for docs
 	 */
-	function DocAsideCtrl( $rootScope, $scope, $http, $timeout, $aside )
+	function DocAsideCtrl( $scope )
 	{
 		var list = [],
 			keepalive,
 			id = 0;
-
-		$scope.pages = [];
-
-		$scope.id = { id: $rootScope.docsid.value };
-
-		$http.get('docs/index.json')
-			.then(function(index){
-				list = index.data;
-
-				keepalive = $timeout(tick, 400);
-			});
-
-		$scope.aside = $aside(
-			{
-				scope: $scope,
-				template: 'partials/doc.aside.html',
-				placement: 'left',
-				animation: 'am-fade-and-slide-left',
-				backdrop: false,
-				keyboard: false,
-				container: '#background'
-			}
-		);
-
-		$rootScope.$on('backHome', function (event, data) {
-			$scope.aside.hide();
-		});
 	}
 
-	DocAsideCtrl.$inject = ['$rootScope', '$scope', '$http', '$timeout', '$aside'];
+	DocAsideCtrl.$inject = ['$scope'];
 	angular.module('aecApp').controller('DocAsideCtrl', DocAsideCtrl);
 
 
