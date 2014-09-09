@@ -2,13 +2,13 @@
 	{
 		"title": "Get Started",
 		"handle": "get-started",
-		"path": "00-start/00-welcome.md",
+		"path": "start/welcome",
 		"keywords": [],
 		"children": [
 			{
 				"title": "Setup",
 				"handle": "setup",
-				"path": "00-start/01-setup.md",
+				"path": "start/01-setup",
 				"keywords":
 					[
 						"installation", "install", "requirements", "joomla", "package"
@@ -17,7 +17,7 @@
 			{
 				"title": "Basic Concepts",
 				"handle": "overview",
-				"path": "00-start/02-overview.md",
+				"path": "start/02-overview",
 				"keywords":
 					[
 						"home"
@@ -26,7 +26,7 @@
 			{
 				"title": "Settings",
 				"handle": "settings",
-				"path": "00-start/03-settings.md",
+				"path": "start/03-settings",
 				"keywords":
 					[
 						"settings"
@@ -35,7 +35,7 @@
 			{
 				"title": "In Joomla",
 				"handle": "joomla",
-				"path": "00-start/04-joomla.md",
+				"path": "start/04-joomla",
 				"keywords":
 					[
 						"system", "menu", "menu item"
@@ -46,30 +46,70 @@
 	{
 		"title": "Customizing AEC",
 		"handle": "customizing",
-		"path": "00-start/00-welcome.md",
+		"path": "customizing/customizing",
 		"keywords": [],
 		"children": [
 			{
-				"title": "Database",
-				"handle": "database",
-				"path": "15-hacking/01-setup.md",
+				"title": "Settings",
+				"handle": "settings",
+				"path": "customizing/01-settings",
 				"keywords":
-					[
-						"installation", "install", "requirements", "joomla", "package"
-					]
+					[]
+			},
+			{
+				"title": "Price Formatting",
+				"handle": "price-formatting",
+				"path": "customizing/02-price-formatting",
+				"keywords":
+					[]
+			},
+			{
+				"title": "Processor Buttons",
+				"handle": "processor-buttons",
+				"path": "customizing/03-processor-buttons",
+				"keywords":
+					[]
+			},
+			{
+				"title": "CSS Stylesheet",
+				"handle": "css",
+				"path": "customizing/04-css",
+				"keywords":
+					[]
+			},
+			{
+				"title": "Translations",
+				"handle": "i18n",
+				"path": "customizing/05-i18n",
+				"keywords":
+					[]
+			},
+			{
+				"title": "Template Overrides",
+				"handle": "template-overrides",
+				"path": "customizing/06-template-overrides",
+				"keywords":
+					[]
+			},
+			{
+				"title": "Signup Page",
+				"handle": "signup-page",
+				"path": "customizing/07-signup-page",
+				"keywords":
+					[]
 			}
 		]
 	},
 	{
 		"title": "Troubleshooting",
 		"handle": "troubleshooting",
-		"path": "00-start/00-welcome.md",
+		"path": "troubleshooting/troubleshooting",
 		"keywords": [],
 		"children": [
 			{
 				"title": "Database",
 				"handle": "database",
-				"path": "15-hacking/01-setup.md",
+				"path": "troubleshooting/01-routing",
 				"keywords":
 					[
 						"installation", "install", "requirements", "joomla", "package"
@@ -80,13 +120,13 @@
 	{
 		"title": "Hacking AEC",
 		"handle": "hacking-aec",
-		"path": "00-start/00-welcome.md",
+		"path": "start/welcome",
 		"keywords": [],
 		"children": [
 			{
 				"title": "Database",
 				"handle": "database",
-				"path": "15-hacking/01-setup.md",
+				"path": "hacking/01-setup",
 				"keywords":
 					[
 						"installation", "install", "requirements", "joomla", "package"

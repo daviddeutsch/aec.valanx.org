@@ -31,7 +31,7 @@
 			})
 
 			.state('docs', {
-				url: '/docs/:id',
+				url: '/docs/:path/:doc',
 				views: {
 					"main": {
 						templateUrl: '/partials/doc.html'
@@ -209,41 +209,19 @@
 
 		$scope.map = {};
 
-		if ( typeof $stateParams.id == 'undefined' || $stateParams.id == '' ) {
-			$stateParams.id = 'welcome'
+		if ( typeof $stateParams.path == 'undefined' || $stateParams.path == '' ) {
+			$stateParams.path = 'start';
+			$stateParams.doc = 'welcome';
 		}
 
-		$scope.id = $stateParams.id;
-
-		var switchPage = function(id) {
+		var switchPage = function(path) {
 			$rootScope.loading = true;
 
-			$scope.path = '/docs/' + $scope.pages[$scope.map[id]].path;
+			$scope.path = path;
 
 			$timeout(function(){
 				$rootScope.loading = false;
 			}, 500);
-		};
-
-		var mapPages = function() {
-			var deferred = $q.defer(),
-				promises = [];
-
-			angular.forEach(list, function(page, key){
-				var deferred = $q.defer();
-
-				$scope.map[page.handle] = key;
-
-				deferred.resolve();
-
-				promises.push(deferred.promise);
-			});
-
-			$q.all(promises).then(function(item){
-				deferred.resolve();
-			});
-
-			return deferred.promise;
 		};
 
 		$scope.$watch('id', function(newVal, oldVal) {
@@ -258,19 +236,9 @@
 			if ( list.length > id ) {
 				keepalive = $timeout(tick, 40);
 			} else {
-				switchPage($scope.id);
+				switchPage($stateParams.path+'/'+$stateParams.doc);
 			}
 		};
-
-		$http.get('docs/index.json')
-			.then(function(index){
-				list = index.data;
-
-				mapPages()
-					.then(function() {
-						keepalive = $timeout(tick, 400);
-					});
-			});
 
 		var aside = $aside(
 			{
@@ -283,6 +251,13 @@
 				container: '#background'
 			}
 		);
+
+		$http.get('docs/index.json')
+			.then(function(index){
+				list = index.data;
+
+				keepalive = $timeout(tick, 400);
+			});
 
 		$rootScope.$on('backHome', function (event, data) {
 			aside.hide();
