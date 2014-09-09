@@ -6288,6 +6288,18 @@ legend {
 .modal .close {
   color: #333333;
 }
+#documentation h1 {
+  font-weight: 700;
+}
+#documentation h2,
+#documentation h3,
+#documentation h4 {
+  font-weight: 500;
+}
+#documentation p {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.8em;
+}
 .aside {
   background: #aaa;
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -6316,7 +6328,7 @@ legend {
   margin-bottom: 2px;
 }
 .aside .aside-dialog .aside-body {
-  padding: 24px 24px;
+  padding: 24px 36px;
 }
 .aside .aside-dialog .aside-body ul {
   font-size: 16px;
@@ -6326,9 +6338,12 @@ legend {
 }
 .aside .aside-dialog .aside-body ul li ul {
   overflow: hidden;
+  margin-top: 8px;
+  margin-left: -12px;
 }
 .aside .aside-dialog .aside-body ul li ul li {
   list-style-type: none;
+  margin-bottom: 6px;
 }
 .aside .aside-dialog .aside-body a {
   text-decoration: none;

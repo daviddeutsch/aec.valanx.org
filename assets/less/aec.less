@@ -1,6 +1,21 @@
 @import "bootstrap.less";
 @import "bootswatch.less";
 
+#documentation {
+	h1 {
+		font-weight: 700;
+	}
+
+	h2, h3, h4 {
+		font-weight: 500;
+	}
+
+	p {
+		font-family: @font-family-sans-serif;
+		line-height: 1.8em;
+	}
+}
+
 .aside {
 	background: #aaa;
 	font-family: @font-family-sans-serif;
@@ -26,15 +41,18 @@
 		}
 	}
 	& &-dialog &-body {
-		padding: 24px 24px;
+		padding: 24px 36px;
 		ul {
 			font-size: @font-size-base;
 			li {
 				margin-bottom: 12px;
 				ul {
 					overflow: hidden;
+					margin-top: 8px;
+					margin-left: -12px;
 					li {
 						list-style-type: none;
+						margin-bottom: 6px;
 					}
 				}
 			}
