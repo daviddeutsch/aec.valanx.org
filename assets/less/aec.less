@@ -2,16 +2,31 @@
 @import "bootswatch.less";
 
 #documentation {
+	font-family: @font-family-sans-serif;
 	h1 {
 		font-weight: 700;
+		text-align: center;
+		display: inline-block;
+		width: 100%;
+		padding-bottom: 8px;
+		border-bottom: 12px solid #eee;
 	}
 
-	h2, h3, h4 {
+	h2 {
+		display: inline-block;
+		width: 100%;
+		border-bottom: 1px solid #eee;
+		padding-bottom: 4px;
 		font-weight: 500;
 	}
 
+	h3 {
+		font-size: ceil((@font-size-h3 * 0.8));
+		font-weight: 600;
+	}
+
 	p {
-		font-family: @font-family-sans-serif;
+
 		line-height: 1.8em;
 	}
 }

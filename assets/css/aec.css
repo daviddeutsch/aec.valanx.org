@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Raleway:100,200,400,700,900");
+@import url("//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,900");
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -6288,16 +6288,29 @@ legend {
 .modal .close {
   color: #333333;
 }
+#documentation {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 #documentation h1 {
   font-weight: 700;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 8px;
+  border-bottom: 12px solid #eee;
 }
-#documentation h2,
-#documentation h3,
-#documentation h4 {
+#documentation h2 {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
   font-weight: 500;
 }
+#documentation h3 {
+  font-size: 23px;
+  font-weight: 600;
+}
 #documentation p {
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.8em;
 }
 .aside {
