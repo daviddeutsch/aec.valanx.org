@@ -212,7 +212,7 @@
 			scope    : {
 				id : '=disqus'
 			},
-			template : '<div id="disqus_thread"><p class="text-center pulse">preparing to load comments...</p></div>',
+			template : '<div id="disqus_thread"><p class="text-center pulse" id="disqus-loading">preparing to load comments...</p></div>',
 			link: function link(scope, element) {
 				scope.$watch('id', function(id) {
 					if (angular.isDefined(id)) {
@@ -225,6 +225,8 @@
 							$disqus.commit(id);
 
 							window.off('scroll', onScroll);
+
+							angular.element('#disqus-loading').remove();
 
 							displayed = true;
 						};
