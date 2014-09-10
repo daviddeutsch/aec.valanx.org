@@ -221,7 +221,7 @@
 
 			$timeout(function(){
 				$rootScope.loading = false;
-			}, 500);
+			}, 1000);
 		};
 
 		$scope.$watch('id', function(newVal, oldVal) {
