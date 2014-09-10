@@ -12,10 +12,12 @@
 	 *
 	 * @desc Set up the Application
 	 */
-	function AppCfg( $urlRouterProvider, $stateProvider, $locationProvider, $disqusProvider )
+	function AppCfg( $urlRouterProvider, $stateProvider, $locationProvider, $disqusProvider, $popoverProvider )
 	{
 		$urlRouterProvider
 			.otherwise('/');
+
+		$urlRouterProvider.deferIntercept();
 
 		$stateProvider
 			.state('home', {
@@ -46,10 +48,18 @@
 
 		$disqusProvider.setShortname('valanx');
 
-		$locationProvider.hashPrefix('!')
+		$locationProvider.hashPrefix('!');
+
+		angular.extend($popoverProvider.defaults, {
+			animation: 'am-fade-and-slide-bottom',
+			type: 'info',
+			delay: { show: 1000, hide: 10 },
+			trigger: 'hover',
+			placement: 'bottom-left'
+		});
 	}
 
-	AppCfg.$inject = ['$urlRouterProvider', '$stateProvider', '$locationProvider', '$disqusProvider'];
+	AppCfg.$inject = ['$urlRouterProvider', '$stateProvider', '$locationProvider', '$disqusProvider', '$popoverProvider'];
 	angular.module('aecApp').config(AppCfg);
 
 
@@ -58,7 +68,7 @@
 	 *
 	 * @desc Data to prepare when we run the application
 	 */
-	function AppRun( $rootScope, $state )
+	function AppRun( $rootScope, $state, $location )
 	{
 		$rootScope.$state = $state;
 
@@ -73,9 +83,27 @@
 			function(event, toState, toParams, fromState, fromParams) {
 				$rootScope.loading = false;
 			});
+
+
+		$rootScope.$on(
+			'$locationChangeSuccess',
+			function(e)
+			{
+				if ( $state.$current.url.prefix == "" ) {
+					$location.path("/");
+				}
+
+				if ( $state.$current.url.prefix !== "docs" ) {
+					return;
+				}
+
+				if ( $state.$current.url.prefix === "docs" ) {
+					//e.preventDefault();
+				}
+			});
 	}
 
-	AppRun.$inject = ['$rootScope', '$state'];
+	AppRun.$inject = ['$rootScope', '$state', '$location'];
 	angular.module('aecApp').run(AppRun);
 
 
@@ -197,13 +225,13 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function DocCtrl( $scope, $rootScope, $q, $timeout, $http, $stateParams, $aside )
+	function DocCtrl( $scope, $rootScope, $q, $timeout, $http, $stateParams, $aside, $location )
 	{
 		var list = [],
 			keepalive,
 			id = 0;
 
-		$scope.path = '';
+		$scope.fullpath = 'start/welcome';
 
 		$scope.pages = [];
 
@@ -214,19 +242,25 @@
 			$stateParams.doc = 'welcome';
 		}
 
-		var switchPage = function(path) {
+		$scope.path = $stateParams.path;
+		$scope.doc = $stateParams.doc;
+
+		$scope.switchPage = function(path) {
 			$rootScope.loading = true;
 
-			$scope.path = path;
+			$scope.fullpath = path;
+
+			$scope.path = path.split('/')[0];
+			$scope.doc = path.split('/')[1];
+
+			if( $location.path() != "/docs/"+path ) {
+				$location.path("/docs/"+path);
+			}
 
 			$timeout(function(){
 				$rootScope.loading = false;
 			}, 1000);
 		};
-
-		$scope.$watch('id', function(newVal, oldVal) {
-			if (newVal !== oldVal) switchPage(newVal);
-		});
 
 		var tick = function () {
 			$scope.pages.push(list[id]);
@@ -236,7 +270,7 @@
 			if ( list.length > id ) {
 				keepalive = $timeout(tick, 40);
 			} else {
-				switchPage($stateParams.path+'/'+$stateParams.doc);
+				$scope.switchPage($stateParams.path+'/'+$stateParams.doc);
 			}
 		};
 
@@ -264,7 +298,7 @@
 		});
 	}
 
-	DocCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', '$http', '$stateParams', '$aside'];
+	DocCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', '$http', '$stateParams', '$aside', '$location'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 

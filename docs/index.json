@@ -104,12 +104,12 @@
 	},
 	{
 		"title": "Hacking AEC",
-		"path": "start/welcome",
+		"path": "hacking-aec/hacking-aec",
 		"keywords": [],
 		"children": [
 			{
 				"title": "Database",
-				"path": "hacking/01-setup",
+				"path": "hacking-aec/01-setup",
 				"keywords":
 					[
 						"installation", "install", "requirements", "joomla", "package"

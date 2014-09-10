@@ -6,9 +6,9 @@
 			</div>
 			<div class="col-md-8">
 				<div ng-controller="DocCtrl">
-					<div marked ng-include="'/docs/' + path + '.md'" id="documentation"></div>
+					<div marked ng-include="'/docs/' + fullpath + '.md'" id="documentation"></div>
 
-					<div id="comments">
+					<div id="comments" ng-hide="loading">
 						<hr/>
 						<h4>Any Questions?</h4>
 						<p>Please join the discussion if you're stuck on this topic and need us to clarify something or improve the documentation for you.</p>
