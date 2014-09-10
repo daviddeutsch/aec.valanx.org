@@ -2,6 +2,8 @@
 
 ## The home screen
 
+![AEC Home Screen](assets/img/aec-admin-home.png)
+
 ## Quicksearch
 
 If you need to navigate to user accounts quickly, you're going to love the Quicksearch. It's basically just what it says on the name tag - a very smart search that finds you users. What makes it great is how much stuff you can throw at it.

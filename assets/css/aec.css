@@ -6313,6 +6313,9 @@ legend {
 #documentation p {
   line-height: 1.8em;
 }
+#documentation img {
+  max-width: 100%;
+}
 .aside {
   background: #aaa;
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;

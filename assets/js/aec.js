@@ -89,16 +89,10 @@
 			'$locationChangeSuccess',
 			function(e)
 			{
-				if ( $state.$current.url.prefix == "" ) {
-					$location.path("/");
-				}
-
-				if ( $state.$current.url.prefix !== "docs" ) {
-					return;
-				}
-
-				if ( $state.$current.url.prefix === "docs" ) {
-					//e.preventDefault();
+				if ( $state.current.name === "" ) {
+					if ( $location.path() === "" ) {
+						$location.path("/");
+					}
 				}
 			});
 	}
@@ -246,6 +240,12 @@
 		$scope.doc = $stateParams.doc;
 
 		$scope.switchPage = function(path) {
+			if ( $scope.fullpath == path ) {
+				$rootScope.loading = false;
+
+				return;
+			}
+
 			$rootScope.loading = true;
 
 			$scope.fullpath = path;
@@ -259,8 +259,21 @@
 
 			$timeout(function(){
 				$rootScope.loading = false;
-			}, 1000);
+			}, 4000);
 		};
+
+		$rootScope.$on(
+			'$locationChangeSuccess',
+			function(e)
+			{
+				var lpath = $location.path();
+
+				if ( lpath.substr(1,4) === "docs" ) {
+					if ( lpath.substr(6) !== $scope.fullpath ) {
+						$scope.switchPage(lpath.substr(6));
+					}
+				}
+			});
 
 		var tick = function () {
 			$scope.pages.push(list[id]);
