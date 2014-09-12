@@ -223,7 +223,8 @@
 	{
 		var list = [],
 			keepalive,
-			id = 0;
+			id = 0,
+			seen = [];
 
 		$scope.fullpath = 'start/welcome';
 
@@ -255,6 +256,10 @@
 
 			if( $location.path() != "/docs/"+path ) {
 				$location.path("/docs/"+path);
+			}
+
+			if ( angular.element.inArray($scope.fullpath, seen) == -1 ) {
+				seen.push($scope.fullpath);
 			}
 
 			$timeout(function(){
