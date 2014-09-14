@@ -6775,7 +6775,7 @@ img.fullwidth {
   from {
     opacity: 0.1;
   }
-  5% {
+  1% {
     opacity: 1;
   }
   to {
@@ -6786,7 +6786,7 @@ img.fullwidth {
   from {
     opacity: 0.1;
   }
-  5% {
+  1% {
     opacity: 1;
   }
   to {
@@ -6797,7 +6797,7 @@ img.fullwidth {
   from {
     opacity: 0.1;
   }
-  5% {
+  1% {
     opacity: 1;
   }
   to {
@@ -6808,7 +6808,7 @@ img.fullwidth {
   from {
     opacity: 0.1;
   }
-  5% {
+  1% {
     opacity: 1;
   }
   to {
@@ -6819,7 +6819,7 @@ img.fullwidth {
   from {
     opacity: 0.1;
   }
-  5% {
+  1% {
     opacity: 1;
   }
   to {
@@ -6827,7 +6827,7 @@ img.fullwidth {
   }
 }
 .pulse {
-  -webkit-animation: pulse 2s infinite;
-  -o-animation: pulse 2s infinite;
-  animation: pulse 2s infinite;
+  -webkit-animation: pulse 1s infinite;
+  -o-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
 }
