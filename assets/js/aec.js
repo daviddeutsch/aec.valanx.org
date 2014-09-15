@@ -254,6 +254,17 @@
 			$scope.path = path.split('/')[0];
 			$scope.doc = path.split('/')[1];
 
+
+
+			$http.get('/docs/' + $scope.fullpath + '.md')
+				.then(function(index){
+					$scope.content = index.data;
+
+					var headers = angular.element('h1, h2, h3');
+
+					$scope.index = angular.element('');
+				});
+
 			if( $location.path() != "/docs/"+path ) {
 				$location.path("/docs/"+path);
 			}

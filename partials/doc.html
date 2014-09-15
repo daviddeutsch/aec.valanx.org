@@ -6,7 +6,8 @@
 			</div>
 			<div class="col-md-8">
 				<div ng-controller="DocCtrl">
-					<div marked ng-include="'/docs/' + fullpath + '.md'" id="documentation"></div>
+					<div marked id="documentation" ng-bind="content">
+					</div>
 
 					<div id="comments" ng-hide="loading">
 						<hr/>
