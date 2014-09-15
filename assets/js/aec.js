@@ -219,7 +219,7 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function DocCtrl( $scope, $rootScope, $q, $timeout, $http, $stateParams, $aside, $location )
+	function DocCtrl( $scope, $rootScope, $q, $timeout, $http, $stateParams, $aside, $location, marked )
 	{
 		var list = [],
 			keepalive,
@@ -254,15 +254,15 @@
 			$scope.path = path.split('/')[0];
 			$scope.doc = path.split('/')[1];
 
-
-
 			$http.get('/docs/' + $scope.fullpath + '.md')
-				.then(function(index){
-					$scope.content = index.data;
+				.then(function(markdown){
+					$scope.content = marked.parse(markdown.data);
 
-					var headers = angular.element('h1, h2, h3');
+					var headers = angular.element('h1, h2, h3', $scope.content);
 
 					$scope.index = angular.element('');
+
+					$rootScope.loading = false;
 				});
 
 			if( $location.path() != "/docs/"+path ) {
@@ -327,7 +327,7 @@
 		});
 	}
 
-	DocCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', '$http', '$stateParams', '$aside', '$location'];
+	DocCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', '$http', '$stateParams', '$aside', '$location', 'marked'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 
