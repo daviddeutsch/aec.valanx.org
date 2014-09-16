@@ -53,9 +53,9 @@
 		angular.extend($popoverProvider.defaults, {
 			animation: 'am-fade-and-slide-bottom',
 			type: 'info',
-			delay: { show: 1000, hide: 10 },
+			delay: { show: 500, hide: 10 },
 			trigger: 'hover',
-			placement: 'bottom-left'
+			placement: 'bottom'
 		});
 	}
 
@@ -219,7 +219,7 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function DocCtrl( $scope, $rootScope, $q, $timeout, $http, $stateParams, $aside, $location, marked )
+	function DocCtrl( $scope, $rootScope, $q, $timeout, $http, $stateParams, $aside, $location, $sce, marked )
 	{
 		var list = [],
 			keepalive,
@@ -254,13 +254,17 @@
 			$scope.path = path.split('/')[0];
 			$scope.doc = path.split('/')[1];
 
-			$http.get('/docs/' + $scope.fullpath + '.md')
-				.then(function(markdown){
-					$scope.content = marked.parse(markdown.data);
+			$http.get('/docs/pages/' + $scope.fullpath + '.md', {cache: true})
+				.success(function(markdown){
+					$scope.content = $sce.trustAsHtml(marked.parse(markdown));
 
 					var headers = angular.element('h1, h2, h3', $scope.content);
 
 					$scope.index = angular.element('');
+
+					$rootScope.loading = false;
+				}).error(function() {
+					$scope.content = $sce.trustAsHtml('<h1>404</h1><p>Not Found!</p>');
 
 					$rootScope.loading = false;
 				});
@@ -327,7 +331,7 @@
 		});
 	}
 
-	DocCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', '$http', '$stateParams', '$aside', '$location', 'marked'];
+	DocCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', '$http', '$stateParams', '$aside', '$location', '$sce', 'marked'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 

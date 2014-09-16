@@ -6373,6 +6373,12 @@ legend {
 .aside .aside-dialog .aside-body a.active {
   font-weight: 700;
 }
+.aside .popover {
+  margin-left: 1em;
+}
+.aside .popover-content {
+  line-height: 2em;
+}
 a {
   color: #222;
 }

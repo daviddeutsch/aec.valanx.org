@@ -6,7 +6,7 @@
 			</div>
 			<div class="col-md-8">
 				<div ng-controller="DocCtrl">
-					<div id="documentation" ng-bind="content"></div>
+					<div id="documentation" ng-bind-html="content"></div>
 
 					<div id="comments" ng-hide="loading">
 						<hr/>
