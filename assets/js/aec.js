@@ -230,7 +230,7 @@
 
 		$scope.pages = [];
 
-		$scope.title = '';
+		$scope.pagetitle = '';
 		$scope.sideindex = [];
 
 		var headerid = 0;
@@ -272,7 +272,7 @@
 			angular.forEach(list, function(el){
 				if ( (typeof el.id != 'undefined') && (el.id != "") ) {
 					if ( el.localName == 'h1' ) {
-						$scope.title = el.innerHTML;
+						$scope.pagetitle = el.innerHTML;
 					} else if ( el.localName == 'h2' ) {
 						pointer++;
 
@@ -336,6 +336,9 @@
 
 
 				}).error(function() {
+					$scope.sideindex = [];
+					$scope.pagetitle = '';
+
 					$scope.content = $sce.trustAsHtml('<h1>404</h1><p>Not Found!</p>');
 
 					$rootScope.loading = false;
