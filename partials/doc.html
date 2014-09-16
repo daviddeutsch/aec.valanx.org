@@ -4,8 +4,8 @@
 			<div class="col-md-2">
 				<div class="bs-sidebar hidden-print" role="complementary" data-offset-top="-80" bs-affix></div>
 			</div>
-			<div class="col-md-8">
-				<div ng-controller="DocCtrl">
+			<div ng-controller="DocCtrl">
+				<div class="col-md-8">
 					<div id="documentation" ng-bind-html="content"></div>
 
 					<div id="comments" ng-hide="loading">
@@ -15,6 +15,20 @@
 						<div disqus="'http://aec.valanx.org/docs/' + id">
 						</div>
 					</div>
+				</div>
+				<div class="col-md-2">
+
+					<ul class="aec-sidenav nav" bs-scrollspy-list bs-affix>
+						<li><h4>{{title}}</h4></li>
+						<li ng-repeat="item in sideindex" bs-scrollspy data-target="{{item.id}}" data-offset="180">
+							<a href="#{{item.id}}">{{item.text}}</a>
+							<ul class="nav" ng-if="item.children.length">
+								<li ng-repeat="child in item.children" bs-scrollspy data-target="{{child.id}}" data-offset="180">
+									<a href="#{{child.id}}">{{child.text}}</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

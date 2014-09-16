@@ -219,7 +219,7 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function DocCtrl( $scope, $rootScope, $q, $timeout, $http, $stateParams, $aside, $location, $sce, marked )
+	function DocCtrl( $scope, $rootScope, $q, $timeout, $http, $stateParams, $aside, $location, $compile, $sce, marked )
 	{
 		var list = [],
 			keepalive,
@@ -230,6 +230,11 @@
 
 		$scope.pages = [];
 
+		$scope.title = '';
+		$scope.sideindex = [];
+
+		var headerid = 0;
+
 		$scope.map = {};
 
 		if ( typeof $stateParams.path == 'undefined' || $stateParams.path == '' ) {
@@ -239,6 +244,54 @@
 
 		$scope.path = $stateParams.path;
 		$scope.doc = $stateParams.doc;
+
+		var renderer = new marked.Renderer();
+
+		renderer.heading = function (text, level) {
+			headerid++;
+
+			var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+
+			return '<h' + level
+				+ ' id="index-' + headerid + '-'
+				+ escapedText
+				+ '">'
+				+ text
+				+ '</h' + level + '>';
+		};
+
+		marked.setOptions({
+			renderer: renderer,
+			gfm: true
+		});
+
+		var headerTree = function(list) {
+			var tree = [],
+				pointer = -1;
+
+			angular.forEach(list, function(el){
+				if ( (typeof el.id != 'undefined') && (el.id != "") ) {
+					if ( el.localName == 'h1' ) {
+						$scope.title = el.innerHTML;
+					} else if ( el.localName == 'h2' ) {
+						pointer++;
+
+						tree[pointer] = {
+							id: el.id,
+							text: el.innerHTML,
+							children: []
+						};
+					} else if ( el.localName == 'h3' ) {
+						tree[pointer].children.push({
+							id: el.id,
+							text: el.innerHTML
+						});
+					}
+				}
+			});
+
+			return tree;
+		};
 
 		$scope.switchPage = function(path) {
 			if ( $scope.fullpath == path ) {
@@ -256,19 +309,32 @@
 
 			$http.get('/docs/pages/' + $scope.fullpath + '.md', {cache: true})
 				.success(function(markdown){
-					$scope.content = $sce.trustAsHtml(marked.parse(markdown));
+					$scope.sideindex = [];
+					headerid = 0;
 
-					angular.element('html, body').animate(
-						{scrollTop: 0},
-						200,
-						'easeInOutQuint'
+					marked.parse(
+						markdown,
+						function(error, parsed) {
+							var doc = $compile(parsed)($scope);
+
+							//$scope.content = angular.element(doc);
+
+							$scope.content = $sce.trustAsHtml(parsed);
+
+							$scope.sideindex = headerTree(angular.element(parsed));
+
+							angular.element('html, body').animate(
+								{scrollTop: 0},
+								200,
+								'easeInOutQuint'
+							);
+
+							$rootScope.loading = false;
+						}
 					);
 
-					var headers = angular.element('h1, h2, h3', $scope.content);
 
-					$scope.index = angular.element('');
 
-					$rootScope.loading = false;
 				}).error(function() {
 					$scope.content = $sce.trustAsHtml('<h1>404</h1><p>Not Found!</p>');
 
@@ -337,7 +403,7 @@
 		});
 	}
 
-	DocCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', '$http', '$stateParams', '$aside', '$location', '$sce', 'marked'];
+	DocCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', '$http', '$stateParams', '$aside', '$location', '$compile', '$sce', 'marked'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 

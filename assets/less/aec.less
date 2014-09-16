@@ -35,6 +35,57 @@
 	}
 }
 
+ul.aec-sidenav {
+	margin-top: 140px;
+	width: 300px;
+	li {
+		a {
+			display: block;
+			font-weight: 500;
+			font-family: @font-family-sans-serif;
+			color: #999;
+			padding: 4px 15px;
+			&:focus,
+			&:hover {
+				padding-right: 12px;
+				font-weight: 700;
+				color: #B94846;
+				background-color: transparent;
+				border-left: 1px solid #B94846;
+			}
+		}
+		ul {
+			display: none;
+			font-size: 80%;
+			margin-bottom: 12px;
+			a {
+				padding: 4px 20px;
+				&:focus,
+				&:hover {
+					padding-right: 18px;
+				}
+			}
+		}
+		&.active {
+			ul {
+				display: block;
+				border-left: 1px solid #B94846;
+			}
+			&:focus > a,
+			&:hover > a,
+			& > a {
+				padding-right: 13px;
+				font-weight: 700;
+				color: #B94846;
+				background-color: transparent;
+				border-left: 1px solid #B94846;
+			}
+		}
+	}
+}
+
+
+
 .aside {
 	background: #aaa;
 	font-family: @font-family-sans-serif;
