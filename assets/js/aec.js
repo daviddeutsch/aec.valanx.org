@@ -127,7 +127,7 @@
 						scroll = $elm.offset().top + Number(settings.offset);
 					}
 
-					$('html, body').animate(
+					angular.element('html, body').animate(
 						{scrollTop: scroll},
 						settings.duration,
 						settings.easing
@@ -257,6 +257,12 @@
 			$http.get('/docs/pages/' + $scope.fullpath + '.md', {cache: true})
 				.success(function(markdown){
 					$scope.content = $sce.trustAsHtml(marked.parse(markdown));
+
+					angular.element('html, body').animate(
+						{scrollTop: 0},
+						200,
+						'easeInOutQuint'
+					);
 
 					var headers = angular.element('h1, h2, h3', $scope.content);
 
