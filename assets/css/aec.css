@@ -6316,6 +6316,9 @@ legend {
 #documentation img {
   max-width: 100%;
 }
+#documentation-full {
+  margin-bottom: 160px;
+}
 ul.aec-sidenav {
   margin-top: 140px;
   width: 300px;
