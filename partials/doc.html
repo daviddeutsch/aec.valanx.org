@@ -21,10 +21,10 @@
 					<ul class="aec-sidenav nav" bs-scrollspy-list bs-affix>
 						<li><h4>{{title}}</h4></li>
 						<li ng-repeat="item in sideindex" bs-scrollspy data-target="{{item.id}}" data-offset="180">
-							<a href="#{{item.id}}">{{item.text}}</a>
+							<a scroll-on-click href="#{{item.id}}">{{item.text}}</a>
 							<ul class="nav" ng-if="item.children.length">
 								<li ng-repeat="child in item.children" bs-scrollspy data-target="{{child.id}}" data-offset="180">
-									<a href="#{{child.id}}">{{child.text}}</a>
+									<a scroll-on-click href="#{{child.id}}">{{child.text}}</a>
 								</li>
 							</ul>
 						</li>
