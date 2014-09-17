@@ -23,7 +23,7 @@
 							<a scroll-on-click href="#{{item.id}}"><span ng-bind-html="item.text"></span></a>
 							<ul class="nav" ng-if="item.children.length">
 								<li ng-repeat="child in item.children" bs-scrollspy data-target="{{child.id}}" data-offset="180">
-									<a scroll-on-click href="#{{child.id}}">{{child.text}}</a>
+									<a scroll-on-click href="#{{child.id}}"><span ng-bind-html="child.text"></span></a>
 								</li>
 							</ul>
 						</li>
