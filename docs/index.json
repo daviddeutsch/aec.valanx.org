@@ -39,6 +39,41 @@
 		]
 	},
 	{
+		"title": "Memberships",
+		"path": "memberships/general",
+		"keywords": [],
+		"children": [
+			{
+				"title": "Memberships",
+				"path": "memberships/01-memberships",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Payment Plans",
+				"path": "memberships/02-payment-plans",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Membership Administration",
+				"path": "memberships/03-membership-administration",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "In Joomla",
+				"path": "memberships/general",
+				"keywords":
+						 [
+						 ]
+			}
+		]
+	},
+	{
 		"title": "Customizing AEC",
 		"path": "customizing/customizing",
 		"keywords": [],
@@ -97,7 +132,6 @@
 				"path": "troubleshooting/01-routing",
 				"keywords":
 					[
-						"installation", "install", "requirements", "joomla", "package"
 					]
 			}
 		]
@@ -112,7 +146,6 @@
 				"path": "hacking-aec/01-setup",
 				"keywords":
 					[
-						"installation", "install", "requirements", "joomla", "package"
 					]
 			}
 		]

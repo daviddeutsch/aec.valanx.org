@@ -18,14 +18,14 @@ Download the All-in-One package and upload it to your server using the standard 
 
 That's really all there is to it.
 
-Do note that the package is rather large, so if you encounter problems, make sure that your upload limit in PHP is large enough. You can set it in your php.ini file like so:
+Do note that the package is rather large, so if you encounter problems, make sure that your upload limit in PHP is large enough. You can set it in your `php.ini` file like so:
 
 ```
-    ; Maximum allowed size for uploaded files.
-    upload_max_filesize = 5M
+; Maximum allowed size for uploaded files.
+upload_max_filesize = 5M
 
-    ; Must be greater than or equal to upload_max_filesize
-    post_max_size = 5M
+; Must be greater than or equal to upload_max_filesize
+post_max_size = 5M
 ```
 
 You may also have no access to the php.ini file. If that is the case, you may have a corresponding setting in your server configuration console - if not, you need to contact customer support for this.
