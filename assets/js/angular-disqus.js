@@ -214,14 +214,13 @@
 			},
 			template : '<div id="disqus_thread"><p class="text-center pulse" id="disqus-loading">preparing to load comments...</p></div>',
 			link: function link(scope, element) {
-				scope.$watch('id', function(id) {
+				var disqusWatcher = function(id) {
 					if (angular.isDefined(id)) {
 						var displayed = false,
 							window = angular.element($window ),
 							start = true;
 
 						var display = function() {
-
 							$disqus.commit(id);
 
 							window.off('scroll', onScroll);
@@ -234,8 +233,8 @@
 
 						var onScroll = function () {
 							var height = "innerHeight" in window[0] ?
-								window[0].innerHeight
-								: document.documentElement.clientHeight,
+									window[0].innerHeight
+									: document.documentElement.clientHeight,
 								doDisplay = false;
 
 							// https://developer.mozilla.org/en-US/docs/Web/API/window.scrollY
@@ -262,7 +261,11 @@
 							onScroll(true);
 						}, 1600);
 					}
-				});
+				};
+
+				$timeout(function(){
+					scope.$watch('id', disqusWatcher);
+				}, 1000);
 			}
 		};
 	}]);
