@@ -176,13 +176,6 @@
 				"keywords":
 						 [
 						 ]
-			},
-			{
-				"title": "Custom Processors",
-				"path": "invoices-payment/05-custom-processors",
-				"keywords":
-						 [
-						 ]
 			}
 		]
 	},
@@ -245,12 +238,6 @@
 				"path": "toolbox/04-vat-report",
 				"keywords":
 						 []
-			},
-			{
-				"title": "Write your own!",
-				"path": "toolbox/05-custom-tool",
-				"keywords":
-						 []
 			}
 		]
 	},
@@ -304,20 +291,41 @@
 		]
 	},
 	{
-		"title": "Hacking AEC",
-		"path": "hacking-aec/hacking-aec",
+		"title": "Developers",
+		"path": "developers/developers",
 		"keywords": [],
 		"children": [
 			{
 				"title": "Database",
-				"path": "hacking-aec/01-database",
+				"path": "developers/01-database",
 				"keywords":
 					[
 					]
 			},
 			{
 				"title": "Code",
-				"path": "hacking-aec/02-code",
+				"path": "developers/02-code",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Custom Processors",
+				"path": "developers/03-custom-processors",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Custom MI",
+				"path": "developers/04-custom-mi",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Custom Toolbox",
+				"path": "developers/05-custom-tool",
 				"keywords":
 						 [
 						 ]
