@@ -226,7 +226,7 @@
 			id = 0,
 			seen = [];
 
-		$scope.fullpath = 'start/welcome';
+		$scope.fullpath = '';
 
 		$scope.pages = [];
 
@@ -291,6 +291,12 @@
 			});
 
 			return tree;
+		};
+
+		$scope.hideComments = function() {
+			return $scope.loading
+				|| ($scope.fullpath == 'start/welcome')
+				|| ($scope.fullpath == '');
 		};
 
 		$scope.switchPage = function(path) {
