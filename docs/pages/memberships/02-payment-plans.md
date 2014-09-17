@@ -55,3 +55,5 @@ Please make sure that the processor you want to use supports trials!
 We deal with most of the other tabs in separate articles (see below), but the last tab has an important bit, the assignment of MicroIntegrations:
 
 As you can see, this has two fields - first, the MIs it has been assigned by the Group they are in. Second, you can choose which ones you want to attach directly.
+
+## TODO: Relationships

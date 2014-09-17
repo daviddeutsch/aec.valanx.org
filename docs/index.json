@@ -64,6 +64,13 @@
 				"keywords":
 						 [
 						 ]
+			},
+			{
+				"title": "Access Control",
+				"path": "start/09-access-control",
+				"keywords":
+						 [
+						 ]
 			}
 		]
 	},
@@ -99,6 +106,151 @@
 				"keywords":
 						 [
 						 ]
+			}
+		]
+	},
+	{
+		"title": "Restrictions",
+		"path": "restrictions/general",
+		"keywords": [],
+		"children": [
+			{
+				"title": "Memberships",
+				"path": "memberships/01-memberships",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Custom Restrictions",
+				"path": "memberships/02-payment-plans",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Membership Administration",
+				"path": "memberships/03-membership-administration",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Plan Groups",
+				"path": "memberships/04-plan-groups",
+				"keywords":
+						 [
+						 ]
+			}
+		]
+	},
+	{
+		"title": "Invoices & Payment",
+		"path": "invoices-payment/start",
+		"keywords": [],
+		"children": [
+			{
+				"title": "Payment Processor Setup",
+				"path": "invoices-payment/01-processor-setup",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Invoices",
+				"path": "invoices-payment/02-invoices",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Coupons",
+				"path": "invoices-payment/03-coupons",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Processor Overrides",
+				"path": "invoices-payment/04-processor-overrides",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Custom Processors",
+				"path": "invoices-payment/05-custom-processors",
+				"keywords":
+						 [
+						 ]
+			}
+		]
+	},
+	{
+		"title": "Advanced Administration",
+		"path": "advanced-administration/start",
+		"keywords": [],
+		"children": [
+			{
+				"title": "AEC History",
+				"path": "advanced-administration/01-history",
+				"keywords":
+						 []
+			},
+			{
+				"title": "AEC Eventlog",
+				"path": "advanced-administration/02-eventlog",
+				"keywords":
+						 []
+			},
+			{
+				"title": "Hacks",
+				"path": "advanced-administration/03-hacks",
+				"keywords":
+						 []
+			},
+			{
+				"title": "Import & Export",
+				"path": "advanced-administration/04-import-export",
+				"keywords":
+						 []
+			}
+		]
+	},
+	{
+		"title": "Toolbox",
+		"path": "toolbox/start",
+		"keywords": [],
+		"children": [
+			{
+				"title": "System Cleanup",
+				"path": "toolbox/01-system-cleanup",
+				"keywords":
+						 []
+			},
+			{
+				"title": "Readout",
+				"path": "toolbox/02-readout",
+				"keywords":
+						 []
+			},
+			{
+				"title": "Supercommand Terminal",
+				"path": "toolbox/03-supercommand-terminal",
+				"keywords":
+						 []
+			},
+			{
+				"title": "VAT Tax Report",
+				"path": "toolbox/04-vat-report",
+				"keywords":
+						 []
+			},
+			{
+				"title": "Write your own!",
+				"path": "toolbox/05-custom-tool",
+				"keywords":
+						 []
 			}
 		]
 	},
