@@ -6298,6 +6298,7 @@ legend {
   width: 100%;
   padding-bottom: 8px;
   border-bottom: 12px solid #eee;
+  margin-bottom: 32px;
 }
 #documentation h2 {
   display: inline-block;
