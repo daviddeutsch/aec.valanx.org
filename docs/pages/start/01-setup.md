@@ -38,6 +38,10 @@ http://www.yourserver.com/administrator/index.php?option=com_acctexp&task=recall
 
 This can be helpful, for instance, when you're writing your own processor as one of the things that the setup routines checks are updating whether the processor information has changed.
 
+## Upgrading
+
+To upgrade from an older version of AEC, simply install the new version over the old one. Everything will be preserved and/or upgraded.
+
 ## Uninstalling
 
 To make sure that you don't erase your whole customer database by accident, AEC has a little security feature - if you want to actually get rid of all your data, you have to set these two settings to Yes first.

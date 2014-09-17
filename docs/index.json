@@ -152,30 +152,37 @@
 		]
 	},
 	{
-		"title": "Troubleshooting",
-		"path": "troubleshooting/troubleshooting",
-		"keywords": [],
-		"children": [
-			{
-				"title": "Database",
-				"path": "troubleshooting/01-routing",
-				"keywords":
-					[
-					]
-			}
-		]
-	},
-	{
 		"title": "Hacking AEC",
 		"path": "hacking-aec/hacking-aec",
 		"keywords": [],
 		"children": [
 			{
 				"title": "Database",
-				"path": "hacking-aec/01-setup",
+				"path": "hacking-aec/01-database",
 				"keywords":
 					[
 					]
+			},
+			{
+				"title": "Code",
+				"path": "hacking-aec/02-code",
+				"keywords":
+						 [
+						 ]
+			}
+		]
+	},
+	{
+		"title": "Related Software",
+		"path": "related/related",
+		"keywords": [],
+		"children": [
+			{
+				"title": "vSessionControl",
+				"path": "related/01-vsessioncontrol",
+				"keywords":
+						 [
+						 ]
 			}
 		]
 	}
