@@ -293,10 +293,10 @@
 			return tree;
 		};
 
-		$scope.hideComments = function() {
-			return $scope.loading
-				|| ($scope.fullpath == 'start/welcome')
-				|| ($scope.fullpath == '');
+		$scope.showComments = function() {
+			return !$scope.loading
+				&& ($scope.fullpath != 'start/welcome')
+				&& ($scope.fullpath != '');
 		};
 
 		$scope.switchPage = function(path) {
