@@ -6316,6 +6316,9 @@ legend {
 #documentation img {
   max-width: 100%;
 }
+#documentation a {
+  color: #b94846;
+}
 #documentation-full {
   margin-bottom: 220px;
 }

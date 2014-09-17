@@ -260,6 +260,17 @@
 				+ '</h' + level + '>';
 		};
 
+		renderer.table = function (header, body) {
+			return '<table class="table table-striped">'
+				+ '<thead>' + header + '</thead>'
+				+ '<tbody>' + body + '</tbody>'
+				+ '</table>';
+		};
+
+		renderer.link = function (href, title, text) {
+			return '<a href ui-sref="docs({path:\'' + href + '\', doc:\'\'})">' + text + '</a>'
+		};
+
 		marked.setOptions({
 			renderer: renderer,
 			gfm: true
@@ -278,13 +289,13 @@
 
 						tree[pointer] = {
 							id: el.id,
-							text: el.innerHTML,
+							text: $sce.trustAsHtml(el.innerHTML),
 							children: []
 						};
 					} else if ( el.localName == 'h3' ) {
 						tree[pointer].children.push({
 							id: el.id,
-							text: el.innerHTML
+							text: $sce.trustAsHtml(el.innerHTML)
 						});
 					}
 				}
@@ -323,11 +334,11 @@
 						function(error, parsed) {
 							var doc = $compile(parsed)($scope);
 
-							//$scope.content = angular.element(doc);
+							$scope.content = $sce.trustAsHtml(
+								angular.element("<p>").append(doc.clone()).html()
+							);
 
-							$scope.content = $sce.trustAsHtml(parsed);
-
-							$scope.sideindex = headerTree(angular.element(parsed));
+							$scope.sideindex = headerTree(doc);
 
 							angular.element('html, body').animate(
 								{scrollTop: 0},
