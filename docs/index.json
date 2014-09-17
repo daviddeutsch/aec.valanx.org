@@ -52,8 +52,15 @@
 						 ]
 			},
 			{
+				"title": "Signup Flow",
+				"path": "start/07-signup",
+				"keywords":
+						 [
+						 ]
+			},
+			{
 				"title": "Existing Users",
-				"path": "start/07-existing-users",
+				"path": "start/08-existing-users",
 				"keywords":
 						 [
 						 ]
