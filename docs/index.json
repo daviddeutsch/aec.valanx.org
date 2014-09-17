@@ -29,12 +29,34 @@
 					]
 			},
 			{
+				"title": "Advanced Settings",
+				"path": "start/04-advanced-settings",
+				"keywords":
+						 [
+							 "settings"
+						 ]
+			},
+			{
 				"title": "In Joomla",
-				"path": "start/04-joomla",
+				"path": "start/05-joomla",
 				"keywords":
 					[
 						"system", "menu", "menu item"
 					]
+			},
+			{
+				"title": "Integration",
+				"path": "start/06-integration",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Existing Users",
+				"path": "start/07-existing-users",
+				"keywords":
+						 [
+						 ]
 			}
 		]
 	},
