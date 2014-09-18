@@ -73,7 +73,7 @@ AEC has a very extensive restrictions system built in, here's how to use it:
 $restrictions = array();
 
 // Previous plan to be either 5,6 or 7
-$restrictions['plan_previous'] = array( 5,6,7 );
+$restrictions['plan_previous'] = array( 5, 6, 7 );
 
 $response = $metaUser->permissionResponse( $restrictions );
 

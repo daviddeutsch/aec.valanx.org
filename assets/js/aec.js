@@ -273,7 +273,10 @@
 
 		marked.setOptions({
 			renderer: renderer,
-			gfm: true
+			gfm: true,
+			highlight: function (code) {
+				return hljs.highlightAuto(code).value;
+			}
 		});
 
 		var headerTree = function(list) {

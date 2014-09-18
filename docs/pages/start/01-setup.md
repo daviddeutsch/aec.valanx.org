@@ -18,6 +18,8 @@ Download the All-in-One package and upload it to your server using the standard 
 
 That's really all there is to it.
 
+### File Upload Size
+
 Do note that the package is rather large, so if you encounter problems, make sure that your upload limit in PHP is large enough. You can set it in your `php.ini` file like so:
 
 ```
@@ -40,7 +42,7 @@ This can be helpful, for instance, when you're writing your own processor as one
 
 ## Upgrading
 
-To upgrade from an older version of AEC, simply install the new version over the old one. Everything will be preserved and/or upgraded.
+To upgrade from an older version of AEC, **simply install the new version over the old one**. Everything will be preserved and/or upgraded.
 
 ## Uninstalling
 
