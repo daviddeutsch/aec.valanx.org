@@ -14,7 +14,7 @@ As you see - the standard function is that you can put in a username and get you
 
 ### What you can throw at it
 
-![Quicksearch](docs/img/home-quicksearch-results.png)
+![Quicksearch Results](docs/img/home-quicksearch-results.png)
 
 This is the list of things the Quicksearch looks for, in this order:
 

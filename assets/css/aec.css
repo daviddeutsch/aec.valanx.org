@@ -6290,6 +6290,7 @@ legend {
 }
 #documentation {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 24px;
 }
 #documentation h1 {
   font-weight: 700;
