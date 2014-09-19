@@ -344,12 +344,14 @@
 
 							$scope.sideindex = headerTree(doc);
 
-							$scope.sideindex.push({
-								id: 'comments',
-								text: $sce.trustAsHtml('Questions?'),
-								children: [],
-								offset: 180 - ($scope.sideindex.length*5)
-							});
+							if ( $scope.sideindex.length ) {
+								$scope.sideindex.push({
+									id: 'comments',
+									text: $sce.trustAsHtml('Questions?'),
+									children: [],
+									offset: 180 - ($scope.sideindex.length*5)
+								});
+							}
 
 							angular.element('html, body').animate(
 								{scrollTop: 0},
