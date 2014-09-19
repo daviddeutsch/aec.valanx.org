@@ -293,8 +293,7 @@
 						tree[pointer] = {
 							id: el.id,
 							text: $sce.trustAsHtml(el.innerHTML),
-							children: [],
-							offset: 180 - (pointer*5)
+							children: []
 						};
 					} else if ( el.localName == 'h3' ) {
 						tree[pointer].children.push({
@@ -348,8 +347,7 @@
 								$scope.sideindex.push({
 									id: 'comments',
 									text: $sce.trustAsHtml('Questions?'),
-									children: [],
-									offset: 180 - ($scope.sideindex.length*5)
+									children: []
 								});
 							}
 

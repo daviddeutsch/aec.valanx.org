@@ -1,37 +1,37 @@
 # Settings
 
-## Basically
+## General Configuration
 
-## Just
+![Settings - General Configuration](docs/img/settings-general.png)
 
-## A
+TODO!
 
-## Way
+## Registration Flow
 
-## To
+![Settings - Registration Flow](docs/img/settings-registration-flow.png)
 
-## Test
+TODO!
 
-## Long
+### Plan List
 
-## Pages
+![Settings - Plan List](docs/img/settings-registration-plan-list.png)
 
-### Hello
+TODO!
 
-### Hello
+### Shopping Cart
 
-### Hello
+![Settings - Shopping Cart](docs/img/settings-registration-shopping-cart.png)
 
-## For
+TODO!
 
-## Now
+### Checkout Page
 
-## No
+![Settings - Checkout Page](docs/img/settings-registration-checkout.png)
 
-## Seriously
+TODO!
 
-### Hello
+## Inner Workings
 
-## Also: headers
+![Settings - Inner Workings](docs/img/settings-inner-workings.png)
 
-
+TODO!
