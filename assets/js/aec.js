@@ -108,8 +108,8 @@
 				var settings = angular.extend({
 					href: angular.element(),
 					offset: 0,
-					duration: 1600,
-					easing: 'easeInOutQuint'
+					duration: 800,
+					easing: 'easeOutQuint'
 				}, attrs);
 
 				settings.href = settings.href.replace('#','');
@@ -293,7 +293,8 @@
 						tree[pointer] = {
 							id: el.id,
 							text: $sce.trustAsHtml(el.innerHTML),
-							children: []
+							children: [],
+							offset: 180 - (pointer*5)
 						};
 					} else if ( el.localName == 'h3' ) {
 						tree[pointer].children.push({
@@ -342,6 +343,13 @@
 							);
 
 							$scope.sideindex = headerTree(doc);
+
+							$scope.sideindex.push({
+								id: 'comments',
+								text: $sce.trustAsHtml('Questions?'),
+								children: [],
+								offset: 180 - ($scope.sideindex.length*5)
+							});
 
 							angular.element('html, body').animate(
 								{scrollTop: 0},
