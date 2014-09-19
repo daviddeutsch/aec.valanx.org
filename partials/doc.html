@@ -15,13 +15,13 @@
 						<div disqus="'http://aec.valanx.org/docs/' + fullpath"></div>
 					</div>
 				</div>
-				<div class="col-md-2 am-fade-and-slide-right" ng-show="sideindex.length">
-					<ul class="aec-sidenav nav" bs-scrollspy-list bs-affix>
+				<div class="col-md-2">
+					<ul class="aec-sidenav nav am-fade-and-slide-right" ng-show="sideindex.length" bs-scrollspy-list bs-affix>
 						<li><h4>{{pagetitle}}</h4></li>
-						<li ng-repeat="item in sideindex" bs-scrollspy data-target="{{item.id}}" data-offset="{{item.offset}}">
+						<li ng-repeat="item in sideindex" bs-scrollspy data-target="{{item.id}}" data-offset="180">
 							<a scroll-on-click href="#{{item.id}}"><span ng-bind-html="item.text"></span></a>
 							<ul class="nav" ng-if="item.children.length">
-								<li ng-repeat="child in item.children" bs-scrollspy data-target="{{child.id}}" data-offset="{{item.offset}}">
+								<li ng-repeat="child in item.children" bs-scrollspy data-target="{{child.id}}" data-offset="180">
 									<a scroll-on-click href="#{{child.id}}"><span ng-bind-html="child.text"></span></a>
 								</li>
 							</ul>
