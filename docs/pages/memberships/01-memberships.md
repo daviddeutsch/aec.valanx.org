@@ -4,7 +4,7 @@ A Membership is a rather broad term in AEC. In general, what a membership does i
 
 ## `Primary` & `Secondary`
 
-In AEC, a user can have **one** `Primary` and an unlimited number of `Secondary` Memberships.
+In AEC, a user can have **one** `Primary` and an **unlimited number of** `Secondary` Memberships.
 
 A `Primary` Membership is mandatory and controls overall access to the account. If the `Primary` membership expires, the user cannot log in (unless you have configured AEC to allow for access in that case).
 

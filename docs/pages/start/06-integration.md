@@ -2,7 +2,7 @@
 
 AEC works with a number of components through the MicroIntegrations, but this article is actually only about user data and integration of the registration process.
 
-## Integration with the Signup
+## Integrating the Signup
 
 By default, as soon as you activate "Integrate Registration" in the AEC Settings, it will try to wrap around your registration process in one way or another, asking the user to get a membership at the same time.
 

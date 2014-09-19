@@ -2,38 +2,57 @@
 
 ## Membership Overview
 
-From the central page in AEC, you have several options to take a look into existing Memberships:
+From the central page in AEC, you have several options to take a look into existing Memberships, either by clicking **a state from the top menu**, or the `Members` button from the schematic (which links to active members):
 
-TODO: View of Membership states
+![Membership List Filters - Status](docs/img/membership-list-path-to.png)
 
-These all lead to basically the same membership list, only with a different focus selected. The important thing on that page is in the upper right screen, where you can see the current filter setting. When you click on "Active", you will have that Membership status selected in the filter:
+These all lead to basically the same membership list, only with a different focus selected.
 
-TODO: View of Membership filters
+![Membership List Example - Expired List](docs/img/membership-list-example-expired.png)
 
-If you want to, you can even select multiple items in the status selection (by dragging the mouse or CTRL+clicking). The only thing that is not possible is displaying members and non-members ("Not Subscribed") at the same time.
+### Status Filter
 
-Filtering by Plan and Ordering should be pretty self-explanatory. More interesting are the things on the right side.
+The important thing on that page is in the upper section of the screen, where you can see the current filter settings. When you click on `Expired`, you will have that Membership status selected in the filter.
 
-Except for the Search box (which should also be rather self-explanatory), the first two dropdowns let you assign a Membership to multiple users on the fly, or modify the expiration on the fly.
+![Membership List Filters - Status](docs/img/membership-list-filters-status.png)
 
-Modifying the expiration gives you a whole host of options. You can switch their status to any of the available Membership states. You also have the option to set or add (to) the expiration date. With the first, you force it to be "1 month from now", with the second you "add 1 month to the current expiration date".
+If you want to, you can even select multiple items in the status selection. The only thing that is not possible is displaying members and non-members (`Not Subscribed`) at the same time.
 
-And don't forget that you have to select Members from the list before you apply something.
+### Plan, Group, Search Filter
 
+Filtering by `Payment Plan`, `Plan Group` and `Ordering` should be pretty self-explanatory. More interesting are the things on the right side.
+
+Except for the `Search` box (which should also be rather self-explanatory), the first two dropdowns let you **assign a Membership** to multiple users or **modify their expiration**.
+
+### Bulk-update memberships
+
+**Modifying the expiration** gives you a whole host of options. You can **switch their status** to any of the available Membership states (`Active`, `Cancelled`...). You also have the option to **set or add to the expiration date**. With the first, you force it to be "1 month from now", with the second you "add 1 month to the current expiration date".
+
+And don't forget that you have to select Members from the list before you apply something!
 
 ## Membership Details
 
 Selecting a membership brings you to a subscription overview for this user:
 
-TODO: View of Membership details
+![Membership Details - Full View](docs/img/membership-details-full.png)
 
-As you can see - this page does not list one Membership, but one User. When the user holds multiple Memberships, the page will display them and you can switch between them. Of course, when coming from the Membership list, the one you selected will be in focus.
+As you can see - this page does not list just one `Membership`, but gives you an overview of the User with one `Membership` that you currently focus on. When the user holds multiple Memberships, the page will display them and you can switch between them. Of course, when coming from the Membership list, the one you selected will be in focus.
 
-Under Expiration, you can modify the expiration date of the currently selected Membership. You can also set it to Lifetime by clicking the checkbox for it and change the Membership status with the dropdown for that.
+### Expiration
 
-Further down, under Subscription, you see a history of previous memberships in exact detail. You can also apply a specific membership plan.
+![Membership Details - Expiration](docs/img/membership-details-expiration.png)
 
-TODO: View of Membership Invoices
+Under Expiration, you can modify the expiration date of the currently selected Membership. You can also set it to Lifetime by clicking the checkbox for it and change the Membership status with the dropdown for that. You can also apply a specific membership plan.
+
+### Subscription History
+
+![Membership Details - Subscription History](docs/img/membership-details-subscription-history.png)
+
+Further down, under Subscription, you see a history of previous memberships in exact detail.
+
+### Invoices
+
+![Membership Details - Invoices](docs/img/membership-details-invoices.png)
 
 For Invoices, there is a special feature when an invoice is uncleared - it shows you a number of options for this invoice. The repeat Link is simply a link that you can hand your client to get to the checkout quickly. The cancel removes the invoice from the system.
 

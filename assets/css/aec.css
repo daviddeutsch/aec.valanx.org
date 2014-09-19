@@ -6317,7 +6317,7 @@ legend {
 }
 #documentation img {
   display: block;
-  margin: 0 auto;
+  margin: 24px auto;
   max-width: 100%;
 }
 #documentation a {
