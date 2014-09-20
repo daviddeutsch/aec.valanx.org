@@ -6313,6 +6313,7 @@ legend {
   font-weight: 600;
 }
 #documentation p {
+  margin-bottom: 12px;
   line-height: 1.8em;
 }
 #documentation img {
