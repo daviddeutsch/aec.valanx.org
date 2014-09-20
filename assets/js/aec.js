@@ -268,7 +268,13 @@
 		};
 
 		renderer.link = function (href, title, text) {
-			return '<a href ui-sref="docs({path:\'' + href + '\', doc:\'\'})">' + text + '</a>'
+			if ( href.substr(0, 4) != 'http' ) {
+				return '<a href ui-sref="docs({path:\'' + href + '\', doc:\'\'})">' + text + '</a>'
+			} else {
+				return '<a href="' + href + '" target="_blank">' + text + '</a>'
+			}
+
+
 		};
 
 		marked.setOptions({
