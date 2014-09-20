@@ -1,11 +1,11 @@
 # Plan Groups
 
-Groups are containers for plans, they do not refer to Joomla User Groups but Plan Groups.  Think of it this way, your site has for example 50 plans, and you do not want your plans page to be that long and want to group up plans.  When you do this, a person goes to the plans page and will see the group names,   When they click on the Group Name, they will then see a page with just the plans in that group.
+![Path to Plan Groups](docs/img/plan-groups-path-to.png)
 
-Another advantage of groups is that if a large number of plans have the same Restrictions and/or Micro Integrations, you can assign them to the group and they will become inherent in the plans in that group.
+`Plan Groups` are collections of `Payment Plans`.
 
-To access groups go to AEC Central --> Groups
+Say, for example, your site has **50** `Payment Plans` - that would be a lot of plans to display on the signup screen! The most basic feature that groups give you is that you can split up your plans into a few of them so that instead of the long list of 50 options, they just see the groups. When they click on the group button, they will then see a page with just the plans in that group.
 
-The default group that comes in an AEC install is Root, Please do not delete or modify this group,
+Another advantage of groups is that just like `Payment Plans`, they can have `Restrictions` and/or `Micro Integrations` attached to them, so by assigning them to the group, all plans in that group will inherit them.
 
-To create a new group click on the New icon.
+There is a Root Group in AEC which cannot be deleted. Please be careful when editing it and keep in mind that any change you make to it will affect all plans (unless you have removed them from the root group, which is possible).
