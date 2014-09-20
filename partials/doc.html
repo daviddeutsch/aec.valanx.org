@@ -6,12 +6,14 @@
 			</div>
 			<div ng-controller="DocCtrl">
 				<div class="col-md-8" id="documentation-full">
-					<div id="documentation" ng-bind-html="content"></div>
+					<div ng-bind-html="content"></div>
 
 					<div id="comments" ng-show="showComments()">
 						<hr/>
-						<h4>Any Questions?</h4>
+						<h4>Any Questions or Suggestions?</h4>
 						<p>Please join the discussion if you're stuck on this topic and need us to clarify something or improve the documentation for you.</p>
+						<p>Have an improvement to make yourself? Sweet! You can send in a Pull Request on Github right
+							<a ng-href="https://github.com/daviddeutsch/aec.valanx.org/blob/master/docs/pages/{{fullpath}}.md">here</a>.</p>
 						<div disqus="'http://aec.valanx.org/docs/' + fullpath"></div>
 					</div>
 				</div>

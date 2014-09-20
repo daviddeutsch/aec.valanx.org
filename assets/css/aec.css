@@ -6288,11 +6288,11 @@ legend {
 .modal .close {
   color: #333333;
 }
-#documentation {
+#documentation-full {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 24px;
 }
-#documentation h1 {
+#documentation-full h1 {
   font-weight: 700;
   text-align: center;
   display: inline-block;
@@ -6301,30 +6301,30 @@ legend {
   border-bottom: 12px solid #eee;
   margin-bottom: 32px;
 }
-#documentation h2 {
+#documentation-full h2 {
   display: inline-block;
   width: 100%;
   border-bottom: 1px solid #eee;
   padding-bottom: 4px;
   font-weight: 500;
 }
-#documentation h3 {
+#documentation-full h3 {
   font-size: 23px;
   font-weight: 600;
 }
-#documentation p {
+#documentation-full p {
   margin-bottom: 12px;
   line-height: 1.8em;
 }
-#documentation img {
+#documentation-full img {
   display: block;
   margin: 24px auto;
   max-width: 100%;
 }
-#documentation a {
+#documentation-full a {
   color: #b94846;
 }
-#documentation pre {
+#documentation-full pre {
   border-left: none;
   border-right: none;
   border-top: 4px solid #eee;
