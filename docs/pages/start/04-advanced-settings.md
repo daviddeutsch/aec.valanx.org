@@ -4,7 +4,7 @@
 
 ### Custom Redirects
 
-![Settings - Custom Redirects](docs/img/settings-custom-redirects.png)
+![Settings - Custom Redirects](docs/img/settings-custom-redirect.png)
 
 Sometimes, you want the user to go to certain pages instead of the standard AEC pages. This is what you can do here. Just put in full URLs and AEC will use them.
 
@@ -14,15 +14,11 @@ Sometimes, you want the user to go to certain pages instead of the standard AEC 
 
 If your hosting provider has certain restrictions on outgoing traffic (i.e. if AEC calls other websites or services), you need to set the details of the proxy that they provide to you in here.
 
-### Subscribed Member Buttons
-
-These are the buttons that show up when a user logs in without an active membership.
-
 ![Settings - Date & Price Formatting](docs/img/settings-date-price-formatting.png)
 
 ### Date Formatting
 
-If you want a custom formatting for dates in AEC, you can put in the codes here. Refer to this manual for details. If you leave this empty, AEC will just use standard Joomla formatting.
+If you want a custom formatting for any of the dates in AEC (either frontend or administration), you can do that here. Refer to [this php manual entry](http://php.net/manual/en/function.strftime.php) for details. If you leave this empty, AEC will just use the standard Joomla formatting.
 
 ### Invoice Number Formatting
 
@@ -101,9 +97,9 @@ If you want to build your own navigation for the MySubscription page, you can di
 
 ### Subscription Plans
 
-Root Group ReWrite is a way of using the ReWrite Engine to determine which root group the user is shown. This can be used to dynamically target certain usergroups with different root groups.
+`Root Group ReWrite` is a way of using the ReWrite Engine to determine which root group the user is shown. This can be used to dynamically target certain usergroups with different root groups.
 
-With the Entry Plan, you can give any user that is logging in, but hasn't got a membership yet the plan you have selected here. Keep in mind that this means that users will get a free membership, no matter what price you've set.
+With the `Entry Plan`, you can give any user that is logging in, but hasn't got a membership yet the plan you have selected here. Keep in mind that this means that with this setting **users will get a FREE membership, no matter what price you've set**.
 
 The Per-Plan MIs were an experimental feature that has since been discontinued.
 
