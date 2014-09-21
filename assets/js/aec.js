@@ -412,15 +412,13 @@
 				title = '';
 
 			angular.forEach(list, function(el){
-				var deferred = $q.defer();
+				var sdefer = $q.defer();
 
-				promises.push(deferred.promise);
+				promises.push(sdefer.promise);
 
 				if ( (typeof el.id != 'undefined') && (el.id != "") ) {
 					if ( (el.localName == 'h1') && (title == '') ) {
 						title = el.innerHTML;
-
-						deferred.resolve();
 					} else if ( el.localName == 'h2' ) {
 						pointer++;
 
@@ -429,16 +427,16 @@
 							text: $sce.trustAsHtml(el.innerHTML),
 							children: []
 						};
-
-						deferred.resolve();
 					} else if ( el.localName == 'h3' ) {
 						tree[pointer].children.push({
 							id: el.id,
 							text: $sce.trustAsHtml(el.innerHTML)
 						});
-
-						deferred.resolve();
 					}
+
+					sdefer.resolve();
+				} else {
+					sdefer.resolve();
 				}
 			});
 
@@ -490,7 +488,7 @@
 
 					self.headerTree(doc)
 						.then(function(tree){
-							page.sidetitle = tree.title;
+							page.pagetitle = tree.title;
 							page.sideindex = tree.tree;
 
 							if ( page.sideindex.length ) {
@@ -500,9 +498,9 @@
 									children: []
 								});
 							}
-						});
 
-					deferred.resolve(page);
+							deferred.resolve(page);
+						});
 				}
 			);
 

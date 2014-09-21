@@ -10,7 +10,7 @@ To prepare you import file, it must be in CSV format with NO column headings. Th
 |-------------|-----------|
 |User ID|Only use if not importing a new user and associating the Payment Plan and or Invoice Number.|
 |User Full|Name the users full name.|
-|Username the|Username used for login.|
+|Username|The Username used for login.|
 |User Email|The email address of the user.|
 |Password|The password for the user to use on login.|
 |Payment Plan ID|The payment plan ID you want to assign the user to. Note: when importing, you can use separate csv files (each one with the users for a specific plan) and assign them during the import to a specific plan.|
