@@ -56,6 +56,61 @@
 	</div>
 </div>
 
+<div class="container">
+	<div class="row">
+		<h2>What makes AEC the <strong>most versatile</strong> membership management?</h2>
+		<div class="col-md-3">
+			<h3>Powerful Restrictions</h3>
+			<p></p>
+		</div>
+		<div class="col-md-3">
+			<h3>Tons of Integrations</h3>
+			<p>
+				With over
+				<a scroll-on-click href="#integrations-list" offset="-80">80 components and services</a>
+				and <a scroll-on-click href="#processors" offset="-80">70 payment processors</a>
+				supported, AEC offers you the functionality to turn simple memberships into functionality powerhouses. </p>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<h3>What can you do with it?</h3>
+
+			<h4>Charge for access to parts of your website</h4>
+			<p>With AEC, it is dead simple to ask for a registration fee. Just create a basic membership plan and integrate AEC with your registration. New users will have to pay to get in and existing users will be asked to pay on their next login.</p>
+
+			<h4>Collect donations on your blog</h4>
+			<p>Since all the restrictions AEC imposes can be made optional, it is simple to make registration payments voluntary. And with the Donation MI, you can even let your users decide what they want to pay.</p>
+
+			<h4>Sell Downloads</h4>
+			<p>Through its component Integration, AEC gives you the power to influence other software packages. So if you want to sell downloads from within DocMan - You can do just that!</p>
+		</div>
+		<div class="col-md-3">
+			<h4>What users are saying</h4>
+			<p><strong>"AEC is leagues ahead of anything else, and is so easy to use."</strong></p>
+			<p class="text-right">- NicMason</p>
+
+			<p><strong>"it's a must for a subscription site. i love it"</strong></p>
+			<p class="text-right">- 10 years after</p>
+
+			<p><strong>"I’ve been using this component for almost a year now and would highly recommend it for anyone that requires this kind of functionality.<br/>
+				We’ve processed over 35000 payments through AEC and it’s done everything we have asked of it."</strong></p>
+			<p class="text-right">-  jongittoes</p>
+
+			<p><strong>"AEC is sort of the defining component for our installation"</strong></p>
+			<p class="text-right">- blewis</p>
+
+			<p><strong>"This component is all that you would want from a subscription manager. Its support for JACL groups and the microintegration capability with other major components such as Docman is what makes this component absolutely THE BEST of the lot."</strong></p>
+			<p class="text-right">- mohaneesh</p>
+
+			<p>Find more user voices on the AEC on the <a href="http://extensions.joomla.org/extensions/10723">Joomla Extensions directory</a></p>
+		</div>
+	</div>
+</div>
+
 <div class="fullwidth-background content-bg-container carina-inject-mystic-mt">
 	<div class="container">
 		<div class="row">
@@ -73,21 +128,31 @@
 	</div>
 </div>
 
+<div class="container">
+	<div class="row">
+		<h2>Professional featureset</h2>
+		<div class="col-md-3">
+			<h3>Powerful Restrictions</h3>
+			<p>You can restrict Access to Payment Plans, Groups and Coupons by any details of the user account (usergroup or access level, userid...) or the membership history ("only allow users of the Silver Membership buy the Gold Membership")</p>
+		</div>
+		<div class="col-md-3">
+			<h3>Flexible Coupons</h3>
+			<p>Fixed Price or Percent discounts, - AEC</p>
+		</div>
+	</div>
+</div>
+
 <div class="fullwidth-background content-bg-container carina-inject-colorful">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="impact">Integrate with</h1>
 			</div>
-			<div class="col-md-4">
-				<h1 class="superimpact">50+</h1>
-				<h3>components</h3>
+			<div class="col-md-4 col-md-offset-1">
+				<h1 class="superimpact">80+</h1>
+				<h3>components and services</h3>
 			</div>
-			<div class="col-md-4">
-				<h1 class="superimpact">30+</h1>
-				<h3>services</h3>
-			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 col-md-offset-2">
 				<h1 class="superimpact">70+</h1>
 				<h3>payment processors</h3>
 			</div>
@@ -95,7 +160,7 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container" id="integrations">
 	<div class="row">
 		<div class="col-md-12">
 			<h2>Integrate with other software and services</h2>
@@ -135,12 +200,12 @@
 								</div>
 							</div>
 							<br/>
-							<ul class="nav nav-pills">
+							<ul class="nav nav-pills text-center">
 								<li ng-if="type">
 									<a href="#" ng-click="toggleType('')">{{type}} &times;</a>
 								</li>
 								<li ng-if="type && searchText">
-									<a href="">+</a>
+									<a href="" disabled="disabled"><strong>+</strong></a>
 								</li>
 								<li ng-if="searchText">
 									<a href="#" ng-click="eraseSearch()">{{searchText}} &times;</a>
@@ -162,7 +227,7 @@
 
 			</div>
 		</div>
-		<div class="col-md-12">
+		<div class="col-md-12" id="processors">
 			<h2>Supported Payment Processors</h2>
 			<div class="col-md-6">
 				<h3>More than 70 Processors</h3>
@@ -191,7 +256,7 @@
 				<br/>
 			</div>
 			<div class="col-md-12">
-				<ul id="processorlist">
+				<ul id="processors-list">
 					<li ng-repeat="processor in processors | filter:searchText" class="am-fade-and-slide-top">
 						<div class="processor-sprite processor-sprite-pos-{{processor.handle}}"></div>
 						<h4>{{processor.name}}</h4>
