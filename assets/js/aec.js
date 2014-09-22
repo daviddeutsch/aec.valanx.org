@@ -247,19 +247,13 @@
 		};
 
 		$scope.switchPage = function(path) {
-			angular.element('html, body').animate(
-				{scrollTop: 0},
-				200,
-				'easeInOutQuint'
-			);
-
-			$timeout.cancel(pageChangeTimeout);
-
 			if ( $scope.fullpath == path ) {
 				$rootScope.loading = false;
 
 				return;
 			}
+
+			$timeout.cancel(pageChangeTimeout);
 
 			$rootScope.loading = true;
 
@@ -278,11 +272,19 @@
 						$scope.pagetitle = page.pagetitle;
 						$scope.sideindex = page.sideindex;
 						$scope.content = page.content;
+
+						angular.element('html, body').animate(
+							{scrollTop: 0},
+							200,
+							'easeInOutQuint'
+						);
+
+						$rootScope.loading = false;
 					}, 40);
 
-					$timeout(function(){
+					/*$timeout(function(){
 						$rootScope.loading = false;
-					}, 4000);
+					}, 4000);*/
 				});
 		};
 
