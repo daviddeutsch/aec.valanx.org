@@ -291,6 +291,12 @@
 		]
 	},
 	{
+		"title": "Troubleshooting",
+		"path": "troubleshooting/troubleshooting",
+		"keywords": [],
+		"children": []
+	},
+	{
 		"title": "Developers",
 		"path": "developers/developers",
 		"keywords": [],
