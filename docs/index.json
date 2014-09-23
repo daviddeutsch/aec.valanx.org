@@ -37,8 +37,15 @@
 						 ]
 			},
 			{
+				"title": "Eta Carinae Template",
+				"path": "start/05-template",
+				"keywords":
+						 [
+						 ]
+			},
+			{
 				"title": "In Joomla",
-				"path": "start/05-joomla",
+				"path": "start/06-joomla",
 				"keywords":
 					[
 						"system", "menu", "menu item"
@@ -46,28 +53,28 @@
 			},
 			{
 				"title": "Integration",
-				"path": "start/06-integration",
+				"path": "start/07-integration",
 				"keywords":
 						 [
 						 ]
 			},
 			{
 				"title": "Signup Flow",
-				"path": "start/07-signup",
+				"path": "start/08-signup",
 				"keywords":
 						 [
 						 ]
 			},
 			{
 				"title": "Existing Users",
-				"path": "start/08-existing-users",
+				"path": "start/09-existing-users",
 				"keywords":
 						 [
 						 ]
 			},
 			{
 				"title": "Access Control",
-				"path": "start/09-access-control",
+				"path": "start/10-access-control",
 				"keywords":
 						 [
 						 ]

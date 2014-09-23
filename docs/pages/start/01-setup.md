@@ -34,6 +34,12 @@ post_max_size = 5M
 
 You may also have no access to the php.ini file. If that is the case, you may have a corresponding setting in your server configuration console - if not, you need to contact customer support for this.
 
+### Activate AEC Plugins
+
+To ensure that AEC runs properly, it automatically installs and activates a number of plugins. Always make sure that they are active:
+
+![Publishing AEC Plugins](docs/img/installing-aec-publishing.png)
+
 ### Re-trigger Install Process
 
 AEC has quite an elaborate setup routine that does a number of system checks. If you ever find yourself wanting to do the whole thing again, but you don't want to upload the entire component, just call this URL:

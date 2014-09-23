@@ -150,6 +150,13 @@
 		$rootScope.loading = false;
 
 		$rootScope.$broadcast('backHome');
+
+		// TODO: Probably want to replace this with something smarter in the future
+		angular.element('html, body').animate(
+			{scrollTop: 0},
+			200,
+			'easeInOutQuint'
+		);
 	}
 
 	HomeCtrl.$inject = ['$scope', '$rootScope', '$state'];
@@ -282,9 +289,10 @@
 						$rootScope.loading = false;
 					}, 40);
 
-					/*$timeout(function(){
+					// Still have not figured out why .loading = false above "sometimes" fails
+					$timeout(function(){
 						$rootScope.loading = false;
-					}, 4000);*/
+					}, 4000);
 				});
 		};
 
