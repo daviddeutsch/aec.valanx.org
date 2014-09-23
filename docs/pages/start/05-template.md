@@ -4,7 +4,7 @@
 
 The current frontend template in AEC is named after the [Carina Nebula](https://en.wikipedia.org/wiki/Carina_Nebula).
 
-## Template Selections
+## Template Selection
 
 ![Template Selection](../../img/template-selection.png)
 

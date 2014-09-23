@@ -121,34 +121,7 @@
 		"path": "restrictions/general",
 		"keywords": [],
 		"children": [
-			{
-				"title": "Memberships",
-				"path": "memberships/01-memberships",
-				"keywords":
-						 [
-						 ]
-			},
-			{
-				"title": "Custom Restrictions",
-				"path": "memberships/02-payment-plans",
-				"keywords":
-						 [
-						 ]
-			},
-			{
-				"title": "Membership Administration",
-				"path": "memberships/03-membership-administration",
-				"keywords":
-						 [
-						 ]
-			},
-			{
-				"title": "Plan Groups",
-				"path": "memberships/04-plan-groups",
-				"keywords":
-						 [
-						 ]
-			}
+
 		]
 	},
 	{
