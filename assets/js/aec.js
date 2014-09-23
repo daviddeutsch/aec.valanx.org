@@ -219,7 +219,7 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function DocCtrl( $scope, $rootScope, $timeout, $stateParams, $aside, $location, Docs )
+	function DocCtrl( $scope, $rootScope, $timeout, $state, $stateParams, $aside, $location, Docs )
 	{
 		var keepalive,
 			id = 0,
@@ -297,6 +297,8 @@
 					if ( lpath.substr(6) !== $scope.fullpath ) {
 						$scope.switchPage(lpath.substr(6));
 					}
+				} else if ( lpath === "/" ) {
+					$state.go('home');
 				}
 			});
 
@@ -332,7 +334,7 @@
 		});
 	}
 
-	DocCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$stateParams', '$aside', '$location', 'Docs'];
+	DocCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$aside', '$location', 'Docs'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 
