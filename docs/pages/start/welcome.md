@@ -1,6 +1,6 @@
 
 
-![AEC](assets/img/aec-logo-big.png)
+![AEC](../../../assets/img/aec-logo-big.png)
 
 # Welcome to the AEC documentation
 

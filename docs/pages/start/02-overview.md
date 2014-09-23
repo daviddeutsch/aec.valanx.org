@@ -1,6 +1,6 @@
 # Basic Concepts
 
-![AEC Home Screen](assets/img/aec-admin-home-faded.png)
+![AEC Home Screen](../../../assets/img/aec-admin-home-faded.png)
 
 ## Core Terms
 
