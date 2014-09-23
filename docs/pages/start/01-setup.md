@@ -16,7 +16,7 @@ AEC works fine on any version of the Joomla! CMS - starting with 1.5, up to the 
 
 Download the All-in-One package and upload it to your server using the standard Joomla installer.
 
-![Joomla Extension Manager](docs/img/extension-manager-install.png)
+![Joomla Extension Manager](../../img/extension-manager-install.png)
 
 That's really all there is to it.
 
@@ -38,7 +38,7 @@ You may also have no access to the php.ini file. If that is the case, you may ha
 
 To ensure that AEC runs properly, it automatically installs and activates a number of plugins. Always make sure that they are active:
 
-![Publishing AEC Plugins](docs/img/installing-aec-publishing.png)
+![Publishing AEC Plugins](../../img/installing-aec-publishing.png)
 
 ### Re-trigger Install Process
 
@@ -56,6 +56,6 @@ To upgrade from an older version of AEC, **simply install the new version over t
 
 To make sure that you don't erase your whole customer database by accident, AEC has a little security feature - if you want to actually get rid of all your data, you have to set these two settings to Yes first.
 
-![Double Checkbox to delete tables](docs/img/settings-uninstall-doublecheck.png)
+![Double Checkbox to delete tables](../../img/settings-uninstall-doublecheck.png)
 
 Otherwise, AEC will just leave the tables intact for when you install it the next time.

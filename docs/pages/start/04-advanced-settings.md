@@ -4,17 +4,17 @@
 
 ### Custom Redirects
 
-![Settings - Custom Redirects](docs/img/settings-custom-redirect.png)
+![Settings - Custom Redirects](../../img/settings-custom-redirect.png)
 
 Sometimes, you want the user to go to certain pages instead of the standard AEC pages. This is what you can do here. Just put in full URLs and AEC will use them.
 
 ### Proxy
 
-![Settings - Proxy](docs/img/settings-proxy.png)
+![Settings - Proxy](../../img/settings-proxy.png)
 
 If your hosting provider has certain restrictions on outgoing traffic (i.e. if AEC calls other websites or services), you need to set the details of the proxy that they provide to you in here.
 
-![Settings - Date & Price Formatting](docs/img/settings-date-price-formatting.png)
+![Settings - Date & Price Formatting](../../img/settings-date-price-formatting.png)
 
 ### Date Formatting
 
@@ -22,7 +22,7 @@ If you want a custom formatting for any of the dates in AEC (either frontend or 
 
 ### Invoice Number Formatting
 
-![Settings - Invoice Number Formatting](docs/img/settings-invoice-number-formatting.png)
+![Settings - Invoice Number Formatting](../../img/settings-invoice-number-formatting.png)
 
 This one is a bit trickier as we use our aecJSON formatting. Refer to that page in our manual for details. The idea is that you can have pretty much any formatting you want if you switch on formatting and put in your syntax.
 
@@ -30,13 +30,13 @@ The standard formatting in that field is "YEAR-INVOICE_ID", so something like "2
 
 ### ReCAPTCHA
 
-![Settings - ReCAPTCHA](docs/img/settings-recaptcha.png)
+![Settings - ReCAPTCHA](../../img/settings-recaptcha.png)
 
 This is actually just a hack to put ReCAPTCHA in a standard Joomla signup form. This does not work with anything but the standard Joomla registration.
 
 ### Page ItemIds
 
-![Settings - ItemIds](docs/img/settings-itemids.png)
+![Settings - ItemIds](../../img/settings-itemids.png)
 
 This one is a bit trickier - In Joomla, every menu item has an ID, what you typically see as &ItemID=XX in your URLs. Once you have set up menu items for AEC, going into the settings will search your menus and take the first ItemIDs and put them into these settings.
 
@@ -44,7 +44,7 @@ Maybe, though, you want to change them to custom ItemIDs - so that is what you c
 
 ## Expert Settings
 
-![Settings - Expert](docs/img/settings-expert-system.png)
+![Settings - Expert](../../img/settings-expert-system.png)
 
 ### Alert Levels
 
@@ -64,7 +64,7 @@ And provide the hash that you set in the settings. Also note the backend heartbe
 
 ### API
 
-![Settings - API](docs/img/settings-api.png)
+![Settings - API](../../img/settings-api.png)
 
 TODO
 
@@ -72,7 +72,7 @@ TODO
 
 There are a number of country forms that can show up in AEC. It always shows all possible countries, but with Ctrl+Clicking some from this list, you can boil down that list.
 
-![Settings - Expert Registration Flow](docs/img/settings-expert-registration-flow.png)
+![Settings - Expert Registration Flow](../../img/settings-expert-registration-flow.png)
 
 ### Registration Flow
 
@@ -93,7 +93,7 @@ MySubscription Page
 
 If you want to build your own navigation for the MySubscription page, you can disable the standard navigation here.
 
-![Settings - Expert Subscription Plans](docs/img/settings-expert-subscription-plans.png)
+![Settings - Expert Subscription Plans](../../img/settings-expert-subscription-plans.png)
 
 ### Subscription Plans
 
@@ -105,7 +105,7 @@ The Per-Plan MIs were an experimental feature that has since been discontinued.
 
 ### Security
 
-![Settings - Security](docs/img/settings-expert-security.png)
+![Settings - Security](../../img/settings-expert-security.png)
 
 Here, you can force whether SSL encryption is forced on the entire Signup and MySubscription pages. Of course, you will need to have set up an SSL certificate.
 
@@ -113,6 +113,6 @@ By allowing the checkout of unpublished items, you can allow your users to pay f
 
 ### Debug
 
-![Settings - Debug](docs/img/settings-expert-debug.png)
+![Settings - Debug](../../img/settings-expert-debug.png)
 
 TODO

@@ -28,13 +28,13 @@ Read more about `Micro Integrations` [here](memberships/01-memberships).
 
 ## Quicksearch
 
-![Quicksearch](docs/img/home-quicksearch.png)
+![Quicksearch](../../img/home-quicksearch.png)
 
 If you need to navigate to user accounts quickly, you're going to love the Quicksearch. It's a very smart search helps finding user accounts quickly. What makes it great is how much stuff you can throw at it.
 
 ### What you can throw at it
 
-![Quicksearch Results](docs/img/home-quicksearch-results.png)
+![Quicksearch Results](../../img/home-quicksearch-results.png)
 
 This is the list of things the Quicksearch looks for, in this order:
 

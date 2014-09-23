@@ -1,6 +1,6 @@
 # Plan Groups
 
-![Path to Plan Groups](docs/img/plan-groups-path-to.png)
+![Path to Plan Groups](../../img/plan-groups-path-to.png)
 
 `Plan Groups` are collections of `Payment Plans`.
 

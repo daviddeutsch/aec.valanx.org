@@ -6,7 +6,7 @@ New Menu Integration: You can now add menu items using the Joomla Menu Manager f
 
 In your Joomla Administration go to Menus--->Pick the menu you want to add an AEC item to. Click New, and then click on AEC Membership Manager, it will expand as shown below:
 
-![Joomla Menu](docs/img/joomla-menu.png)
+![Joomla Menu](../../img/joomla-menu.png)
 
 To make the links for those in brackets, we suggest creating a hidden menu. First, create a new menu from the Menu Manager in your Joomla! Administrator area and call it something like ‘hiddenmenu’.
 

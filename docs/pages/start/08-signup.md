@@ -24,7 +24,7 @@ Every processor is different.  For example most XML Processors such as Paypal WP
 
 Once this menu item is created, and the user clicks on it, he will see something similar to this, after he click on the Invoices Tab.
 
-![Cancel Links](docs/img/recurring-cancel.png)
+![Cancel Links](../../img/recurring-cancel.png)
 
 This page gives the user a detailed overview  of each invoice. In the action column the use is given different choices.
 

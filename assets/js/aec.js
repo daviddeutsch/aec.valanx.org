@@ -407,6 +407,14 @@
 				}
 			};
 
+			this.renderer.image = function (href, title, text) {
+				var src = href
+					.replace('../../../', '/')
+					.replace('../../', 'docs/');
+
+				return '<img src="' + src + '" title="' + title + '" alt="' + text + '"/>'
+			};
+
 			marked.setOptions({
 				renderer: this.renderer,
 				gfm: true,
