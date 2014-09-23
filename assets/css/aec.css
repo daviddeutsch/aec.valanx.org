@@ -6378,6 +6378,7 @@ ul.aec-sidenav li.active > a {
 }
 .aside {
   background: #aaa;
+  min-width: 290px;
 }
 .aside .aside-dialog .aside-header {
   background: #eee;
