@@ -6464,11 +6464,21 @@ img.fullwidth {
   width: 100%;
 }
 #home-top {
-  padding-top: 30%;
+  padding-top: 10%;
   margin-bottom: 70%;
   color: #fff !important;
   text-shadow: 0 2px 2px #000000;
   height: 100%;
+}
+@media (min-width: 992px) {
+  #home-top {
+    padding-top: 20%;
+  }
+}
+@media (min-width: 1200px) {
+  #home-top {
+    padding-top: 30%;
+  }
 }
 #home-top img {
   display: inline-block;
@@ -6554,6 +6564,7 @@ img.fullwidth {
 .carina-full {
   height: 100%;
   background-image: url(../img/carina-nebula-dark-red.jpg);
+  min-height: 1024px;
 }
 .content-bg-container {
   float: left;

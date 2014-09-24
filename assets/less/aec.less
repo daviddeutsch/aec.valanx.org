@@ -197,11 +197,17 @@ img.fullwidth {
 }
 
 #home-top {
-	padding-top: 30%;
+	padding-top: 10%;
 	margin-bottom: 70%;
 	color: #fff !important;
 	text-shadow: 0 2px 2px rgba(0,0,0,1);
 	height: 100%;
+	@media (min-width: @screen-md-min) {
+		padding-top: 20%;
+	}
+	@media (min-width: @screen-lg-min) {
+		padding-top: 30%;
+	}
 	img {
 		display: inline-block;
 	}
@@ -291,6 +297,7 @@ img.fullwidth {
 .carina-full {
 	height: 100%;
 	background-image: url(../img/carina-nebula-dark-red.jpg);
+	min-height: 1024px;
 }
 
 .content-bg-container {
