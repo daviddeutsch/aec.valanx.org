@@ -6288,6 +6288,10 @@ legend {
 .modal .close {
   color: #333333;
 }
+#main li img {
+  width: 100px;
+  height: 100px;
+}
 #documentation-full {
   margin-top: 24px;
 }
