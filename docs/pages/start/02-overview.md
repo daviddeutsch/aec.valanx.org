@@ -22,7 +22,7 @@ Read more about `Memberships` [here](memberships/01-memberships).
 
 ### Micro Integrations
 
-`Payment Plans` themselves do not have very much functionality to them, but you can extend that freely by attaching `Micro Integrations` to them. You can think of them as plugins for `Payment Plans` - the difference to Joomla System plugins being that you can create unlimited instances that have different settings each.
+`Payment Plans` themselves do not have very much functionality, but you can extend their basic features by attaching `Micro Integrations` to them. You can think of them as plugins for `Payment Plans` - the difference to Joomla System plugins being that you can create unlimited instances that each have different settings.
 
 Read more about `Micro Integrations` [here](memberships/01-memberships).
 

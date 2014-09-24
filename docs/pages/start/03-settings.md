@@ -46,7 +46,7 @@ Some payment processors allow for user details being sent over on the checkout a
 
 ### System
 
-The heartbeat is a housekeeping function that does things like expiration functionality. A heartbeat is triggered by a login - but only every X hours you put in here.
+The **heartbeat** is a housekeeping function that does things like expiration functionality. A **heartbeat** is triggered by a login - but only every X hours you put in here.
 
 ### Email
 
