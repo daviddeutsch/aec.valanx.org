@@ -79,13 +79,6 @@
 			});
 
 		$rootScope.$on(
-			'$stateChangeSuccess',
-			function(event, toState, toParams, fromState, fromParams) {
-				$rootScope.loading = false;
-			});
-
-
-		$rootScope.$on(
 			'$locationChangeSuccess',
 			function(e)
 			{
@@ -145,7 +138,7 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function HomeCtrl( $scope, $rootScope, $state )
+	function HomeCtrl( $rootScope )
 	{
 		$rootScope.loading = false;
 
@@ -159,7 +152,7 @@
 		);
 	}
 
-	HomeCtrl.$inject = ['$scope', '$rootScope', '$state'];
+	HomeCtrl.$inject = ['$rootScope'];
 	angular.module('aecApp').controller('HomeCtrl', HomeCtrl);
 
 
@@ -229,8 +222,7 @@
 	function DocCtrl( $scope, $rootScope, $timeout, $state, $stateParams, $aside, $location, Docs )
 	{
 		var keepalive,
-			id = 0,
-			pageChangeTimeout = {};
+			id = 0;
 
 		$scope.fullpath = '';
 
@@ -238,6 +230,8 @@
 
 		$scope.pagetitle = '';
 		$scope.sideindex = [];
+
+		$scope.docready = true;
 
 		if ( typeof $stateParams.path == 'undefined' || $stateParams.path == '' ) {
 			$stateParams.path = 'start';
@@ -260,7 +254,7 @@
 				return;
 			}
 
-			$timeout.cancel(pageChangeTimeout);
+			$scope.docready = false;
 
 			$rootScope.loading = true;
 
@@ -275,11 +269,11 @@
 
 			Docs.getPage($scope.fullpath)
 				.then(function(page){
-					pageChangeTimeout = $timeout(function(){
-						$scope.pagetitle = page.pagetitle;
-						$scope.sideindex = page.sideindex;
-						$scope.content = page.content;
+					$scope.pagetitle = page.pagetitle;
+					$scope.sideindex = page.sideindex;
+					$scope.content = page.content;
 
+					$timeout(function(){
 						angular.element('html, body').animate(
 							{scrollTop: 0},
 							200,
@@ -287,12 +281,13 @@
 						);
 
 						$rootScope.loading = false;
-					}, 40);
+						$scope.docready = true;
+					}, 80);
 
 					// Still have not figured out why .loading = false above "sometimes" fails
-					$timeout(function(){
+					/*$timeout(function(){
 						$rootScope.loading = false;
-					}, 4000);
+					}, 4000);*/
 				});
 		};
 
@@ -342,7 +337,7 @@
 		});
 	}
 
-	DocCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$aside', '$location', 'Docs'];
+	DocCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$animate', '$location', 'Docs'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 
