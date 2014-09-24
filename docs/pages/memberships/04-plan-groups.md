@@ -46,6 +46,8 @@ Please be careful when editing it and keep in mind that any change you make to i
 
 You can `publish` or `unpublish` a `Plan Group` (making it accessible or denying access in general) and set its visibility. An `invisible` `Plan Group` can still be linked to but will not show up on its own.
 
+Also note the `Direct Frontend Link` - you can use this URL to link somebody directly into the group (for instance when you build your own signup page).
+
 ### Details
 
 ![Plan Groups - Edit Details](../../img/plan-group-edit-general-details.png)
