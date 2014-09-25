@@ -337,7 +337,7 @@
 		});
 	}
 
-	DocCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$animate', '$location', 'Docs'];
+	DocCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$aside', '$location', 'Docs'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 
