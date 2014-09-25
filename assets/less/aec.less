@@ -163,11 +163,18 @@ ul.aec-sidenav {
 		}
 		.form-group {
 			margin: -12px 0 12px 0;
-			.form-control {
+			input.form-control {
 				border-radius: 24px;
 				background-color: transparent;
 				border-color: transparent;
 				color: #fff !important;
+				&::-webkit-input-placeholder,
+				&:-moz-placeholder,
+				&::-moz-placeholder,
+				&:-ms-input-placeholder {
+					color: #fff;
+				}
+
 				box-shadow: none;
 				.transition(400ms ease-in-out);
 				&:focus,
@@ -177,11 +184,11 @@ ul.aec-sidenav {
 					color: #333 !important;
 				}
 			}
-			.input-group-addon {
-				border-radius: 0 24px 24px 0;
+			.input-group-btn .btn {
 				background-color: transparent;
 				border-color: transparent;
 			}
+
 		}
 	}
 	.popover {

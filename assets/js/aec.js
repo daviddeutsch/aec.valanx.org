@@ -225,6 +225,7 @@
 			id = 0;
 
 		$scope.path = '';
+		$scope.indexFilter = '';
 
 		$scope.pages = [];
 

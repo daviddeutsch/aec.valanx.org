@@ -6441,7 +6441,7 @@ ul.aec-sidenav li.active > a {
 .aside .aside-dialog .aside-body .form-group {
   margin: -12px 0 12px 0;
 }
-.aside .aside-dialog .aside-body .form-group .form-control {
+.aside .aside-dialog .aside-body .form-group input.form-control {
   border-radius: 24px;
   background-color: transparent;
   border-color: transparent;
@@ -6451,14 +6451,19 @@ ul.aec-sidenav li.active > a {
   -o-transition: 400ms ease-in-out;
   transition: 400ms ease-in-out;
 }
-.aside .aside-dialog .aside-body .form-group .form-control:focus,
-.aside .aside-dialog .aside-body .form-group .form-control:hover {
+.aside .aside-dialog .aside-body .form-group input.form-control::-webkit-input-placeholder,
+.aside .aside-dialog .aside-body .form-group input.form-control:-moz-placeholder,
+.aside .aside-dialog .aside-body .form-group input.form-control::-moz-placeholder,
+.aside .aside-dialog .aside-body .form-group input.form-control:-ms-input-placeholder {
+  color: #fff;
+}
+.aside .aside-dialog .aside-body .form-group input.form-control:focus,
+.aside .aside-dialog .aside-body .form-group input.form-control:hover {
   background-color: #fff;
   border-color: #ddd;
   color: #333 !important;
 }
-.aside .aside-dialog .aside-body .form-group .input-group-addon {
-  border-radius: 0 24px 24px 0;
+.aside .aside-dialog .aside-body .form-group .input-group-btn .btn {
   background-color: transparent;
   border-color: transparent;
 }
