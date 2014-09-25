@@ -16,8 +16,22 @@
 				</h4>
 			</div>
 			<div class="aside-body">
+				<div class="clearfix">
+					<div class="form-group">
+						<div class="input-group">
+							<label for="indexFilter" class="sr-only">Search</label>
+							<input type="text"
+								   class="form-control"
+								   name="indexFilter"
+								   id="indexFilter"
+								   ng-model="indexFilter"
+								   placeholder="search" />
+							<div class="input-group-addon"><i class="fa fa-search"></i></div>
+						</div>
+					</div>
+				</div>
 				<ul class="list-unstyled">
-					<li ng-repeat="page in pages" class="am-fade-and-slide-right">
+					<li ng-repeat="page in pages | filter:indexFilter" class="am-fade-and-slide-right">
 						<a
 							ng-click="switchPage(page.path)"
 							ng-class="{active: page.path === path}"
@@ -27,8 +41,8 @@
 							<span class="index-page-title">{{page.title}}</span>
 						</a>
 						<!-- TODO: Display popover of children on hover -->
-						<ul ng-if="page.children && (page.path.split('/')[0] == path.split('/')[0])">
-							<li ng-repeat="child in page.children">
+						<ul ng-if="page.children && (((page.path.split('/')[0] == path.split('/')[0])) || indexFilter)">
+							<li ng-repeat="child in page.children | filter:indexFilter">
 								<a
 									ng-click="switchPage(child.path)"
 									ng-class="{active: child.path === path}"

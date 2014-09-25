@@ -6437,6 +6437,30 @@ ul.aec-sidenav li.active > a {
 .aside .aside-dialog .aside-body a.active {
   font-weight: 700;
 }
+.aside .aside-dialog .aside-body .form-group {
+  margin: -12px 0 24px 0;
+}
+.aside .aside-dialog .aside-body .form-group .form-control {
+  border-radius: 24px;
+  background-color: transparent;
+  border-color: transparent;
+  color: #fff !important;
+  box-shadow: none;
+  -webkit-transition: 400ms ease-in-out;
+  -o-transition: 400ms ease-in-out;
+  transition: 400ms ease-in-out;
+}
+.aside .aside-dialog .aside-body .form-group .form-control:focus,
+.aside .aside-dialog .aside-body .form-group .form-control:hover {
+  background-color: #fff;
+  border-color: #ddd;
+  color: #333 !important;
+}
+.aside .aside-dialog .aside-body .form-group .input-group-addon {
+  border-radius: 0 24px 24px 0;
+  background-color: transparent;
+  border-color: transparent;
+}
 .aside .popover {
   margin-left: 1em;
 }

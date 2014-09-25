@@ -162,6 +162,28 @@ ul.aec-sidenav {
 				font-weight: 700;
 			}
 		}
+		.form-group {
+			margin: -12px 0 24px 0;
+			.form-control {
+				border-radius: 24px;
+				background-color: transparent;
+				border-color: transparent;
+				color: #fff !important;
+				box-shadow: none;
+				.transition(400ms ease-in-out);
+				&:focus,
+				&:hover {
+					background-color: #fff;
+					border-color: #ddd;
+					color: #333 !important;
+				}
+			}
+			.input-group-addon {
+				border-radius: 0 24px 24px 0;
+				background-color: transparent;
+				border-color: transparent;
+			}
+		}
 	}
 	.popover {
 		margin-left: 1em;
