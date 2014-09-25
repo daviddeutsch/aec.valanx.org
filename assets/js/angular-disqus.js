@@ -208,7 +208,6 @@
 
 		return {
 			restrict : 'AC',
-			replace  : true,
 			scope    : {
 				id : '=disqus'
 			},
@@ -235,7 +234,7 @@
 							var height = "innerHeight" in window[0] ?
 									window[0].innerHeight
 									: document.documentElement.clientHeight,
-								doDisplay = false;
+								doDisplay;
 
 							// https://developer.mozilla.org/en-US/docs/Web/API/window.scrollY
 							var scroll = (window[0].pageYOffset !== undefined) ? window[0].pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;

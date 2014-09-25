@@ -267,6 +267,8 @@
 				$location.path("/docs/"+path);
 			}
 
+			angular.element('#disqus_thread').replaceWith('<div id="disqus_thread"><p class="text-center pulse" id="disqus-loading">preparing to load comments...</p></div>');
+
 			Docs.getPage($scope.fullpath)
 				.then(function(page){
 					$scope.pagetitle = page.pagetitle;
