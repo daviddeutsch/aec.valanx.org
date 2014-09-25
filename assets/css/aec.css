@@ -6404,12 +6404,13 @@ ul.aec-sidenav li.active > a {
   }
 }
 .aside-collapsed .aside-switch {
-  position: relative;
+  position: relative !important;
 }
 .aside .aside-switch {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   width: 290px;
+  z-index: 200;
 }
 .aside .aside-switch .btn {
   width: 100%;
