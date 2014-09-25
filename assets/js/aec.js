@@ -391,7 +391,7 @@
 
 			this.renderer.link = function (href, title, text) {
 				if ( href.substr(0, 4) != 'http' ) {
-					return '<a href ui-sref="docs({path:\'' + href + '\', doc:\'\'})">' + text + '</a>'
+					return '<a href ui-sref="docs({path:\'' + href + '\'})">' + text + '</a>'
 				} else {
 					return '<a href="' + href + '" target="_blank">' + text + '</a>'
 				}
