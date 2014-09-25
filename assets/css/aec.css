@@ -6383,6 +6383,7 @@ ul.aec-sidenav li.active > a {
 .aside {
   background: #aaa;
   min-width: 290px;
+  max-width: 320px;
 }
 .aside .aside-dialog .aside-header {
   background: #eee;
@@ -6438,7 +6439,7 @@ ul.aec-sidenav li.active > a {
   font-weight: 700;
 }
 .aside .aside-dialog .aside-body .form-group {
-  margin: -12px 0 24px 0;
+  margin: -12px 0 12px 0;
 }
 .aside .aside-dialog .aside-body .form-group .form-control {
   border-radius: 24px;
