@@ -6428,9 +6428,9 @@ ul.aec-sidenav li.active > a {
 }
 .aside .aside-dialog .aside-body a {
   text-decoration: none;
-  -webkit-transition: 400ms ease-in-out;
-  -o-transition: 400ms ease-in-out;
-  transition: 400ms ease-in-out;
+  -webkit-transition: 80ms ease-in-out;
+  -o-transition: 80ms ease-in-out;
+  transition: 80ms ease-in-out;
 }
 .aside .aside-dialog .aside-body a:hover {
   text-decoration: none;
