@@ -6295,6 +6295,11 @@ legend {
 #documentation-full {
   margin-top: 24px;
 }
+@media (max-width: 768px) {
+  #documentation-full {
+    padding-top: 90px;
+  }
+}
 #documentation-full h1 {
   font-weight: 700;
   text-align: center;
@@ -6383,10 +6388,43 @@ ul.aec-sidenav li.active > a {
 .aside {
   background: #aaa;
   min-width: 290px;
-  max-width: 320px;
+  max-width: 290px;
+  -webkit-transition: height 400ms ease-in-out;
+  -o-transition: height 400ms ease-in-out;
+  transition: height 400ms ease-in-out;
+}
+.aside-collapsed {
+  height: 114px;
+}
+@media (max-width: 480px) {
+  .aside-collapsed {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+.aside-collapsed .aside-switch {
+  position: relative;
+}
+.aside .aside-switch {
+  position: absolute;
+  bottom: 0px;
+  width: 290px;
+}
+.aside .aside-switch .btn {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  bottom: 0px;
+}
+@media (max-width: 480px) {
+  .aside .aside-switch {
+    width: 100% !important;
+  }
 }
 .aside .aside-dialog .aside-header {
   background: #eee;
+  z-index: 100;
 }
 .aside .aside-dialog .aside-header h4 {
   font-size: 34px;
@@ -6408,8 +6446,13 @@ ul.aec-sidenav li.active > a {
   text-decoration: none;
   margin-bottom: 2px;
 }
+.aside-body-collapsed {
+  display: none;
+}
 .aside .aside-dialog .aside-body {
   padding: 24px 36px;
+  z-index: 50;
+  overflow: hidden;
 }
 .aside .aside-dialog .aside-body ul {
   font-size: 16px;
@@ -6439,10 +6482,11 @@ ul.aec-sidenav li.active > a {
   font-weight: 700;
 }
 .aside .aside-dialog .aside-body .form-group {
-  margin: -12px 0 12px 0;
+  margin: -12px -12px 12px -12px;
 }
 .aside .aside-dialog .aside-body .form-group input.form-control {
   border-radius: 24px;
+  padding: 0 12px;
   background-color: transparent;
   border-color: transparent;
   color: #fff !important;
@@ -6886,6 +6930,13 @@ img.fullwidth {
   left: inherit;
   box-shadow: none;
   display: block;
+}
+a a:focus,
+a:active,
+button,
+button:focus,
+button:active {
+  outline: 0 !important;
 }
 @-webkit-keyframes pulse {
   from {

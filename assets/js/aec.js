@@ -234,6 +234,8 @@
 
 		$scope.docready = true;
 
+		$scope.extended = true;
+
 		if ( typeof $stateParams.path == 'undefined' || $stateParams.path == '' ) {
 			$stateParams.path = 'start/welcome';
 		}
@@ -278,7 +280,7 @@
 
 						$rootScope.loading = false;
 						$scope.docready = true;
-					}, 80);
+					}, 60);
 
 					// Still have not figured out why .loading = false above "sometimes" fails
 					/*$timeout(function(){

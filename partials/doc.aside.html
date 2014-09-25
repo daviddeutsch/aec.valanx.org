@@ -1,4 +1,4 @@
-<div class="aside">
+<div class="aside" ng-class="{'aside-collapsed': !extended}" ng-mouseover="extended = true">
 	<div class="aside-dialog">
 		<div class="aside-content">
 			<div class="aside-header">
@@ -10,13 +10,12 @@
 					<a href ui-sref="home">
 						<img src="/assets/img/aec-logo-red-small.png" alt="AEC"/>
 					</a>
-					<a href="http://aec.valanx.org/docs">
+					<a href ui-sref="docs({path:'start/welcome'})">
 						/docs
 					</a>
 				</h4>
 			</div>
-			<div class="aside-body">
-				<div class="clearfix">
+			<div class="aside-body" ng-class="{'aside-body-collapsed': !extended}">
 					<div class="form-group">
 						<div class="input-group">
 							<label for="indexFilter" class="sr-only">Search</label>
@@ -25,7 +24,7 @@
 								   name="indexFilter"
 								   id="indexFilter"
 								   ng-model="indexFilter"
-								   ng-model-options="{ debounce: {'default': 140, 'blur': 0} }"
+								   ng-model-options="{ debounce: {'default': 140} }"
 								   placeholder="search" />
 							<div class="input-group-btn">
 								<button class="btn btn-default" ng-click="indexFilter = ''">
@@ -33,7 +32,6 @@
 								</button>
 							</div>
 						</div>
-					</div>
 				</div>
 				<ul class="list-unstyled">
 					<li ng-repeat="page in pages | filter:indexFilter" class="am-fade-and-slide-right">
@@ -58,6 +56,11 @@
 						</ul>
 					</li>
 				</ul>
+			</div>
+			<div class="aside-switch">
+				<button class="btn btn-default" ng-click="extended = !extended">
+					<i class="fa" ng-class="{'fa-angle-double-up': extended, 'fa-angle-double-down': !extended}"></i>
+				</button>
 			</div>
 		</div>
 	</div>
