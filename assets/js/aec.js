@@ -33,7 +33,7 @@
 			})
 
 			.state('docs', {
-				url: '/docs/:path/:doc',
+				url: '/docs/{path:.*}',
 				views: {
 					"main": {
 						templateUrl: '/partials/doc.html'
@@ -224,7 +224,7 @@
 		var keepalive,
 			id = 0;
 
-		$scope.fullpath = '';
+		$scope.path = '';
 
 		$scope.pages = [];
 
@@ -234,21 +234,17 @@
 		$scope.docready = true;
 
 		if ( typeof $stateParams.path == 'undefined' || $stateParams.path == '' ) {
-			$stateParams.path = 'start';
-			$stateParams.doc = 'welcome';
+			$stateParams.path = 'start/welcome';
 		}
-
-		$scope.path = $stateParams.path;
-		$scope.doc = $stateParams.doc;
 
 		$scope.showComments = function() {
 			return !$scope.loading
-				&& ($scope.fullpath != 'start/welcome')
-				&& ($scope.fullpath != '');
+				&& ($scope.path != 'start/welcome')
+				&& ($scope.path != '');
 		};
 
 		$scope.switchPage = function(path) {
-			if ( $scope.fullpath == path ) {
+			if ( $scope.path == path ) {
 				$rootScope.loading = false;
 
 				return;
@@ -256,20 +252,17 @@
 
 			$scope.docready = false;
 
+			$scope.path = path;
+
 			$rootScope.loading = true;
 
-			$scope.fullpath = path;
-
-			$scope.path = path.split('/')[0];
-			$scope.doc = path.split('/')[1];
-
-			if( $location.path() != "/docs/"+path ) {
-				$location.path("/docs/"+path);
+			if( $location.path() != "/docs/" + $scope.path ) {
+				$location.path("/docs/" + $scope.path);
 			}
 
 			angular.element('#disqus_thread').replaceWith('<div id="disqus_thread"><p class="text-center pulse" id="disqus-loading">preparing to load comments...</p></div>');
 
-			Docs.getPage($scope.fullpath)
+			Docs.getPage($scope.path)
 				.then(function(page){
 					$scope.pagetitle = page.pagetitle;
 					$scope.sideindex = page.sideindex;
@@ -299,7 +292,7 @@
 				var lpath = $location.path();
 
 				if ( lpath.substr(1,4) === "docs" ) {
-					if ( lpath.substr(6) !== $scope.fullpath ) {
+					if ( lpath.substr(6) !== $scope.path ) {
 						$scope.switchPage(lpath.substr(6));
 					}
 				} else if ( lpath === "/" ) {
@@ -315,7 +308,7 @@
 			if ( Docs.index.length > id ) {
 				keepalive = $timeout(tick, 40);
 			} else {
-				$scope.switchPage($stateParams.path+'/'+$stateParams.doc);
+				$scope.switchPage($stateParams.path);
 			}
 		};
 

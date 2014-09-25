@@ -20,18 +20,18 @@
 					<li ng-repeat="page in pages" class="am-fade-and-slide-right">
 						<a
 							ng-click="switchPage(page.path)"
-							ng-class="{active: page.path.split('/')[0] === path}"
+							ng-class="{active: page.path === path}"
 							bs-popover
 							data-template="partials/doc.aside.tooltip.html"
 							>
 							<span class="index-page-title">{{page.title}}</span>
 						</a>
 						<!-- TODO: Display popover of children on hover -->
-						<ul ng-if="page.children && (page.path.split('/')[0] == path)">
+						<ul ng-if="page.children && (page.path.split('/')[0] == path.split('/')[0])">
 							<li ng-repeat="child in page.children">
 								<a
 									ng-click="switchPage(child.path)"
-									ng-class="{active: child.path.split('/')[1] === doc}"
+									ng-class="{active: child.path === path}"
 									>
 									<span class="index-page-title">{{child.title}}</span>
 								</a>
