@@ -483,7 +483,7 @@
 					.replace('../../../', '/')
 					.replace('../../', 'docs/');
 
-				return '<img src="' + src + '" title="' + title + '" alt="' + text + '"/>'
+				return '<img src="' + src + '" alt="' + text + '"/>'
 			};
 
 			marked.setOptions({
