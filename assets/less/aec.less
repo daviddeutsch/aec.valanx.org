@@ -171,11 +171,11 @@ ul.aec-sidenav {
 		}
 	}
 	&-switch {
-
 		position: fixed;
 		bottom: 0px;
 		width: 290px;
 		z-index: 200;
+		opacity: 1;
 		.btn {
 			width: 100%;
 			border: none;
@@ -185,6 +185,11 @@ ul.aec-sidenav {
 		}
 		@media (max-width: @screen-xs-min) {
 			width: 100% !important;
+		}
+	}
+	&-switch-min {
+		@media (max-width: @screen-xs-min) {
+			display: none;
 		}
 	}
 	&-switch-fixed {
@@ -292,7 +297,6 @@ ul.aec-sidenav {
 				z-index: 100;
 				background-color: transparent;
 				border-color: transparent;
-				height: 0px;
 				&.clickable {
 					height: auto;
 				}

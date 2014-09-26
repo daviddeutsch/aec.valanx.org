@@ -3,8 +3,7 @@
 	angular.module('aecApp', [
 		'ngAnimate', 'ui.router',
 		'ct.ui.router.extras', 'mgcrea.ngStrap',
-		'ngDisqus', 'hc.marked',
-		'ngScroll'
+		'ngDisqus', 'hc.marked'
 	]);
 
 	/**
@@ -133,37 +132,6 @@
 	scrollOnClickDirective.$inject = ['$location'];
 	angular.module('aecApp').directive('scrollOnClick', scrollOnClickDirective);
 
-
-	function scrollUpDirective( $parse, scroll )
-	{
-		return {
-			scope: {
-				callback: '=aecscrollUp'
-			},
-			link: function(scope, el, attr) {
-				var fn = $parse(scope.callback);
-
-				scroll.bind();
-
-				scope.lastdir = null;
-
-				scope.$on('scroll', function(event, data) {
-					if ( data.directionY == 'up' && data.directionY == scope.lastdir ) {
-						scope.$parent[fn]();
-
-						scope.lastdir = data.directionY
-					} else {
-						scope.lastdir = data.directionY;
-					}
-				});
-			}
-		};
-	}
-
-	scrollUpDirective.$inject = ['$parse', 'scroll'];
-	angular.module('aecApp').directive('aecScrollUp', scrollUpDirective);
-
-
 	/**
 	 * @name HomeCtrl
 	 *
@@ -290,10 +258,6 @@
 		if ( typeof $stateParams.path == 'undefined' || $stateParams.path == '' ) {
 			$stateParams.path = 'start/welcome';
 		}
-
-		$scope.collapseAside = function() {
-			$scope.extended = false
-		};
 
 		$scope.hoverLeave = function() {
 			$scope.extended = $scope.extendedPreference;

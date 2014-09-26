@@ -6435,6 +6435,7 @@ ul.aec-sidenav li.active > a {
   bottom: 0px;
   width: 290px;
   z-index: 200;
+  opacity: 1;
 }
 .aside-switch .btn {
   width: 100%;
@@ -6446,6 +6447,11 @@ ul.aec-sidenav li.active > a {
 @media (max-width: 480px) {
   .aside-switch {
     width: 100% !important;
+  }
+}
+@media (max-width: 480px) {
+  .aside-switch-min {
+    display: none;
   }
 }
 .aside-switch-fixed .btn {
@@ -6560,7 +6566,6 @@ ul.aec-sidenav li.active > a {
   z-index: 100;
   background-color: transparent;
   border-color: transparent;
-  height: 0px;
 }
 .aside .aside-dialog .aside-body .form-group button.clickable {
   height: auto;
