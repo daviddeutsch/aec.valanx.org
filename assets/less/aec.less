@@ -283,11 +283,20 @@ ul.aec-sidenav {
 					color: #333 !important;
 				}
 			}
-			.input-group-btn .btn {
+			button {
+				float: left;
+				display: inline-block;
+				position: absolute;
+				right: 2em;
+				top: 1.125em;
+				z-index: 100;
 				background-color: transparent;
 				border-color: transparent;
+				height: 0px;
+				&.clickable {
+					height: auto;
+				}
 			}
-
 		}
 	}
 	.popover {

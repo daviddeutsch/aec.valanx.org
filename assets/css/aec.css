@@ -6551,9 +6551,19 @@ ul.aec-sidenav li.active > a {
   border-color: #ddd;
   color: #333 !important;
 }
-.aside .aside-dialog .aside-body .form-group .input-group-btn .btn {
+.aside .aside-dialog .aside-body .form-group button {
+  float: left;
+  display: inline-block;
+  position: absolute;
+  right: 2em;
+  top: 1.125em;
+  z-index: 100;
   background-color: transparent;
   border-color: transparent;
+  height: 0px;
+}
+.aside .aside-dialog .aside-body .form-group button.clickable {
+  height: auto;
 }
 .aside .popover {
   margin-left: 1em;

@@ -16,22 +16,18 @@
 				</h4>
 			</div>
 			<div class="aside-body" ng-class="{'aside-body-collapsed': !extended}">
-					<div class="form-group">
-						<div class="input-group">
-							<label for="indexFilter" class="sr-only">Search</label>
-							<input type="text"
-								   class="form-control"
-								   name="indexFilter"
-								   id="indexFilter"
-								   ng-model="indexFilter"
-								   ng-model-options="{ debounce: {'default': 140} }"
-								   placeholder="search" />
-							<div class="input-group-btn">
-								<button class="btn btn-default" ng-click="indexFilter = ''">
-									<i class="fa" ng-class="{'fa-search': indexFilter=='', 'fa-times': indexFilter!=''}"></i>
-								</button>
-							</div>
-						</div>
+				<div class="form-group">
+					<label for="indexFilter" class="sr-only">Search</label>
+					<button ng-click="indexFilter = ''" ng-class="{'clickable': indexFilter!=''}">
+						<i class="fa" ng-class="{'fa-search': indexFilter=='', 'fa-times': indexFilter!=''}"></i>
+					</button>
+					<input type="text"
+						   class="form-control"
+						   name="indexFilter"
+						   id="indexFilter"
+						   ng-model="indexFilter"
+						   ng-model-options="{ debounce: {'default': 140} }"
+						   placeholder="search" />
 				</div>
 				<ul class="list-unstyled">
 					<li ng-repeat="page in pages | filter:indexFilter" class="am-fade-and-slide-right">
