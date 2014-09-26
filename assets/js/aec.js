@@ -266,6 +266,7 @@
 		$scope.docready = true;
 
 		$scope.extended = true;
+		$scope.extendedPreference = true;
 
 		if ( typeof $stateParams.path == 'undefined' || $stateParams.path == '' ) {
 			$stateParams.path = 'start/welcome';
@@ -273,6 +274,23 @@
 
 		$scope.collapseAside = function() {
 			$scope.extended = false
+		};
+
+		$scope.hoverLeave = function() {
+			$scope.extended = $scope.extendedPreference;
+		};
+
+		$scope.hoverEnter = function() {
+			$scope.extended = true;
+		};
+
+		$scope.toggleOpen = function() {
+			if ( $scope.extended && !$scope.extendedPreference ) {
+				$scope.extendedPreference = true;
+			} else {
+				$scope.extendedPreference = false;
+				$scope.extended = false;
+			}
 		};
 
 		$scope.showComments = function() {
