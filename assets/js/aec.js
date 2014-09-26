@@ -466,7 +466,9 @@
 
 				if ( (typeof el.id != 'undefined') && (el.id != "") ) {
 					if ( (el.localName == 'h1') && (title == '') ) {
-						title = el.innerHTML;
+						title = el.innerHTML
+							.replace('<strong>', '')
+							.replace('</strong>', '');
 					} else if ( el.localName == 'h2' ) {
 						pointer++;
 

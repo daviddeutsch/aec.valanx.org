@@ -1,4 +1,4 @@
-# Advanced Settings
+# **Advanced** Settings
 
 ## Customize
 

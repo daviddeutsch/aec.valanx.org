@@ -1,4 +1,4 @@
-# Eta Carinae Template
+# **Eta Carinae** Template
 
 ![Eta Carinae](../../../assets/img/carina-nebula-colorful.jpg)
 

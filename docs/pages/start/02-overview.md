@@ -1,4 +1,4 @@
-# Basic Concepts
+# Basic **Concepts**
 
 ![AEC Home Screen](../../../assets/img/aec-admin-home-faded.png)
 
