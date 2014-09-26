@@ -6296,7 +6296,7 @@ legend {
 #documentation-full {
   margin-top: 24px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   #documentation-full {
     padding-top: 90px;
   }
@@ -6392,18 +6392,24 @@ ul.aec-sidenav li.active > a {
   background: #aaa;
   min-width: 290px;
   max-width: 290px;
-  -webkit-transition: height 400ms ease-in-out;
-  -o-transition: height 400ms ease-in-out;
-  transition: height 400ms ease-in-out;
+  overflow: hidden;
+  -webkit-transition: 400ms ease-in-out;
+  -o-transition: 400ms ease-in-out;
+  transition: 400ms ease-in-out;
+}
+@media (max-width: 480px) {
+  .aside {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
 }
 .aside-collapsed {
   height: 114px;
 }
-@media (max-width: 480px) {
+@media (max-width: 992px) {
   .aside-collapsed {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: 100% !important;
+    height: 96px;
   }
 }
 .aside-collapsed .aside-switch {
@@ -6429,6 +6435,17 @@ ul.aec-sidenav li.active > a {
 .aside .aside-dialog .aside-header {
   background: #eee;
   z-index: 100;
+  padding: 2px 12px;
+}
+@media (min-width: 992px) {
+  .aside .aside-dialog .aside-header {
+    padding: 6px 15px;
+  }
+}
+@media (max-width: 992px) {
+  .aside .aside-dialog .aside-header .aside-title {
+    margin: 6px 0;
+  }
 }
 .aside .aside-dialog .aside-header h4 {
   font-size: 34px;

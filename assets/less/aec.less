@@ -13,7 +13,7 @@
 
 #documentation-full {
 	margin-top: 24px;
-	@media (max-width: @screen-sm-min) {
+	@media (max-width: @screen-md-min) {
 		padding-top: 90px;
 	}
 	h1 {
@@ -121,13 +121,18 @@ ul.aec-sidenav {
 	background: #aaa;
 	min-width: 290px;
 	max-width: 290px;
-	.transition(height 400ms ease-in-out);
+	overflow: hidden;
+	@media (max-width: @screen-xs-min) {
+		width: 100% !important;
+		min-width: 100% !important;
+		max-width: 100% !important;
+	}
+	.transition(400ms ease-in-out);
 	&-collapsed {
 		height: 114px;
-		@media (max-width: @screen-xs-min) {
-			width: 100% !important;
-			min-width: 100% !important;
-			max-width: 100% !important;
+
+		@media (max-width: @screen-md-min) {
+			height: 96px;
 		}
 		.aside-switch {
 			position: relative !important;
@@ -151,6 +156,15 @@ ul.aec-sidenav {
 	& &-dialog &-header {
 		background: #eee;
 		z-index: 100;
+		padding: 2px 12px;
+		@media (min-width: @screen-md-min) {
+			padding: 6px 15px;
+		}
+		.aside-title {
+			@media (max-width: @screen-md-min) {
+				margin: 6px 0;
+			}
+		}
 		h4 {
 			font-size: 34px;
 			color: #333;
