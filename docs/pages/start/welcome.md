@@ -2,7 +2,7 @@
 
 ![AEC](../../../assets/img/aec-logo-big.png)
 
-# Welcome to the AEC documentation
+# **Welcome** to the **AEC documentation**
 
 Let's get started! Right away, you probably want to check out how to [Install AEC](start/01-setup).
 
