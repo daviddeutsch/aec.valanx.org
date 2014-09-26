@@ -250,10 +250,11 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function DocCtrl( $scope, $rootScope, $timeout, $state, $stateParams, $aside, $location, Docs )
+	function DocCtrl( $window, $scope, $rootScope, $timeout, $state, $stateParams, $aside, $location, Docs )
 	{
 		var keepalive,
-			id = 0;
+			id = 0,
+			affix;
 
 		$scope.path = '';
 		$scope.indexFilter = '';
@@ -266,7 +267,25 @@
 		$scope.docready = true;
 
 		$scope.extended = true;
-		$scope.extendedPreference = true;
+
+		var resize = function(start) {
+			if ( $window.innerWidth <= 992 ) {
+				$scope.extendedPreference = false;
+			} else {
+				$scope.extended = true;
+				$scope.extendedPreference = true;
+			}
+
+			if ( typeof affix != 'undefined') {
+				affix.$onResize();
+			}
+
+			$scope.hoverLeave();
+		};
+
+		angular.element($window).bind("resize", function() {
+			$timeout(resize, 100);
+		});
 
 		if ( typeof $stateParams.path == 'undefined' || $stateParams.path == '' ) {
 			$stateParams.path = 'start/welcome';
@@ -372,7 +391,7 @@
 			}
 		};
 
-		var aside = $aside({
+		aside = $aside({
 				scope: $scope,
 				template: 'partials/doc.aside.html',
 				placement: 'left',
@@ -381,6 +400,8 @@
 				keyboard: false,
 				container: '#background'
 			});
+
+		resize(true);
 
 		Docs.init()
 			.then(function(){
@@ -392,7 +413,7 @@
 		});
 	}
 
-	DocCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$aside', '$location', 'Docs'];
+	DocCtrl.$inject = ['$window', '$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$aside', '$location', 'Docs'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 

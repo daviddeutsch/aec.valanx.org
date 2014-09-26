@@ -6349,7 +6349,7 @@ legend {
 }
 ul.aec-sidenav {
   margin-top: 140px;
-  width: 300px;
+  min-width: 212px;
 }
 ul.aec-sidenav li a {
   display: block;
@@ -6391,7 +6391,7 @@ ul.aec-sidenav li.active > a {
   border-left: 1px solid #B94846;
 }
 .aside {
-  background: #fff;
+  background: transparent;
   min-width: 290px;
   max-width: 290px;
   overflow: hidden;
@@ -6431,7 +6431,6 @@ ul.aec-sidenav li.active > a {
   }
 }
 .aside-switch {
-  background: #fff;
   position: fixed;
   bottom: 0px;
   width: 290px;
@@ -6454,7 +6453,7 @@ ul.aec-sidenav li.active > a {
 }
 .aside .aside-dialog {
   background: #aaa;
-  height: 100%;
+  height: 98%;
 }
 .aside .aside-dialog .aside-header {
   background: #eee;

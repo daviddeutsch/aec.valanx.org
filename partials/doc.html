@@ -1,11 +1,11 @@
 <div id="main">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-2 col-md-0">
+			<div class="col-lg-2 col-md-3 col-sm-0 col-xs-0">
 				<div class="bs-sidebar hidden-print" role="complementary" data-offset-top="-80" bs-affix></div>
 			</div>
 			<div ng-controller="DocCtrl">
-				<div class="col-md-8" id="documentation-full">
+				<div class="col-lg-8 col-md-7 col-sm-11 col-xs-12" id="documentation-full">
 					<div id="content-inner" ng-bind-html="content" class="am-fade" ng-if="docready">
 					</div>
 
@@ -18,7 +18,7 @@
 						<div disqus="'http://aec.valanx.org/docs/' + path"></div>
 					</div>
 				</div>
-				<div class="col-md-2 hidden-sm hidden-xs">
+				<div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
 					<ul class="aec-sidenav nav am-fade-and-slide-left" ng-show="sideindex.length" bs-scrollspy-list bs-affix>
 						<li><h4>{{pagetitle}}</h4></li>
 						<li ng-repeat="item in sideindex" bs-scrollspy data-target="{{item.id}}" data-offset="180">
