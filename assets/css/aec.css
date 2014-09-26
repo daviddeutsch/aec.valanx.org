@@ -6303,6 +6303,7 @@ legend {
 }
 #documentation-full h1 {
   font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-size: 50px;
   font-weight: 700;
   text-align: center;
   display: inline-block;
