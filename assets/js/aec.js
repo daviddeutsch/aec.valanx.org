@@ -306,6 +306,10 @@
 				return;
 			}
 
+			if ( !$scope.extendedPreference ) {
+				$scope.extended = false;
+			}
+
 			$scope.docready = false;
 
 			$scope.path = path;

@@ -6303,7 +6303,6 @@ legend {
 }
 #documentation-full h1 {
   font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
-  font-size: 41px;
   font-weight: 500;
   text-align: center;
   display: inline-block;
@@ -6391,19 +6390,24 @@ ul.aec-sidenav li.active > a {
   border-left: 1px solid #B94846;
 }
 .aside {
-  background: #aaa;
+  background: #fff;
   min-width: 290px;
   max-width: 290px;
   overflow: hidden;
-  -webkit-transition: 400ms ease-in-out;
-  -o-transition: 400ms ease-in-out;
-  transition: 400ms ease-in-out;
+  -webkit-transition: 240ms ease-in-out;
+  -o-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
 }
 @media (max-width: 480px) {
   .aside {
     width: 100% !important;
     min-width: 100% !important;
     max-width: 100% !important;
+  }
+}
+@media (max-width: 1200px) {
+  .aside {
+    opacity: 0.8;
   }
 }
 .aside-collapsed {
@@ -6417,22 +6421,39 @@ ul.aec-sidenav li.active > a {
 .aside-collapsed .aside-switch {
   position: relative !important;
 }
-.aside .aside-switch {
+.aside-collapsed .aside-dialog {
+  height: auto !important;
+}
+@media (max-width: 1200px) {
+  .aside:hover {
+    opacity: 1;
+  }
+}
+.aside-switch {
+  background: #fff;
   position: fixed;
   bottom: 0px;
   width: 290px;
   z-index: 200;
 }
-.aside .aside-switch .btn {
+.aside-switch .btn {
   width: 100%;
   border: none;
-  border-radius: 0;
+  border-radius: 0 0 24px 24px;
   bottom: 0px;
+  background: #ddd;
 }
 @media (max-width: 480px) {
-  .aside .aside-switch {
+  .aside-switch {
     width: 100% !important;
   }
+}
+.aside-switch-fixed .btn {
+  border-radius: 0 0 0 0;
+}
+.aside .aside-dialog {
+  background: #aaa;
+  height: 100%;
 }
 .aside .aside-dialog .aside-header {
   background: #eee;
@@ -6450,7 +6471,7 @@ ul.aec-sidenav li.active > a {
   }
 }
 .aside .aside-dialog .aside-header h4 {
-  font-size: 34px;
+  font-size: 37px;
   color: #333;
 }
 .aside .aside-dialog .aside-header h4 img {

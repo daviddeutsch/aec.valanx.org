@@ -57,11 +57,12 @@
 					</li>
 				</ul>
 			</div>
-			<div class="aside-switch">
-				<button class="btn btn-default" ng-click="toggleOpen()">
-					<i class="fa" ng-class="{'fa-angle-double-up': extendedPreference && extended, 'fa-angle-double-down': !extendedPreference && extended, 'fa-angle-down': !extendedPreference && !extended}"></i>
-				</button>
-			</div>
+
 		</div>
+	</div>
+	<div class="aside-switch" ng-class="{'aside-switch-fixed': extendedPreference && extended}">
+		<button class="btn btn-default" ng-click="toggleOpen()">
+			<i class="fa" ng-class="{'fa-angle-double-up': extendedPreference && extended, 'fa-angle-double-down': !extendedPreference && extended, 'fa-angle-down': !extendedPreference && !extended}"></i>
+		</button>
 	</div>
 </div>
