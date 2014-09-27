@@ -6483,9 +6483,6 @@ ul.aec-sidenav li.active > a {
 .aside .aside-dialog .aside-header h4 img {
   vertical-align: top;
 }
-.aside .aside-dialog .aside-header h4 span {
-  color: #222;
-}
 .aside .aside-dialog .aside-header h4 a {
   text-decoration: none;
   -webkit-transition: 400ms ease-in-out;
