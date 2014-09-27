@@ -205,7 +205,6 @@
 	 * Used to display the comments block for a thread.
 	 */
 	disqusModule.directive('disqus', [ '$disqus', '$timeout', '$window', function($disqus, $timeout, $window) {
-
 		return {
 			restrict : 'AC',
 			scope    : {
@@ -213,11 +212,12 @@
 			},
 			template : '<div id="disqus_thread"><p class="text-center pulse" id="disqus-loading">preparing to load comments...</p></div>',
 			link: function link(scope, element) {
+				var start = true;
+
 				var disqusWatcher = function(id) {
 					if (angular.isDefined(id)) {
 						var displayed = false,
-							window = angular.element($window ),
-							start = true;
+							window = angular.element($window);
 
 						var display = function() {
 							$disqus.commit(id);
@@ -228,7 +228,6 @@
 
 							displayed = true;
 						};
-
 
 						var onScroll = function () {
 							var height = "innerHeight" in window[0] ?
