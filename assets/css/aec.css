@@ -6349,7 +6349,7 @@ legend {
 }
 ul.aec-sidenav {
   margin-top: 140px;
-  min-width: 212px;
+  width: 100%;
 }
 ul.aec-sidenav li a {
   display: block;
@@ -6392,12 +6392,38 @@ ul.aec-sidenav li.active > a {
 }
 .aside {
   background: transparent;
-  min-width: 290px;
-  max-width: 290px;
   overflow: hidden;
-  -webkit-transition: 240ms ease-in-out;
-  -o-transition: 240ms ease-in-out;
-  transition: 240ms ease-in-out;
+  -webkit-transition: opacity 240ms ease-in-out;
+  -o-transition: opacity 240ms ease-in-out;
+  transition: opacity 240ms ease-in-out;
+}
+@media (min-width: 1200px) {
+  .aside {
+    width: 16.66666667%;
+    min-width: 16.66666667%;
+    max-width: 16.66666667%;
+  }
+}
+@media (max-width: 1200px) {
+  .aside {
+    width: 25%;
+    min-width: 25%;
+    max-width: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .aside {
+    width: 41.66666667%;
+    min-width: 41.66666667%;
+    max-width: 41.66666667%;
+  }
+}
+@media (max-width: 992px) {
+  .aside {
+    width: 41.66666667%;
+    min-width: 41.66666667%;
+    max-width: 41.66666667%;
+  }
 }
 @media (max-width: 480px) {
   .aside {
@@ -6406,26 +6432,36 @@ ul.aec-sidenav li.active > a {
     max-width: 100% !important;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1320px) {
   .aside {
     opacity: 0.8;
   }
 }
 .aside-collapsed {
-  height: 114px;
-}
-@media (max-width: 992px) {
-  .aside-collapsed {
-    height: 96px;
-  }
+  height: 120px;
 }
 .aside-collapsed .aside-switch {
   position: relative !important;
+  width: 100% !important;
 }
 .aside-collapsed .aside-dialog {
   height: auto !important;
 }
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
+  .aside-collapsed {
+    width: 41.66666667%;
+    min-width: 41.66666667%;
+    max-width: 41.66666667%;
+  }
+}
+@media (max-width: 992px) {
+  .aside-collapsed {
+    width: 41.66666667%;
+    min-width: 41.66666667%;
+    max-width: 41.66666667%;
+  }
+}
+@media (max-width: 1320px) {
   .aside:hover {
     opacity: 1;
   }
@@ -6433,7 +6469,6 @@ ul.aec-sidenav li.active > a {
 .aside-switch {
   position: fixed;
   bottom: 0px;
-  width: 290px;
   z-index: 200;
   opacity: 1;
 }
@@ -6444,9 +6479,24 @@ ul.aec-sidenav li.active > a {
   bottom: 0px;
   background: #ddd;
 }
+@media (min-width: 1200px) {
+  .aside-switch {
+    width: 16.66666667%;
+  }
+}
+@media (max-width: 1200px) {
+  .aside-switch {
+    width: 25%;
+  }
+}
+@media (max-width: 992px) {
+  .aside-switch {
+    width: 41.66666667%;
+  }
+}
 @media (max-width: 480px) {
   .aside-switch {
-    width: 100% !important;
+    width: 100%;
   }
 }
 @media (max-width: 480px) {
@@ -6464,16 +6514,22 @@ ul.aec-sidenav li.active > a {
 .aside .aside-dialog .aside-header {
   background: #eee;
   z-index: 100;
-  padding: 2px 12px;
+  padding: 2px 2px 4px 12px;
+  width: 200%;
 }
 @media (min-width: 992px) {
   .aside .aside-dialog .aside-header {
-    padding: 6px 15px;
+    padding: 6px 2px 6px 12px;
+  }
+}
+@media (max-width: 480px) {
+  .aside .aside-dialog .aside-header {
+    padding: 2px 2px 0px 8px;
   }
 }
 @media (max-width: 992px) {
   .aside .aside-dialog .aside-header .aside-title {
-    margin: 6px 0;
+    margin: 6px 2px;
   }
 }
 .aside .aside-dialog .aside-header h4 {
@@ -6482,6 +6538,13 @@ ul.aec-sidenav li.active > a {
 }
 .aside .aside-dialog .aside-header h4 img {
   vertical-align: top;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+@media (max-width: 1200px) {
+  .aside .aside-dialog .aside-header h4 img {
+    font-size: 29px;
+  }
 }
 .aside .aside-dialog .aside-header h4 a {
   text-decoration: none;

@@ -90,7 +90,7 @@
 
 ul.aec-sidenav {
 	margin-top: 140px;
-	min-width: 212px;
+	width: 100%;
 	li {
 		a {
 			display: block;
@@ -136,44 +136,70 @@ ul.aec-sidenav {
 	}
 }
 
+@aside-width-lg: percentage((2 / @grid-columns));
+@aside-width-md: percentage((3 / @grid-columns));
+@aside-width-mdl: percentage((5 / @grid-columns));
+
 .aside {
 	background: transparent;
-	min-width: 290px;
-	max-width: 290px;
 	overflow: hidden;
+	@media (min-width: @screen-lg-min) {
+		width: @aside-width-lg;
+		min-width: @aside-width-lg;
+		max-width: @aside-width-lg;
+	}
+	@media (max-width: @screen-lg-min) {
+		width: @aside-width-md;
+		min-width: @aside-width-md;
+		max-width: @aside-width-md;
+	}
+	@media (max-width: @screen-sm-min) {
+		width: @aside-width-mdl;
+		min-width: @aside-width-mdl;
+		max-width: @aside-width-mdl;
+	}
+	@media (max-width: @screen-md-min) {
+		width: @aside-width-mdl;
+		min-width: @aside-width-mdl;
+		max-width: @aside-width-mdl;
+	}
 	@media (max-width: @screen-xs-min) {
 		width: 100% !important;
 		min-width: 100% !important;
 		max-width: 100% !important;
 	}
-
-	@media (max-width: @screen-lg-min) {
+	@media (max-width: ceil((@screen-lg-min + 120))) {
 		opacity: 0.8;
 	}
-
-	.transition(240ms ease-in-out);
+	.transition(opacity 240ms ease-in-out);
 	&-collapsed {
-		height: 114px;
-
-		@media (max-width: @screen-md-min) {
-			height: 96px;
-		}
+		height: 120px;
 		.aside-switch {
 			position: relative !important;
+			width: 100% !important;
 		}
 		.aside-dialog {
 			height: auto !important;
 		}
+		@media (max-width: @screen-sm-min) {
+			width: @aside-width-mdl;
+			min-width: @aside-width-mdl;
+			max-width: @aside-width-mdl;
+		}
+		@media (max-width: @screen-md-min) {
+			width: @aside-width-mdl;
+			min-width: @aside-width-mdl;
+			max-width: @aside-width-mdl;
+		}
 	}
 	&:hover {
-		@media (max-width: @screen-lg-min) {
+		@media (max-width: ceil((@screen-lg-min + 120))) {
 			opacity: 1;
 		}
 	}
 	&-switch {
 		position: fixed;
 		bottom: 0px;
-		width: 290px;
 		z-index: 200;
 		opacity: 1;
 		.btn {
@@ -183,8 +209,17 @@ ul.aec-sidenav {
 			bottom: 0px;
 			background: #ddd;
 		}
+		@media (min-width: @screen-lg-min) {
+			width: @aside-width-lg;
+		}
+		@media (max-width: @screen-lg-min) {
+			width: @aside-width-md;
+		}
+		@media (max-width: @screen-md-min) {
+			width: @aside-width-mdl;
+		}
 		@media (max-width: @screen-xs-min) {
-			width: 100% !important;
+			width: 100%;
 		}
 	}
 	&-switch-min {
@@ -204,13 +239,17 @@ ul.aec-sidenav {
 	& &-dialog &-header {
 		background: #eee;
 		z-index: 100;
-		padding: 2px 12px;
+		padding: 2px 2px 4px 12px;
+		width: 200%;
 		@media (min-width: @screen-md-min) {
-			padding: 6px 15px;
+			padding: 6px 2px 6px 12px;
+		}
+		@media (max-width: @screen-xs-min) {
+			padding: 2px 2px 0px 8px;
 		}
 		.aside-title {
 			@media (max-width: @screen-md-min) {
-				margin: 6px 0;
+				margin: 6px 2px;
 			}
 		}
 		h4 {
@@ -218,8 +257,12 @@ ul.aec-sidenav {
 			color: #333;
 			img {
 				vertical-align: top;
+				margin-left: -6px;
+				margin-right: -6px;
+				@media (max-width: @screen-lg-min) {
+					font-size: ceil((@font-size-h1 * 0.7));
+				}
 			}
-
 			a {
 				text-decoration: none;
 				.transition(400ms ease-in-out);
