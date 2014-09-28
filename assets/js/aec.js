@@ -563,7 +563,11 @@
 				} else {
 					previous = self.index[res[0]].children[res[1]-1];
 
-					next = self.index[res[0]].children[res[1]+1];
+					if ( (res[1]+1) < self.index[res[0]].children.length ) {
+						next = self.index[res[0]].children[res[1]+1];
+					} else {
+						next = self.index[res[0]+1];
+					}
 				}
 
 				deferred.resolve({

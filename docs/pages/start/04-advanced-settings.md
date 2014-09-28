@@ -58,7 +58,9 @@ These Settings determine how fast AEC reacts to certain changes. For instance - 
 
 If you want to trigger heartbeats on your own schedule, you can call the frontend with:
 
-http://www.youdomain.com/index.php?option=com_acctexp&task=heartbeat&hash=HASH
+```
+yourdomain.com/index.php?option=com_acctexp&task=heartbeat&hash=HASH
+```
 
 And provide the hash that you set in the settings. Also note the backend heartbeat setting - it usually makes sense to trigger them more often on the backend. Heartbeats can take a bit of time, so it's better to inflict them on administrators and not customers.
 
