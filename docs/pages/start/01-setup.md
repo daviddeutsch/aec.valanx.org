@@ -44,7 +44,9 @@ To ensure that AEC runs properly, it automatically installs and activates a numb
 
 AEC has quite an elaborate setup routine that does a number of system checks. If you ever find yourself wanting to do the whole thing again, but you don't want to upload the entire component, just call this URL:
 
-http://www.yourserver.com/administrator/index.php?option=com_acctexp&task=recallinstall
+```
+yourserver.com/administrator/index.php?option=com_acctexp&task=recallinstall
+```
 
 This can be helpful, for instance, when you're writing your own processor as one of the things that the setup routines checks are updating whether the processor information has changed.
 

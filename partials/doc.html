@@ -8,9 +8,26 @@
 				<div class="col-lg-8 col-md-7 col-sm-12" id="documentation-full">
 					<div id="content-inner" ng-bind-html="content" class="am-fade" ng-if="docready">
 					</div>
-
-					<div id="comments" ng-show="showComments()">
-						<hr/>
+					<div ng-if="(siblings.previous.title != '') && siblings.next.title != ''">
+						<br/>
+						<br/>
+						<div id="pager" class="col-md-12 clearfix">
+							<div class="col-md-6">
+								<a ui-sref="docs({path:siblings.previous.path})" ng-if="siblings.previous.title != ''">
+									<i class="fa fa-arrow-left"></i>&nbsp;{{siblings.previous.title}}
+								</a>
+							</div>
+							<div class="col-md-6 text-right">
+								<a ui-sref="docs({path:siblings.next.path})" ng-if="siblings.next.title != ''">
+									{{siblings.next.title}}&nbsp;<i class="fa fa-arrow-right"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<br/>
+					<br/>
+					<div id="comments" class="col-md-12 clearfix" ng-show="showComments()">
 						<h4>Any Questions or Suggestions?</h4>
 						<p>Please join the discussion if you're stuck on this topic and need us to clarify something or improve the documentation for you.</p>
 						<p>Want to improve this page yourself? Sweet! You can send in a

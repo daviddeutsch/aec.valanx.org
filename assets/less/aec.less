@@ -535,8 +535,18 @@ img.fullwidth {
 	background-image: url(../img/carina-nebula-colorful.jpg);
 }
 
+#pager {
+	opacity: 0.6;
+	.transition(opacity 240ms ease-in-out);
+	&:hover {
+		opacity: 1;
+	}
+	i {
+		margin: 0 12px;
+	}
+}
+
 #comments {
-	margin-top: 120px;
 	min-height: 400px;
 }
 

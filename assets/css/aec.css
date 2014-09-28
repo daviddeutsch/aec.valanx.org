@@ -6804,8 +6804,19 @@ img.fullwidth {
 .carina-inject-colorful {
   background-image: url(../img/carina-nebula-colorful.jpg);
 }
+#pager {
+  opacity: 0.6;
+  -webkit-transition: opacity 240ms ease-in-out;
+  -o-transition: opacity 240ms ease-in-out;
+  transition: opacity 240ms ease-in-out;
+}
+#pager:hover {
+  opacity: 1;
+}
+#pager i {
+  margin: 0 12px;
+}
 #comments {
-  margin-top: 120px;
   min-height: 400px;
 }
 .processor-sprite {

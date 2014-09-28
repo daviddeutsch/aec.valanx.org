@@ -229,6 +229,15 @@
 
 		$scope.pages = [];
 
+		var resetSiblings = function() {
+			$scope.siblings = {
+				previous: { title: '', path: '' },
+				next: { title: '', path: '' }
+			};
+		};
+
+		resetSiblings();
+
 		$scope.pagetitle = '';
 		$scope.sideindex = [];
 
@@ -299,6 +308,8 @@
 
 			$rootScope.loading = true;
 
+			resetSiblings();
+
 			if( $location.path() != "/docs/" + $scope.path ) {
 				$location.path("/docs/" + $scope.path);
 			}
@@ -317,6 +328,11 @@
 							200,
 							'easeInOutQuint'
 						);
+
+						Docs.pageSiblings($scope.path)
+							.then(function(siblings){
+								$scope.siblings = siblings;
+							});
 
 						$rootScope.loading = false;
 						$scope.docready = true;
@@ -501,6 +517,64 @@
 				deferred.resolve({
 					title: title,
 					tree: tree
+				});
+			});
+
+			return deferred.promise;
+		};
+
+		this.pageSiblings = function(path) {
+			var deferred = $q.defer(),
+				seek = $q.defer(),
+				catid = 0;
+
+			angular.forEach(this.index, function(category){
+				var childid = 0;
+
+				if ( category.path == path ) {
+					seek.resolve([catid, -1]);
+				}
+
+				angular.forEach(category.children, function(child){
+					if ( child.path == path ) {
+						seek.resolve([catid, childid]);
+					}
+
+					childid++;
+				});
+
+				catid++;
+			});
+
+			seek.promise.then(function(res){
+				var previous = { title: '', path: '' },
+					next = { title: '', path: '' };
+
+				if (res[1] == -1) {
+					if ( res[0] > 0 ) {
+						previous = self.index[res[0]-1].children[self.index[res[0]-1].children.length-1];
+					}
+
+					next = self.index[res[0]].children[res[1]+1];
+				} else if (res[1] == 0) {
+					previous = self.index[res[0]];
+
+					next = self.index[res[0]].children[res[1]+1];
+				} else {
+					previous = self.index[res[0]].children[res[1]-1];
+
+					next = self.index[res[0]].children[res[1]+1];
+				}
+
+				deferred.resolve({
+					previous: {
+						title: previous.title,
+						path: previous.path
+					},
+					next: {
+						title: next.title,
+						path: next.path
+					}
 				});
 			});
 
