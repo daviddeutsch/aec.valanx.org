@@ -8,22 +8,23 @@
 				<div class="col-lg-8 col-md-7 col-sm-12" id="documentation-full">
 					<div id="content-inner" ng-bind-html="content" class="am-fade" ng-if="docready">
 					</div>
-					<div ng-if="(siblings.previous.title != '') && siblings.next.title != ''">
+					<div ng-hide="(siblings.previous.title == '') && (siblings.next.title == '')">
 						<br/>
 						<br/>
 						<div id="pager" class="col-md-12 clearfix">
 							<div class="col-md-6">
-								<a ui-sref="docs({path:siblings.previous.path})" ng-if="siblings.previous.title != ''">
+								<a class="btn btn-sm btn-danger" ui-sref="docs({path:siblings.previous.path})" ng-if="siblings.previous.title != ''">
 									<i class="fa fa-arrow-left"></i>&nbsp;{{siblings.previous.title}}
 								</a>
 							</div>
 							<div class="col-md-6 text-right">
-								<a ui-sref="docs({path:siblings.next.path})" ng-if="siblings.next.title != ''">
+								<a class="btn btn-sm btn-danger" ui-sref="docs({path:siblings.next.path})" ng-if="siblings.next.title != ''">
 									{{siblings.next.title}}&nbsp;<i class="fa fa-arrow-right"></i>
 								</a>
 							</div>
 						</div>
 					</div>
+					<br/>
 					<br/>
 					<br/>
 					<br/>
