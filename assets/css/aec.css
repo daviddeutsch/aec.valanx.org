@@ -6374,7 +6374,7 @@ ul.aec-sidenav li ul {
   margin-bottom: 12px;
 }
 ul.aec-sidenav li ul a {
-  padding: 4px 20px;
+  padding: 4px 0 4px 26px;
 }
 ul.aec-sidenav li ul a:focus,
 ul.aec-sidenav li ul a:hover {
@@ -6387,7 +6387,6 @@ ul.aec-sidenav li.active ul {
 ul.aec-sidenav li.active:focus > a,
 ul.aec-sidenav li.active:hover > a,
 ul.aec-sidenav li.active > a {
-  padding-right: 13px;
   font-weight: 700;
   color: #B94846;
   background-color: transparent;
