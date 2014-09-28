@@ -8,7 +8,7 @@
 
 Anything you sell through AEC has to be captured within a `Payment Plan`. It's the blueprint for a users `Membership` and can have additional functionality attached depending on the kind of functionality you're trying to achieve.
 
-Read more about `Payment Plans` [here](memberships/02-payment-plans).
+Read more about [Payment Plans](memberships/02-payment-plans).
 
 ### Memberships
 
@@ -18,13 +18,13 @@ Once a user has purchased a `Payment Plan`, a new `Membership` is created and at
 
 The lifecycle of the `Membership` (from payment to expiration) has events attached to it that can trigger additional functionality (like expiration notifications on expiration).
 
-Read more about `Memberships` [here](memberships/01-memberships).
+Read more about [Memberships](memberships/01-memberships).
 
 ### Micro Integrations
 
 `Payment Plans` themselves do not have very much functionality, but you can extend their basic features by attaching `Micro Integrations` to them. You can think of them as plugins for `Payment Plans` - the difference to Joomla System plugins being that you can create unlimited instances that each have different settings.
 
-Read more about `Micro Integrations` [here](memberships/01-memberships).
+Read more about [Micro Integrations](memberships/01-memberships).
 
 ## Quicksearch
 

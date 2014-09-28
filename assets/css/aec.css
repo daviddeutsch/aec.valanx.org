@@ -6331,6 +6331,9 @@ legend {
 }
 #documentation-full a {
   color: #b94846;
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-size: 19px;
+  font-weight: 600;
 }
 #documentation-full img {
   display: block;

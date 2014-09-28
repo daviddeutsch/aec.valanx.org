@@ -20,7 +20,7 @@ Once the plan is paid for, the user gets an active subscription - if you don't w
 
 By default, payment plans take the role of a `Primary` subscription once applied, but you can also make them `Secondary`. If it is a `Secondary` subscription, you can make it at least search for another existing, similar subscription that gets updated with this subscription with `Update Existing`. This prevents the system from creating a new `Secondary` membership for every single time this plan has been purchased.
 
-You can learn more about `Primary` and `Secondary` Memberships [here](memberships/01-memberships).
+You can learn more about `Primary` and `Secondary` [Memberships](memberships/01-memberships).
 
 The URL put into `Always Redirect` is a hard redirect - when the user chooses this plan, it instead redirects to something else.
 
