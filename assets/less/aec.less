@@ -13,6 +13,7 @@
 
 #documentation-full {
 	margin-top: 24px;
+	margin-bottom: 220px;
 	@media (max-width: @screen-md-min) {
 		padding-top: 90px;
 	}
@@ -65,14 +66,6 @@
 		line-height: 1.8em;
 	}
 
-	a {
-		color: #b94846;
-		font-family: @font-family-serif;
-		font-size: ceil((@font-size-base * 1.15));
-		font-weight: 600;
-
-	}
-
 	img {
 		display: block;
 		margin: 24px auto;
@@ -88,12 +81,17 @@
 	}
 }
 
-#documentation-full {
-	margin-bottom: 220px;
+#content-inner {
+	a {
+		color: #b94846;
+		font-family: @font-family-serif;
+		font-size: ceil((@font-size-base * 1.15));
+		font-weight: 600;
+	}
+
 }
 
 ul.aec-sidenav {
-	margin-top: 140px;
 	width: 100%;
 	li {
 		a {
@@ -534,7 +532,7 @@ img.fullwidth {
 	background-image: url(../img/carina-nebula-colorful.jpg);
 }
 
-#pager {
+.pager {
 	opacity: 0.5;
 	.transition(opacity 240ms ease-in-out);
 	&:hover {
@@ -553,10 +551,57 @@ img.fullwidth {
 		color: #B94846;
 		background: #fff;
 		border-radius: 42px;
+		position: absolute;
+		left: 4px;
 	}
 	.text-right {
 		i {
 			margin: 0 2px 0 6px;
+			left: unset;
+			right: 4px;
+		}
+		.btn {
+			float: right;
+		}
+	}
+	.btn {
+		float: left;
+		margin: 6px 0;
+		@media (max-width: @screen-sm-min) {
+			width: 100%;
+		}
+	}
+}
+
+#sidenav {
+	margin-top: 140px;
+	&.affix {
+		width: @aside-width-lg;
+	}
+	&.affix-top {
+		width: 200%;
+		.pager {
+			.text-right {
+				.btn {
+					float: none;
+				}
+			}
+			.btn {
+				float: none;
+			}
+		}
+	}
+	.pager {
+		opacity: 0.3;
+		&:hover {
+			opacity: 1;
+		}
+		.col-md-6 {
+			width: 100%;
+			margin-top: 12px;
+		}
+		.btn {
+			width: 100%;
 		}
 	}
 }

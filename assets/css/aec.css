@@ -6295,6 +6295,7 @@ legend {
 }
 #documentation-full {
   margin-top: 24px;
+  margin-bottom: 220px;
 }
 @media (max-width: 992px) {
   #documentation-full {
@@ -6329,12 +6330,6 @@ legend {
   margin-bottom: 12px;
   line-height: 1.8em;
 }
-#documentation-full a {
-  color: #b94846;
-  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
-  font-size: 19px;
-  font-weight: 600;
-}
 #documentation-full img {
   display: block;
   margin: 24px auto;
@@ -6347,11 +6342,13 @@ legend {
   border-bottom: 4px solid #eee;
   border-radius: 0;
 }
-#documentation-full {
-  margin-bottom: 220px;
+#content-inner a {
+  color: #b94846;
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-size: 19px;
+  font-weight: 600;
 }
 ul.aec-sidenav {
-  margin-top: 140px;
   width: 100%;
 }
 ul.aec-sidenav li a {
@@ -6803,31 +6800,75 @@ img.fullwidth {
 .carina-inject-colorful {
   background-image: url(../img/carina-nebula-colorful.jpg);
 }
-#pager {
+.pager {
   opacity: 0.5;
   -webkit-transition: opacity 240ms ease-in-out;
   -o-transition: opacity 240ms ease-in-out;
   transition: opacity 240ms ease-in-out;
 }
-#pager:hover {
+.pager:hover {
   opacity: 1;
 }
-#pager a {
+.pager a {
   color: #fff;
 }
-#pager a:hover {
+.pager a:hover {
   text-decoration: none;
 }
-#pager i {
+.pager i {
   margin: 0 6px 0 2px;
   vertical-align: initial;
   padding: 4px;
   color: #B94846;
   background: #fff;
   border-radius: 42px;
+  position: absolute;
+  left: 4px;
 }
-#pager .text-right i {
+.pager .text-right i {
   margin: 0 2px 0 6px;
+  left: unset;
+  right: 4px;
+}
+.pager .text-right .btn {
+  float: right;
+}
+.pager .btn {
+  float: left;
+  margin: 6px 0;
+}
+@media (max-width: 768px) {
+  .pager .btn {
+    width: 100%;
+  }
+}
+#sidenav {
+  margin-top: 140px;
+}
+#sidenav.affix {
+  width: 16.66666667%;
+}
+#sidenav.affix-top {
+  width: 200%;
+}
+#sidenav.affix-top .pager .text-right .btn {
+  float: none;
+}
+#sidenav.affix-top .pager .btn {
+  float: none;
+}
+#sidenav .pager {
+  opacity: 0.3;
+}
+#sidenav .pager:hover {
+  opacity: 1;
+}
+#sidenav .pager .col-md-6 {
+  width: 100%;
+  margin-top: 12px;
+}
+#sidenav .pager .btn {
+  width: 100%;
 }
 #comments {
   min-height: 400px;

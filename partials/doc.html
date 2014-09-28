@@ -8,21 +8,8 @@
 				<div class="col-lg-8 col-md-7 col-sm-12" id="documentation-full">
 					<div id="content-inner" ng-bind-html="content" class="am-fade" ng-if="docready">
 					</div>
-					<div ng-hide="(siblings.previous.title == '') && (siblings.next.title == '')">
-						<br/>
-						<br/>
-						<div id="pager" class="col-md-12 clearfix">
-							<div class="col-md-6">
-								<a class="btn btn-sm btn-danger" ng-click="switchPage(siblings.previous.path)" ng-if="siblings.previous.title != ''">
-									<i class="fa fa-arrow-left"></i>&nbsp;{{siblings.previous.title}}
-								</a>
-							</div>
-							<div class="col-md-6 text-right">
-								<a class="btn btn-sm btn-danger" ng-click="switchPage(siblings.next.path)" ng-if="siblings.next.title != ''">
-									{{siblings.next.title}}&nbsp;<i class="fa fa-arrow-right"></i>
-								</a>
-							</div>
-						</div>
+					<div ng-class="{'hidden-lg': sideindex.length}">
+						<div ng-include="'partials/pager.html'"></div>
 					</div>
 					<br/>
 					<br/>
@@ -37,17 +24,23 @@
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
-					<ul class="aec-sidenav nav am-fade-and-slide-left" ng-show="sideindex.length" bs-scrollspy-list bs-affix>
-						<li><h4>{{pagetitle}}</h4></li>
-						<li ng-repeat="item in sideindex" bs-scrollspy data-target="{{item.id}}" data-offset="180">
-							<a scroll-on-click href="#{{item.id}}"><span ng-bind-html="item.text"></span></a>
-							<ul class="nav" ng-if="item.children.length">
-								<li ng-repeat="child in item.children" bs-scrollspy data-target="{{child.id}}" data-offset="180">
-									<a scroll-on-click href="#{{child.id}}"><span ng-bind-html="child.text"></span></a>
-								</li>
-							</ul>
-						</li>
-					</ul>
+					<div id="sidenav" bs-scrollspy-list bs-affix>
+						<ul class="aec-sidenav nav am-fade-and-slide-left" ng-show="sideindex.length" >
+							<li><h4>{{pagetitle}}</h4></li>
+							<li ng-repeat="item in sideindex" bs-scrollspy data-target="{{item.id}}" data-offset="180">
+								<a scroll-on-click href="#{{item.id}}"><span ng-bind-html="item.text"></span></a>
+								<ul class="nav" ng-if="item.children.length">
+									<li ng-repeat="child in item.children" bs-scrollspy data-target="{{child.id}}" data-offset="180">
+										<a scroll-on-click href="#{{child.id}}"><span ng-bind-html="child.text"></span></a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+						<div ng-class="{'visible-lg': sideindex.length}">
+							<div ng-include="'partials/pager.html'"></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
