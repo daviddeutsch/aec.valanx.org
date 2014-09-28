@@ -13,12 +13,12 @@
 						<br/>
 						<div id="pager" class="col-md-12 clearfix">
 							<div class="col-md-6">
-								<a class="btn btn-sm btn-danger" ui-sref="docs({path:siblings.previous.path})" ng-if="siblings.previous.title != ''">
+								<a class="btn btn-sm btn-danger" ng-click="switchPage(siblings.previous.path)" ng-if="siblings.previous.title != ''">
 									<i class="fa fa-arrow-left"></i>&nbsp;{{siblings.previous.title}}
 								</a>
 							</div>
 							<div class="col-md-6 text-right">
-								<a class="btn btn-sm btn-danger" ui-sref="docs({path:siblings.next.path})" ng-if="siblings.next.title != ''">
+								<a class="btn btn-sm btn-danger" ng-click="switchPage(siblings.next.path)" ng-if="siblings.next.title != ''">
 									{{siblings.next.title}}&nbsp;<i class="fa fa-arrow-right"></i>
 								</a>
 							</div>
