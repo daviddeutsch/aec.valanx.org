@@ -43,6 +43,18 @@
 				}
 			})
 
+			.state('stats', {
+				url: '/stats',
+				views: {
+					"main": {
+						templateUrl: '/partials/stats.html'
+					},
+					"background": {
+						templateUrl: '/partials/empty.html'
+					}
+				}
+			})
+
 		;
 
 		$disqusProvider.setShortname('valanx');
@@ -356,6 +368,10 @@
 					}
 				} else if ( lpath === "/" ) {
 					$state.go('home');
+				} else {
+					aside.hide();
+
+					$state.go(lpath.substr(1));
 				}
 			});
 
@@ -398,19 +414,90 @@
 
 
 	/**
-	 * @name DocAsideCtrl
+	 * @name StatsCtrl
 	 *
-	 * @desc Controls Behavior on the side naviation for docs
+	 * @desc Shows Progress
 	 */
-	function DocAsideCtrl( $scope )
+	function StatsCtrl( $scope, $rootScope, $q, $timeout, Docs )
 	{
-		var list = [],
-			keepalive,
-			id = 0;
+		$scope.pages = [];
+
+		$scope.completion = {};
+
+		var pageCompletion = function(page) {
+			var deferred = $q.defer();
+
+			Docs.getPage(page.path)
+				.then(function(content){
+					var done = 0;
+
+					if ( content.pagetitle != '' ) {
+						done = 100;
+					}
+
+					$scope.completion[page.path] = {
+						done: done
+					};
+
+					deferred.resolve();
+				});
+
+			return deferred.promise;
+		};
+
+		var completionIndex = function(index) {
+			var deferred = $q.defer(),
+				promises = [];
+
+			angular.forEach(index, function(item){
+				var sdefer = $q.defer();
+
+				pageCompletion(item)
+					.then(function(){
+						if ( typeof item.children != 'undefined' ) {
+							completionIndex(item.children)
+								.then(function(){
+									sdefer.resolve();
+								});
+						} else {
+							sdefer.resolve();
+						}
+					});
+
+				promises.push(sdefer.promise);
+			});
+
+			$q.all(promises).then(function(){
+				deferred.resolve();
+			});
+
+			return deferred.promise;
+		};
+
+		$scope.getCompletion = function(path) {
+			if ( typeof $scope.completion[path] == 'undefined' ) {
+				return 0;
+			} else {
+				return $scope.completion[path].done;
+			}
+
+		};
+
+		Docs.init()
+			.then(function(){
+				$scope.pages = Docs.index;
+
+				completionIndex(Docs.index)
+					.then(function(){
+						$rootScope.loading = false;
+					});
+			});
+
 	}
 
-	DocAsideCtrl.$inject = ['$scope'];
-	angular.module('aecApp').controller('DocAsideCtrl', DocAsideCtrl);
+	StatsCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', 'Docs'];
+	angular.module('aecApp').controller('StatsCtrl', StatsCtrl);
+
 
 	function DocService( $rootScope, $http, $compile, $q, $sce )
 	{
@@ -596,7 +683,7 @@
 						self.pages[path] = page;
 
 						deferred.resolve(page);
-					}, function(){
+					}, function() {
 						deferred.resolve(self.errorpage);
 					});
 			}

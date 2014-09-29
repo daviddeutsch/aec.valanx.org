@@ -1,0 +1,24 @@
+<div id="main" ng-controller="StatsCtrl">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<section ng-repeat="page in pages" class="am-fade-and-slide-right">
+					<h4><a ui-sref="docs({path:page.path})">{{page.title}}</a></h4>
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" ng-style="{width: getCompletion(page.path) + '%' }"></div>
+					</div>
+					<!-- TODO: Display popover of children on hover -->
+					<div ng-if="page.children">
+						<div ng-repeat="child in page.children">
+							<h5><a ui-sref="docs({path:child.path})">{{child.title}}</a></h5>
+							<div class="progress">
+								<div class="progress-bar progress-bar-success" ng-style="{width: getCompletion(child.path) + '%'}"></div>
+							</div>
+						</div>
+					</div>
+					<hr/>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
