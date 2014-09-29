@@ -6617,7 +6617,7 @@ ul.aec-sidenav li.active > a {
   border-radius: 24px;
   padding: 0 12px;
   background-color: transparent;
-  border-color: transparent;
+  border-color: #bbb;
   color: #fff !important;
   box-shadow: none;
   -webkit-transition: 400ms ease-in-out;
@@ -6631,6 +6631,7 @@ ul.aec-sidenav li.active > a {
   color: #fff;
 }
 .aside .aside-dialog .aside-body .form-group input.form-control:focus,
+.aside .aside-dialog .aside-body .form-group input.form-control:active,
 .aside .aside-dialog .aside-body .form-group input.form-control:hover {
   background-color: #fff;
   border-color: #ddd;
