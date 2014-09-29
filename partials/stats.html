@@ -6,20 +6,18 @@
 				<section ng-repeat="page in pages">
 					<h4>
 						<a ui-sref="docs({path:page.path})">{{page.title}}</a>
-						<i class="fa fa-wifi pulse" ng-show="seeking"></i>
 					</h4>
 					<div class="progress">
-						<div class="progress-bar" ng-class="{'progress-bar-success': getCompletion(page.path) == 100, 'progress-bar-warning': getCompletion(page.path) < 100}" ng-style="{width: getCompletion(page.path) + '%' }"></div>
+						<div class="progress-bar" ng-class="progressBar(page)" ng-style="{width: page.completion.percentage + '%' }"></div>
 					</div>
 					<!-- TODO: Display popover of children on hover -->
 					<div ng-if="page.children">
 						<div ng-repeat="child in page.children">
 							<h5>
 								<a ui-sref="docs({path:child.path})">{{child.title}}</a>
-								<i class="fa fa-wifi pulse" ng-show="seeking"></i>
 							</h5>
 							<div class="progress">
-								<div class="progress-bar progress-bar-success" ng-class="{'progress-bar-success': getCompletion(child.path) == 100, 'progress-bar-warning': getCompletion(child.path) < 100}" ng-style="{width: getCompletion(child.path) + '%'}"></div>
+								<div class="progress-bar" ng-class="progressBar(child)" ng-style="{width: child.completion.percentage + '%' }"></div>
 							</div>
 						</div>
 					</div>

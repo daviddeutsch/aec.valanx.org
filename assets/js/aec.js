@@ -355,7 +355,9 @@
 								$scope.showIndex = $scope.sideindex.length > 0;
 							});
 
-						$rootScope.loading = false;
+						$timeout(function(){
+							$rootScope.loading = false;
+						}, 40);
 
 						$scope.showComments = ($scope.path != 'start/welcome') && ($scope.path != '');
 
@@ -363,9 +365,7 @@
 					}, 60);
 
 					// Still have not figured out why .loading = false above "sometimes" fails
-					/*$timeout(function(){
-						$rootScope.loading = false;
-					}, 4000);*/
+
 				});
 		};
 
@@ -434,29 +434,37 @@
 	{
 		$scope.pages = [];
 
-		$scope.seeking = true;
-
-		$scope.completion = {};
-
 		var pageCompletion = function(page) {
 			var deferred = $q.defer();
 
-			Docs.getPage(page.path)
-				.then(function(content){
-					var done = 0,
-						el = angular.element(content.content ),
-						todos = (content.content.match(/TODO/g) || []).length;
+			page.completion = {
+				loaded: false,
+				percentage: 100
+			};
 
-					var paragraphs = el.filter("p");
+			$timeout(function(){
+				Docs.getPage(page.path)
+					.then(function(content){
+						var done = 0,
+							el = angular.element(content.content ),
+							todos = (content.content.match(/TODO/g) || []).length;
 
-					if ( content.pagetitle != '' ) {
-						done = 100 - ( (paragraphs.length / 10) * todos * 5 );
-					}
+						var paragraphs = el.filter("p");
 
-					$scope.completion[page.path] = done;
+						if ( content.pagetitle != '' ) {
+							done = 100 - ( (paragraphs.length / 10) * todos * 5 );
+						}
 
-					deferred.resolve();
-				});
+						$timeout(function(){
+							page.completion.loaded = true;
+							page.completion.percentage = done;
+						}, 40);
+
+
+						deferred.resolve();
+					});
+			}, 200);
+
 
 			return deferred.promise;
 		};
@@ -490,14 +498,18 @@
 			return deferred.promise;
 		};
 
-		$scope.getCompletion = function(path) {
-			if ( typeof $scope.completion[path] == 'undefined' ) {
-				return 0;
+		// {'progress-bar-info progress-striped active': page.completion.loaded == false, 'progress-bar-success': page.completion.percentage == 100 'progress-bar-warning': page.completion.percentage < 100 && page.completion.percentage > 0 , 'progress-bar-danger': page.completion.percentage == 0}
+		$scope.progressBar = function(page) {
+			if ( page.completion.loaded == false ) {
+				return 'progress-bar-info';
+			} else if ( page.completion.percentage < 100 && page.completion.percentage > 0 ) {
+				return 'progress-bar-warning';
+			} else if ( page.completion.percentage == 0 ) {
+				return 'progress-bar-danger';
 			} else {
-				return $scope.completion[path];
+				return 'progress-bar-success';
 			}
 		};
-
 
 		Docs.init()
 			.then(function(){
@@ -507,8 +519,6 @@
 				completionIndex(Docs.index)
 					.then(function(){
 						$rootScope.loading = false;
-
-						$scope.seeking = false;
 					});
 				}, 1000);
 			});

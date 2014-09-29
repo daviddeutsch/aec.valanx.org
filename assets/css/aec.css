@@ -7139,6 +7139,14 @@ ul.aec-sidenav li.active > a {
   box-shadow: none;
   display: block;
 }
+section .progress {
+  -webkit-transition: width 2s ease;
+  -o-transition: width 2s ease;
+  transition: width 2s ease;
+}
+section .progress-bar-info {
+  opacity: 0.5;
+}
 @-webkit-keyframes pulse {
   from {
     opacity: 0.1;
