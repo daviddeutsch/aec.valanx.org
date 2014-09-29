@@ -1,5 +1,5 @@
 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
-	<div id="sidenav" class="am-fade" bs-scrollspy-list bs-affix ng-hide="loading || (sideindex.length == 0)">
+	<div id="sidenav" class="am-fade" bs-scrollspy-list bs-affix ng-if="showIndex">
 		<ul class="aec-sidenav nav">
 			<li><h4>{{pagetitle}}</h4></li>
 			<li ng-repeat="item in sideindex" bs-scrollspy data-target="{{item.id}}" data-offset="180">

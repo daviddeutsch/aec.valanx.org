@@ -234,10 +234,14 @@
 	{
 		var keepalive,
 			id = 0,
-			affix;
+			affix,
+			pageload;
 
 		$scope.path = '';
 		$scope.indexFilter = '';
+
+		$scope.showComments = false;
+		$scope.showIndex = false;
 
 		$scope.pages = [];
 
@@ -297,12 +301,6 @@
 			}
 		};
 
-		$scope.showComments = function() {
-			return !$scope.loading
-				&& ($scope.path != 'start/welcome')
-				&& ($scope.path != '');
-		};
-
 		$scope.switchPage = function(path) {
 			if ( $scope.path == path ) {
 				$rootScope.loading = false;
@@ -313,6 +311,9 @@
 			if ( !$scope.extendedPreference ) {
 				$scope.extended = false;
 			}
+
+			$scope.showComments = false;
+			$scope.showIndex = false;
 
 			$scope.docready = false;
 
@@ -330,11 +331,17 @@
 
 			Docs.getPage($scope.path)
 				.then(function(page){
+
+					$scope.showComments = false;
+					$scope.showIndex = false;
+
 					$scope.pagetitle = page.pagetitle;
 					$scope.sideindex = page.sideindex;
 					$scope.content = $sce.trustAsHtml(page.content);
 
-					$timeout(function(){
+					$timeout.cancel(pageload);
+
+					pageload = $timeout(function(){
 						angular.element('html, body').animate(
 							{scrollTop: 0},
 							200,
@@ -344,9 +351,14 @@
 						Docs.pageSiblings($scope.path)
 							.then(function(siblings){
 								$scope.siblings = siblings;
+
+								$scope.showIndex = $scope.sideindex.length > 0;
 							});
 
 						$rootScope.loading = false;
+
+						$scope.showComments = ($scope.path != 'start/welcome') && ($scope.path != '');
+
 						$scope.docready = true;
 					}, 60);
 
