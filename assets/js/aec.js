@@ -450,7 +450,7 @@
 					var paragraphs = el.filter("p");
 
 					if ( content.pagetitle != '' ) {
-						done = 100 - ( (paragraphs.length / 10) * todos );
+						done = 100 - ( (paragraphs.length / 10) * todos * 5 );
 					}
 
 					$scope.completion[page.path] = done;
