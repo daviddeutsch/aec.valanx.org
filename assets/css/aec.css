@@ -6289,6 +6289,26 @@ legend {
 .modal .close {
   color: #333333;
 }
+a a:focus,
+a:active,
+button,
+button:focus,
+button:active {
+  outline: 0 !important;
+}
+a {
+  outline: 0 !important;
+  color: #222;
+}
+a:hover {
+  color: #d43f3a;
+}
+.fa {
+  vertical-align: middle;
+}
+img.fullwidth {
+  width: 100%;
+}
 #main li img {
   width: 100px;
   height: 100px;
@@ -6635,12 +6655,6 @@ ul.aec-sidenav li.active > a {
 .aside .popover-content {
   line-height: 2em;
 }
-a {
-  color: #222;
-}
-a:hover {
-  color: #d43f3a;
-}
 .index-page-index {
   display: inline-block;
   text-align: right;
@@ -6648,12 +6662,6 @@ a:hover {
 }
 .page-home {
   height: 100%;
-}
-.fa {
-  vertical-align: middle;
-}
-img.fullwidth {
-  width: 100%;
 }
 #home-top {
   padding-top: 10%;
@@ -6758,6 +6766,12 @@ img.fullwidth {
   background-image: url(../img/carina-nebula-dark-red.jpg);
   min-height: 1024px;
 }
+.carina-inject-mystic-mt {
+  background-image: url(../img/carina-nebula-mystic-mt.jpg);
+}
+.carina-inject-colorful {
+  background-image: url(../img/carina-nebula-colorful.jpg);
+}
 .content-bg-container {
   float: left;
   position: relative;
@@ -6793,12 +6807,6 @@ img.fullwidth {
   list-style: none;
   margin-bottom: 1em;
   font-weight: 700;
-}
-.carina-inject-mystic-mt {
-  background-image: url(../img/carina-nebula-mystic-mt.jpg);
-}
-.carina-inject-colorful {
-  background-image: url(../img/carina-nebula-colorful.jpg);
 }
 .pager {
   opacity: 0.5;
@@ -6849,7 +6857,8 @@ img.fullwidth {
   width: 16.66666667%;
 }
 #sidenav.affix-top {
-  width: 200%;
+  position: fixed !important;
+  width: 16.66666667%;
 }
 #sidenav.affix-top .pager .text-right .btn {
   float: none;
@@ -7117,16 +7126,6 @@ img.fullwidth {
   left: inherit;
   box-shadow: none;
   display: block;
-}
-a a:focus,
-a:active,
-button,
-button:focus,
-button:active {
-  outline: 0 !important;
-}
-a {
-  outline: 0 !important;
 }
 @-webkit-keyframes pulse {
   from {

@@ -4,6 +4,31 @@
 @import "bootstrap.less";
 @import "bootswatch.less";
 
+a
+a:focus,
+a:active,
+button,
+button:focus,
+button:active {
+	outline: 0 !important;
+}
+
+a {
+	outline: 0 !important;
+	color: #222;
+	&:hover {
+		color: #d43f3a;
+	}
+}
+
+.fa {
+	vertical-align: middle;
+}
+
+img.fullwidth {
+	width: 100%;
+}
+
 #main {
 	li img {
 		width: 100px;
@@ -353,13 +378,6 @@ ul.aec-sidenav {
 	}
 }
 
-a {
-	color: #222;
-	&:hover {
-		color: #d43f3a;
-	}
-}
-
 .index-page-index {
 	display: inline-block;
 	text-align: right;
@@ -368,14 +386,6 @@ a {
 
 .page-home {
 	height: 100%;
-}
-
-.fa {
-	vertical-align: middle;
-}
-
-img.fullwidth {
-	width: 100%;
 }
 
 #home-top {
@@ -476,10 +486,18 @@ img.fullwidth {
 	box-shadow: 0 0 48px rgba(0,0,0,0.9) inset;
 }
 
-.carina-full {
-	height: 100%;
-	background-image: url(../img/carina-nebula-dark-red.jpg);
-	min-height: 1024px;
+.carina {
+	&-full {
+		height: 100%;
+		background-image: url(../img/carina-nebula-dark-red.jpg);
+		min-height: 1024px;
+	}
+	&-inject-mystic-mt {
+		background-image: url(../img/carina-nebula-mystic-mt.jpg);
+	}
+	&-inject-colorful {
+		background-image: url(../img/carina-nebula-colorful.jpg);
+	}
 }
 
 .content-bg-container {
@@ -522,14 +540,6 @@ img.fullwidth {
 			font-weight: 700;
 		}
 	}
-}
-
-.carina-inject-mystic-mt {
-	background-image: url(../img/carina-nebula-mystic-mt.jpg);
-}
-
-.carina-inject-colorful {
-	background-image: url(../img/carina-nebula-colorful.jpg);
 }
 
 .pager {
@@ -579,7 +589,8 @@ img.fullwidth {
 		width: @aside-width-lg;
 	}
 	&.affix-top {
-		width: 200%;
+		position: fixed !important;
+		width: @aside-width-lg;
 		.pager {
 			.text-right {
 				.btn {
@@ -726,19 +737,6 @@ img.fullwidth {
 	left: inherit;
 	box-shadow: none;
 	display: block;
-}
-
-a
-a:focus,
-a:active,
-button,
-button:focus,
-button:active {
-	outline: 0 !important;
-}
-
-a {
-	outline: 0 !important;
 }
 
 .mixin-pulse() {
