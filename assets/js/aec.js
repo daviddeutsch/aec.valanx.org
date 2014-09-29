@@ -422,6 +422,8 @@
 	{
 		$scope.pages = [];
 
+		$scope.seeking = true;
+
 		$scope.completion = {};
 
 		var pageCompletion = function(page) {
@@ -480,19 +482,22 @@
 			} else {
 				return $scope.completion[path].done;
 			}
-
 		};
+
 
 		Docs.init()
 			.then(function(){
 				$scope.pages = Docs.index;
 
+				$timeout(function(){
 				completionIndex(Docs.index)
 					.then(function(){
 						$rootScope.loading = false;
-					});
-			});
 
+						$scope.seeking = false;
+					});
+				}, 1000);
+			});
 	}
 
 	StatsCtrl.$inject = ['$scope', '$rootScope', '$q', '$timeout', 'Docs'];
