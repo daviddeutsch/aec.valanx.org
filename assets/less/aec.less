@@ -369,6 +369,13 @@ ul.aec-sidenav {
 				}
 			}
 		}
+		.alert {
+			text-align: center;
+			opacity: 0.6;
+			&:hover {
+				opacity: 1;
+			}
+		}
 	}
 	.popover {
 		margin-left: 1em;
@@ -544,18 +551,24 @@ ul.aec-sidenav {
 
 .pager {
 	opacity: 0.5;
-	.transition(opacity 240ms ease-in-out);
+	.transition(opacity 400ms ease-in-out);
 	&:hover {
 		opacity: 1;
+		.btn {
+			color: #fff;
+			background: #b94846;
+		}
 	}
 	a {
 		color: #fff;
+		span {
+			margin: 0 6px;
+		}
 		&:hover {
 			text-decoration: none;
 		}
 	}
 	i {
-		margin: 0 6px 0 2px;
 		vertical-align: initial;
 		padding: 4px;
 		color: #B94846;
@@ -566,7 +579,6 @@ ul.aec-sidenav {
 	}
 	.text-right {
 		i {
-			margin: 0 2px 0 6px;
 			left: unset;
 			right: 4px;
 		}
@@ -577,6 +589,8 @@ ul.aec-sidenav {
 	.btn {
 		float: left;
 		margin: 6px 0;
+		color: #b94846;
+		background: transparent;
 		@media (max-width: @screen-sm-min) {
 			width: 100%;
 		}
@@ -607,10 +621,6 @@ ul.aec-sidenav {
 		}
 	}
 	.pager {
-		opacity: 0.3;
-		&:hover {
-			opacity: 1;
-		}
 		.col-md-6 {
 			width: 100%;
 		}
@@ -621,6 +631,7 @@ ul.aec-sidenav {
 }
 
 #comments {
+	margin-top: 112px;
 	min-height: 400px;
 }
 

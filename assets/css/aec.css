@@ -6649,6 +6649,13 @@ ul.aec-sidenav li.active > a {
 .aside .aside-dialog .aside-body .form-group button.clickable {
   height: auto;
 }
+.aside .aside-dialog .aside-body .alert {
+  text-align: center;
+  opacity: 0.6;
+}
+.aside .aside-dialog .aside-body .alert:hover {
+  opacity: 1;
+}
 .aside .popover {
   margin-left: 1em;
 }
@@ -6810,21 +6817,27 @@ ul.aec-sidenav li.active > a {
 }
 .pager {
   opacity: 0.5;
-  -webkit-transition: opacity 240ms ease-in-out;
-  -o-transition: opacity 240ms ease-in-out;
-  transition: opacity 240ms ease-in-out;
+  -webkit-transition: opacity 400ms ease-in-out;
+  -o-transition: opacity 400ms ease-in-out;
+  transition: opacity 400ms ease-in-out;
 }
 .pager:hover {
   opacity: 1;
 }
+.pager:hover .btn {
+  color: #fff;
+  background: #b94846;
+}
 .pager a {
   color: #fff;
+}
+.pager a span {
+  margin: 0 6px;
 }
 .pager a:hover {
   text-decoration: none;
 }
 .pager i {
-  margin: 0 6px 0 2px;
   vertical-align: initial;
   padding: 4px;
   color: #B94846;
@@ -6834,7 +6847,6 @@ ul.aec-sidenav li.active > a {
   left: 4px;
 }
 .pager .text-right i {
-  margin: 0 2px 0 6px;
   left: unset;
   right: 4px;
 }
@@ -6844,6 +6856,8 @@ ul.aec-sidenav li.active > a {
 .pager .btn {
   float: left;
   margin: 6px 0;
+  color: #b94846;
+  background: transparent;
 }
 @media (max-width: 768px) {
   .pager .btn {
@@ -6869,12 +6883,6 @@ ul.aec-sidenav li.active > a {
 #sidenav.affix-top .pager .btn {
   float: none;
 }
-#sidenav .pager {
-  opacity: 0.3;
-}
-#sidenav .pager:hover {
-  opacity: 1;
-}
 #sidenav .pager .col-md-6 {
   width: 100%;
 }
@@ -6882,6 +6890,7 @@ ul.aec-sidenav li.active > a {
   width: 100%;
 }
 #comments {
+  margin-top: 112px;
   min-height: 400px;
 }
 .processor-sprite {
