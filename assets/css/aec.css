@@ -6850,6 +6850,9 @@ ul.aec-sidenav li.active > a {
     width: 100%;
   }
 }
+.nav > li {
+  position: unset;
+}
 #sidenav {
   margin-top: 140px;
 }
@@ -6874,7 +6877,6 @@ ul.aec-sidenav li.active > a {
 }
 #sidenav .pager .col-md-6 {
   width: 100%;
-  margin-top: 12px;
 }
 #sidenav .pager .btn {
   width: 100%;
