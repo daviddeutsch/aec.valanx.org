@@ -1,0 +1,18 @@
+<div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+	<div id="sidenav" class="am-fade" bs-scrollspy-list bs-affix ng-hide="loading || (sideindex.length == 0)">
+		<ul class="aec-sidenav nav">
+			<li><h4>{{pagetitle}}</h4></li>
+			<li ng-repeat="item in sideindex" bs-scrollspy data-target="{{item.id}}" data-offset="180">
+				<a scroll-on-click href="#{{item.id}}"><span ng-bind-html="item.text"></span></a>
+				<ul class="nav" ng-if="item.children.length">
+					<li ng-repeat="child in item.children" bs-scrollspy data-target="{{child.id}}" data-offset="180">
+						<a scroll-on-click href="#{{child.id}}"><span ng-bind-html="child.text"></span></a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div ng-class="{'visible-lg': sideindex.length}">
+			<div ng-include="'partials/pager.html'"></div>
+		</div>
+	</div>
+</div>

@@ -15,32 +15,9 @@
 					<br/>
 					<br/>
 					<br/>
-					<div id="comments" class="col-md-12 clearfix" ng-show="showComments()">
-						<h4>Any Questions or Suggestions?</h4>
-						<p>Please join the discussion if you're stuck on this topic and need us to clarify something or improve the documentation for you.</p>
-						<p>Want to improve this page yourself? Sweet! You can send in a
-							<a ng-href="https://github.com/daviddeutsch/aec.valanx.org/blob/master/docs/pages/{{path}}.md" target="_blank">Pull Request on Github</a>.</p>
-						<div disqus="'aec.valanx.org/docs/' + path"></div>
-					</div>
+					<div ng-include="'partials/comments.html'"></div>
 				</div>
-				<div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
-					<div id="sidenav" class="am-fade" bs-scrollspy-list bs-affix ng-show="sideindex.length">
-						<ul class="aec-sidenav nav am-fade-and-slide-left">
-							<li><h4>{{pagetitle}}</h4></li>
-							<li ng-repeat="item in sideindex" bs-scrollspy data-target="{{item.id}}" data-offset="180">
-								<a scroll-on-click href="#{{item.id}}"><span ng-bind-html="item.text"></span></a>
-								<ul class="nav" ng-if="item.children.length">
-									<li ng-repeat="child in item.children" bs-scrollspy data-target="{{child.id}}" data-offset="180">
-										<a scroll-on-click href="#{{child.id}}"><span ng-bind-html="child.text"></span></a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<div ng-class="{'visible-lg': sideindex.length}">
-							<div ng-include="'partials/pager.html'"></div>
-						</div>
-					</div>
-				</div>
+				<div ng-include="'partials/sidenav.html'"></div>
 			</div>
 		</div>
 	</div>

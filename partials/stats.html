@@ -3,13 +3,13 @@
 		<div class="row">
 			<div id="documentation-full" class="col-md-8 col-md-offset-2">
 				<h1>Manual completion progress</h1>
-				<section ng-repeat="page in pages" class="am-fade-and-slide-right">
+				<section ng-repeat="page in pages">
 					<h4>
 						<a ui-sref="docs({path:page.path})">{{page.title}}</a>
 						<i class="fa fa-wifi pulse" ng-show="seeking"></i>
 					</h4>
 					<div class="progress">
-						<div class="progress-bar progress-bar-success" ng-style="{width: getCompletion(page.path) + '%' }"></div>
+						<div class="progress-bar" ng-class="{'progress-bar-success': getCompletion(page.path) == 100, 'progress-bar-warning': getCompletion(page.path) < 100}" ng-style="{width: getCompletion(page.path) + '%' }"></div>
 					</div>
 					<!-- TODO: Display popover of children on hover -->
 					<div ng-if="page.children">
@@ -19,7 +19,7 @@
 								<i class="fa fa-wifi pulse" ng-show="seeking"></i>
 							</h5>
 							<div class="progress">
-								<div class="progress-bar progress-bar-success" ng-style="{width: getCompletion(child.path) + '%'}"></div>
+								<div class="progress-bar progress-bar-success" ng-class="{'progress-bar-success': getCompletion(child.path) == 100, 'progress-bar-warning': getCompletion(child.path) < 100}" ng-style="{width: getCompletion(child.path) + '%'}"></div>
 							</div>
 						</div>
 					</div>

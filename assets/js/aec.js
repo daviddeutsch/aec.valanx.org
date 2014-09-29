@@ -230,7 +230,7 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function DocCtrl( $window, $scope, $rootScope, $timeout, $state, $stateParams, $aside, $location, Docs )
+	function DocCtrl( $window, $scope, $rootScope, $timeout, $state, $stateParams, $aside, $location, Docs, $sce )
 	{
 		var keepalive,
 			id = 0,
@@ -332,7 +332,7 @@
 				.then(function(page){
 					$scope.pagetitle = page.pagetitle;
 					$scope.sideindex = page.sideindex;
-					$scope.content = page.content;
+					$scope.content = $sce.trustAsHtml(page.content);
 
 					$timeout(function(){
 						angular.element('html, body').animate(
@@ -409,7 +409,7 @@
 		});
 	}
 
-	DocCtrl.$inject = ['$window', '$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$aside', '$location', 'Docs'];
+	DocCtrl.$inject = ['$window', '$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$aside', '$location', 'Docs', '$sce'];
 	angular.module('aecApp').controller('DocCtrl', DocCtrl);
 
 
@@ -431,15 +431,17 @@
 
 			Docs.getPage(page.path)
 				.then(function(content){
-					var done = 0;
+					var done = 0,
+						el = angular.element(content.content ),
+						todos = (content.content.match(/TODO/g) || []).length;
+
+					var paragraphs = el.filter("p");
 
 					if ( content.pagetitle != '' ) {
-						done = 100;
+						done = 100 - ( (paragraphs.length / 10) * todos );
 					}
 
-					$scope.completion[page.path] = {
-						done: done
-					};
+					$scope.completion[page.path] = done;
 
 					deferred.resolve();
 				});
@@ -480,7 +482,7 @@
 			if ( typeof $scope.completion[path] == 'undefined' ) {
 				return 0;
 			} else {
-				return $scope.completion[path].done;
+				return $scope.completion[path];
 			}
 		};
 
@@ -516,7 +518,7 @@
 		this.errorpage = {
 			sideindex: [],
 			pagetitle: '',
-			content: $sce.trustAsHtml('<h1>404</h1><p>Not Found!</p>')
+			content: '<h1>404</h1><p>Not Found!</p>'
 		};
 
 		this.initRenderer = function() {
@@ -709,9 +711,7 @@
 				function(error, parsed) {
 					var doc = $compile(parsed)($rootScope);
 
-					page.content = $sce.trustAsHtml(
-						angular.element("<p>").append(doc.clone()).html()
-					);
+					page.content = angular.element("<p>").append(doc.clone()).html();
 
 					self.headerTree(doc)
 						.then(function(tree){
