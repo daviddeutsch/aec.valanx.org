@@ -268,26 +268,26 @@ ul.aec-sidenav {
 		padding: 2px 2px 4px 12px;
 		width: 200%;
 		@media (min-width: @screen-md-min) {
-			padding: 6px 2px 6px 12px;
+			padding: 4px 2px 4px 12px;
 		}
 		@media (max-width: @screen-xs-min) {
-			padding: 2px 2px 0px 8px;
+			padding: 1px 0px 0px 6px;
 		}
 		.aside-title {
 			@media (max-width: @screen-md-min) {
 				margin: 6px 2px;
 			}
+			@media (max-width: @screen-sm-min) {
+				margin: 4px 1px;
+			}
 		}
 		h4 {
-			font-size: ceil((@font-size-h1 * 0.9));
+			font-size: ceil((@font-size-h1 * 0.85));
 			color: #333;
 			img {
 				vertical-align: top;
 				margin-left: -6px;
 				margin-right: -6px;
-				@media (max-width: @screen-lg-min) {
-					font-size: ceil((@font-size-h1 * 0.7));
-				}
 			}
 			a {
 				text-decoration: none;
