@@ -302,14 +302,14 @@
 		};
 
 		$scope.switchPage = function(path) {
+			if ( !$scope.extendedPreference ) {
+				$scope.extended = false;
+			}
+
 			if ( $scope.path == path ) {
 				$rootScope.loading = false;
 
 				return;
-			}
-
-			if ( !$scope.extendedPreference ) {
-				$scope.extended = false;
 			}
 
 			$scope.showComments = false;

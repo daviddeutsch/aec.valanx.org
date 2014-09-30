@@ -6411,7 +6411,6 @@ ul.aec-sidenav li.active > a {
 }
 .aside {
   background: transparent;
-  overflow: hidden;
   -webkit-transition: opacity 240ms ease-in-out;
   -o-transition: opacity 240ms ease-in-out;
   transition: opacity 240ms ease-in-out;
@@ -6457,11 +6456,7 @@ ul.aec-sidenav li.active > a {
   }
 }
 .aside-collapsed {
-  height: 120px;
-}
-.aside-collapsed .aside-switch {
-  position: relative !important;
-  width: 100% !important;
+  bottom: initial;
 }
 .aside-collapsed .aside-dialog {
   height: auto !important;
@@ -6486,37 +6481,16 @@ ul.aec-sidenav li.active > a {
   }
 }
 .aside-switch {
-  position: fixed;
-  bottom: 0px;
   z-index: 200;
   opacity: 1;
+  width: 100%;
 }
 .aside-switch .btn {
   width: 100%;
   border: none;
-  border-radius: 0 0 24px 24px;
+  border-radius: 0;
   bottom: 0px;
   background: #ddd;
-}
-@media (min-width: 1200px) {
-  .aside-switch {
-    width: 16.66666667%;
-  }
-}
-@media (max-width: 1200px) {
-  .aside-switch {
-    width: 25%;
-  }
-}
-@media (max-width: 992px) {
-  .aside-switch {
-    width: 41.66666667%;
-  }
-}
-@media (max-width: 480px) {
-  .aside-switch {
-    width: 100%;
-  }
 }
 @media (max-width: 480px) {
   .aside-switch-min {
@@ -6526,15 +6500,11 @@ ul.aec-sidenav li.active > a {
 .aside-switch-fixed .btn {
   border-radius: 0 0 0 0;
 }
-.aside .aside-dialog {
-  background: #aaa;
-  height: 98%;
-}
 .aside .aside-dialog .aside-header {
   background: #eee;
   z-index: 100;
   padding: 2px 2px 4px 12px;
-  width: 200%;
+  overflow: hidden;
 }
 @media (min-width: 992px) {
   .aside .aside-dialog .aside-header {
@@ -6545,6 +6515,9 @@ ul.aec-sidenav li.active > a {
   .aside .aside-dialog .aside-header {
     padding: 1px 0px 0px 6px;
   }
+}
+.aside .aside-dialog .aside-header .aside-title {
+  width: 200%;
 }
 @media (max-width: 992px) {
   .aside .aside-dialog .aside-header .aside-title {
@@ -6575,13 +6548,10 @@ ul.aec-sidenav li.active > a {
   text-decoration: none;
   margin-bottom: 2px;
 }
-.aside-body-collapsed {
-  display: none;
-}
 .aside .aside-dialog .aside-body {
   padding: 24px 36px;
   z-index: 50;
-  overflow: hidden;
+  background: #aaa;
 }
 .aside .aside-dialog .aside-body ul {
   font-size: 16px;

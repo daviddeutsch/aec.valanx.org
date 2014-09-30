@@ -168,7 +168,6 @@ ul.aec-sidenav {
 
 .aside {
 	background: transparent;
-	overflow: hidden;
 	@media (min-width: @screen-lg-min) {
 		width: @aside-width-lg;
 		min-width: @aside-width-lg;
@@ -199,11 +198,7 @@ ul.aec-sidenav {
 	}
 	.transition(opacity 240ms ease-in-out);
 	&-collapsed {
-		height: 120px;
-		.aside-switch {
-			position: relative !important;
-			width: 100% !important;
-		}
+		bottom: initial;
 		.aside-dialog {
 			height: auto !important;
 		}
@@ -224,28 +219,15 @@ ul.aec-sidenav {
 		}
 	}
 	&-switch {
-		position: fixed;
-		bottom: 0px;
 		z-index: 200;
 		opacity: 1;
+		width: 100%;
 		.btn {
 			width: 100%;
 			border: none;
-			border-radius: 0 0 24px 24px;
+			border-radius: 0;
 			bottom: 0px;
 			background: #ddd;
-		}
-		@media (min-width: @screen-lg-min) {
-			width: @aside-width-lg;
-		}
-		@media (max-width: @screen-lg-min) {
-			width: @aside-width-md;
-		}
-		@media (max-width: @screen-md-min) {
-			width: @aside-width-mdl;
-		}
-		@media (max-width: @screen-xs-min) {
-			width: 100%;
 		}
 	}
 	&-switch-min {
@@ -258,15 +240,11 @@ ul.aec-sidenav {
 			border-radius: 0 0 0 0;
 		}
 	}
-	& &-dialog {
-		background: #aaa;
-		height: 98%;
-	}
 	& &-dialog &-header {
 		background: #eee;
 		z-index: 100;
 		padding: 2px 2px 4px 12px;
-		width: 200%;
+		overflow: hidden;
 		@media (min-width: @screen-md-min) {
 			padding: 4px 2px 4px 12px;
 		}
@@ -274,6 +252,7 @@ ul.aec-sidenav {
 			padding: 1px 0px 0px 6px;
 		}
 		.aside-title {
+			width: 200%;
 			@media (max-width: @screen-md-min) {
 				margin: 6px 2px;
 			}
@@ -299,13 +278,10 @@ ul.aec-sidenav {
 			}
 		}
 	}
-	&-body-collapsed {
-		display: none;
-	}
 	& &-dialog &-body {
 		padding: 24px 36px;
 		z-index: 50;
-		overflow: hidden;
+		background: #aaa;
 		ul {
 			font-size: @font-size-base;
 			li {

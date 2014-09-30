@@ -15,7 +15,12 @@
 					</a>
 				</h4>
 			</div>
-			<div class="aside-body" ng-class="{'aside-body-collapsed': !extended}">
+			<div class="aside-switch" ng-class="{'aside-switch-fixed': extendedPreference && extended}">
+				<button class="btn btn-default" ng-click="toggleOpen()">
+					<i class="fa" ng-class="{'fa-angle-double-left': extendedPreference && extended, 'fa-thumb-tack': !extendedPreference && extended, 'fa-angle-right': !extendedPreference && !extended}"></i>
+				</button>
+			</div>
+			<div class="aside-body am-slide-left" ng-if="extended">
 				<div class="form-group">
 					<label for="indexFilter" class="sr-only">Search</label>
 					<button ng-click="indexFilter = ''" ng-class="{'clickable': indexFilter!=''}">
@@ -61,10 +66,5 @@
 			</div>
 
 		</div>
-	</div>
-	<div class="aside-switch" ng-class="{'aside-switch-fixed': extendedPreference && extended}">
-		<button class="btn btn-default" ng-click="toggleOpen()">
-			<i class="fa" ng-class="{'fa-angle-double-up': extendedPreference && extended, 'fa-angle-double-down': !extendedPreference && extended, 'fa-angle-down': !extendedPreference && !extended}"></i>
-		</button>
 	</div>
 </div>
