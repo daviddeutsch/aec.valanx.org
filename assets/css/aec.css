@@ -6848,7 +6848,7 @@ ul.aec-sidenav li.active > a {
   left: 4px;
 }
 .pager .text-right i {
-  left: unset;
+  left: initial;
   right: 4px;
 }
 .pager .text-right .btn {
