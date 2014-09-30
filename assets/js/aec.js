@@ -23,10 +23,10 @@
 				url: '/',
 				views: {
 					"main": {
-						templateUrl: '/partials/home.html'
+						templateUrl: 'partials/home.html'
 					},
 					"background": {
-						templateUrl: '/partials/carina.html'
+						templateUrl: 'partials/carina.html'
 					}
 				}
 			})
@@ -35,10 +35,10 @@
 				url: '/docs/{path:.*}',
 				views: {
 					"main": {
-						templateUrl: '/partials/doc.html'
+						templateUrl: 'partials/doc.html'
 					},
 					"background": {
-						templateUrl: '/partials/empty.html'
+						templateUrl: 'partials/empty.html'
 					}
 				}
 			})
@@ -47,10 +47,10 @@
 				url: '/stats',
 				views: {
 					"main": {
-						templateUrl: '/partials/stats.html'
+						templateUrl: 'partials/stats.html'
 					},
 					"background": {
-						templateUrl: '/partials/empty.html'
+						templateUrl: 'partials/empty.html'
 					}
 				}
 			})
@@ -576,7 +576,7 @@
 
 			this.renderer.image = function (href, title, text) {
 				var src = href
-					.replace('../../../', '/')
+					.replace('../../../', '')
 					.replace('../../', 'docs/');
 
 				return '<img src="' + src + '" alt="' + text + '"/>'
@@ -759,7 +759,7 @@
 		this.downloadPage = function(path) {
 			var deferred = $q.defer();
 
-			$http.get('/docs/pages/' + path + '.md', {cache: true})
+			$http.get('docs/pages/' + path + '.md', {cache: true})
 				.success(function(markdown){
 					self.convertMarkdownToPage(markdown)
 						.then(function(page){
