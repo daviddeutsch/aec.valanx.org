@@ -1,6 +1,6 @@
 # **Eta Carinae** Template
 
-![Eta Carinae](../../../assets/img/carina-nebula-colorful.jpg)
+![Eta Carinae](../../../assets/img/carina-nebula-colorful-small.jpg)
 
 The current frontend template in AEC is named after the [Carina Nebula](https://en.wikipedia.org/wiki/Carina_Nebula).
 
