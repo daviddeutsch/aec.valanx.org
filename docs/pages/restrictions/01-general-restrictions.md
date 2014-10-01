@@ -70,8 +70,8 @@ Plan: the payment plan that the user has to have used the specified number of ti
 
 ## By Plan Group (...Count)
 
-![Restrictions - By Membership Plan Group](../../img/restrictions-group.png)
+![Restrictions - By Membership Plan Group](../../img/restrictions-plan-group.png)
 
-![Restrictions - By Membership Plan Group](../../img/restrictions-group-uses.png)
+![Restrictions - By Membership Plan Group](../../img/restrictions-plan-group-uses.png)
 
 These settings are exactly the same as the plan settings above - just for groups.
