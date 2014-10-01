@@ -1,12 +1,6 @@
 # Restrictions
 
-Be careful setting restrictions, you can over restrict plans easily.  Usually only one restriction is needed.  It is best to test the restrictions after setting them by viewing a plans page in the front end as a user who will meet the criteria to see or not see the plan.
-
-![Restrictions - Denied Redirect](../../img/restrictions-denied-redirect.png)
-
-### Denied Access Redirect
-
-Redirect to a different URL should the user follow a direct link to this item without having the right authorization caused by the restrictions below.
+Be careful setting restrictions, as you can over-restrict plans and groups easily.  Usually only one restriction is needed.  It is best to test the restrictions after setting them by viewing a plans page in the front end as a user who will meet the criteria to see or not see the plan.
 
 ## By Usergroup
 
