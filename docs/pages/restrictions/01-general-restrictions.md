@@ -2,11 +2,15 @@
 
 Be careful setting restrictions, you can over restrict plans easily.  Usually only one restriction is needed.  It is best to test the restrictions after setting them by viewing a plans page in the front end as a user who will meet the criteria to see or not see the plan.
 
+![Restrictions - Denied Redirect](../../img/restrictions-denied-redirect.png)
+
 ### Denied Access Redirect
 
 Redirect to a different URL should the user follow a direct link to this item without having the right authorization caused by the restrictions below.
 
 ## By Usergroup
+
+![Restrictions - By Usergroup](../../img/restrictions-usergroup.png)
 
 ### Min GID
 
@@ -23,6 +27,8 @@ Enable this setting if you want to restrict this plan to one particular usergrou
 Enable this setting if you want to restrict whether a user is shown this plan by a maximum usergroup.
 
 ## By Membership
+
+![Restrictions - By Membership Plan](../../img/restrictions-plan.png)
 
 ### Required Previous Plan
 
@@ -50,7 +56,11 @@ Do NOT show this plan to users who have used the selected plan. A user will not 
 
 ### Min Used Plan
 
+TODO
+
 ## By Membership Count
+
+![Restrictions - By Membership Plan Uses](../../img/restrictions-plan-uses.png)
 
 Enable checking for the minimum number of times your customers have subscribed to a specified payment plan in order to see THIS plan.
 
@@ -66,8 +76,8 @@ Plan: the payment plan that the user has to have used the specified number of ti
 
 ## By Plan Group (...Count)
 
+![Restrictions - By Membership Plan Group](../../img/restrictions-group.png)
+
+![Restrictions - By Membership Plan Group](../../img/restrictions-group-uses.png)
+
 These settings are exactly the same as the plan settings above - just for groups.
-
-## Custom Restrictions
-
-Use RewriteEngine fields to check for specific strings in this form: [[user_id]] >= 1500. [[parametername]] = value (Create separate rules by entering a new line) You can use =, <=, >=, <, >, <> as comparing elements. You MUST use spaces between parameters, values and comparators!
