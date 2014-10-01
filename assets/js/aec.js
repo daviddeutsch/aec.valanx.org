@@ -295,6 +295,8 @@
 		$scope.toggleOpen = function() {
 			if ( $scope.extended && !$scope.extendedPreference ) {
 				$scope.extendedPreference = true;
+			} else if ( !$scope.extended && !$scope.extendedPreference ) {
+				$scope.extended = true;
 			} else {
 				$scope.extendedPreference = false;
 				$scope.extended = false;
