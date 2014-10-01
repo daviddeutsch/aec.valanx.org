@@ -141,6 +141,13 @@
 				"keywords":
 						 [
 						 ]
+			},
+			{
+				"title": "Coupon Restrictions",
+				"path": "restrictions/04-coupon-restrictions",
+				"keywords":
+						 [
+						 ]
 			}
 		]
 	},

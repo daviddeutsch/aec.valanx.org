@@ -1,6 +1,6 @@
 # Restrictions
 
-Be careful setting restrictions, as you can over-restrict plans and groups easily.  Usually only one restriction is needed.  It is best to test the restrictions after setting them by viewing a plans page in the front end as a user who will meet the criteria to see or not see the plan.
+Be careful setting restrictions, as you can over-restrict plans and groups easily. Usually only one restriction is needed.  It is best to test the restrictions after setting them by viewing a plans page in the front end as a user who will meet the criteria to see or not see the plan.
 
 ## By Usergroup
 
