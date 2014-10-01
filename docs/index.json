@@ -121,7 +121,20 @@
 		"path": "restrictions/general",
 		"keywords": [],
 		"children": [
-
+			{
+				"title": "General Restrictions",
+				"path": "restrictions/01-general-restrictions",
+				"keywords":
+						 [
+						 ]
+			},
+			{
+				"title": "Custom Restrictions",
+				"path": "restrictions/02-custom-restrictions",
+				"keywords":
+						 [
+						 ]
+			}
 		]
 	},
 	{

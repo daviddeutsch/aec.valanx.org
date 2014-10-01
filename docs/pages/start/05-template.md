@@ -12,6 +12,8 @@ Unless you are upgrading from an older version of AEC (where the template was na
 
 ## Template Settings
 
+TODO: Overview picture of eta template settings
+
 ### Default
 
 ![Template Settings - Default](../../img/template-settings-default.png)
