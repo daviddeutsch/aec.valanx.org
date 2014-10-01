@@ -454,7 +454,7 @@
 						var paragraphs = el.filter("p");
 
 						if ( content.pagetitle != '' ) {
-							done = 100 - ( (paragraphs.length / 10) * todos * 5 );
+							done = 100 - ( todos * 10 );
 						}
 
 						$timeout(function(){
