@@ -1,7 +1,7 @@
 (function () {
 
 	angular.module('aecApp', [
-		'ngAnimate', 'ui.router',
+		'ngAnimate', 'ngTouch', 'ui.router',
 		'ct.ui.router.extras', 'mgcrea.ngStrap',
 		'ngDisqus', 'hc.marked'
 	]);
