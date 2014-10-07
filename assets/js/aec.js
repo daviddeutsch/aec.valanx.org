@@ -284,8 +284,17 @@
 			$stateParams.path = 'start/welcome';
 		}
 
-		$scope.hoverLeave = function() {
+		$scope.hoverLeave = function(swipe) {
+			if ( typeof swipe == 'undefined' ) {
+				swipe = false;
+			}
+
+			if ( swipe ) {
+				$scope.extendedPreference = false;
+			}
+
 			$scope.extended = $scope.extendedPreference;
+
 		};
 
 		$scope.hoverEnter = function() {

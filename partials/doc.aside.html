@@ -1,4 +1,4 @@
-<div class="aside" ng-class="{'aside-collapsed': !extended}" ng-mouseenter="hoverEnter()" ng-mouseleave="hoverLeave()">
+<div class="aside" ng-class="{'aside-collapsed': !extended}" ng-mouseenter="hoverEnter()" ng-mouseleave="hoverLeave()" ng-swipe-left="hoverLeave(true)">
 	<div class="aside-dialog">
 		<div class="aside-content">
 			<div class="aside-header">
@@ -17,7 +17,12 @@
 			</div>
 			<div class="aside-switch" ng-class="{'aside-switch-fixed': extendedPreference && extended}">
 				<button class="btn btn-default" ng-click="toggleOpen()">
-					<i class="fa" ng-class="{'fa-angle-double-left': extendedPreference && extended, 'fa-thumb-tack': !extendedPreference && extended, 'fa-angle-right': !extendedPreference && !extended}"></i>
+						<span>&nbsp;
+							<i class="fa visible-xs-inline-block" ng-class="{'fa-angle-left': !extendedPreference && extended, 'fa-thumb-tack': extendedPreference && extended}"></i>
+							<span class="visible-xs-inline-block">swipe</span>
+							<i class="fa hidden-xs" ng-class="{'fa-angle-double-left': extendedPreference && extended, 'fa-thumb-tack': !extendedPreference && extended, 'fa-angle-right': !extendedPreference && !extended}"></i>
+							<i class="fa visible-xs-inline-block" ng-class="{'fa-angle-right': !extended}"></i>
+						</span>
 				</button>
 			</div>
 			<div class="aside-body am-slide-left" ng-if="extended">

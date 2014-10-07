@@ -192,9 +192,13 @@ ul.aec-sidenav {
 		width: 100% !important;
 		min-width: 100% !important;
 		max-width: 100% !important;
+		opacity: 1 !important;
 	}
 	@media (max-width: (@screen-lg-min + 120)) {
 		opacity: 0.8;
+	}
+	@media (max-width: @screen-md-min) {
+		opacity: 1;
 	}
 	.transition(opacity 240ms ease-in-out);
 	&-collapsed {
@@ -211,6 +215,7 @@ ul.aec-sidenav {
 			width: @aside-width-mdl;
 			min-width: @aside-width-mdl;
 			max-width: @aside-width-mdl;
+			opacity: 0.8;
 		}
 	}
 	&:hover {
@@ -228,6 +233,12 @@ ul.aec-sidenav {
 			border-radius: 0;
 			bottom: 0px;
 			background: #ddd;
+			@media (max-width: @screen-xs-min) {
+				padding: 1px;
+			}
+		}
+		@media (max-width: @screen-xs-min) {
+			margin-top: -2px;
 		}
 	}
 	&-switch-min {
@@ -243,13 +254,13 @@ ul.aec-sidenav {
 	& &-dialog &-header {
 		background: #eee;
 		z-index: 100;
-		padding: 2px 2px 4px 12px;
+		padding: 2px 2px 8px 12px;
 		overflow: hidden;
 		@media (min-width: @screen-md-min) {
 			padding: 4px 2px 4px 12px;
 		}
 		@media (max-width: @screen-xs-min) {
-			padding: 0px 0px 2px 6px;
+			padding: 0px 0px 6px 6px;
 		}
 		.aside-title {
 			width: 200%;
@@ -285,6 +296,7 @@ ul.aec-sidenav {
 		z-index: 50;
 		background: #aaa;
 		ul {
+			margin: 24px 0 0 12px;
 			font-size: @font-size-base;
 			li {
 				margin-bottom: 12px;
@@ -530,7 +542,7 @@ ul.aec-sidenav {
 
 .pager {
 	opacity: 0.5;
-	.transition(opacity 400ms ease-in-out);
+	.transition(opacity 800ms ease-in-out);
 	&:hover {
 		opacity: 1;
 		.btn {
