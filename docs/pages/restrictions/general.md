@@ -10,3 +10,5 @@ A common way to set up your payment plans is to structure them in such a way tha
 
 ## Legacy Access Rights
 
+If you're just setting out with AEC, you don't yet have any subscription records to use, but you may already have properties in the user accounts that you can utilize. By restricting access to payment plans by Joomla usergroups or by other properties in the users account, you might even be able to emulate the behavior of a previous system that you had been using instead of AEC.
+
