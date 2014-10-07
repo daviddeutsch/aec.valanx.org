@@ -5,14 +5,16 @@
 				<div class="bs-sidebar hidden-print" role="complementary" data-offset-top="-80" bs-affix></div>
 			</div>
 			<div ng-controller="DocCtrl">
-				<div class="col-lg-8 col-md-7 col-sm-12" id="documentation-full">
-					<div id="content-inner" ng-bind-html="content" class="am-fade" ng-if="docready"></div>
-					<div ng-class="{'hidden-lg': sideindex.length}">
-						<div ng-include="'partials/pager.html'"></div>
+				<div ng-swipe-right="hoverEnter()" ng-swipe-left="hoverLeave()">
+					<div class="col-lg-8 col-md-7 col-sm-12" id="documentation-full">
+						<div id="content-inner" ng-bind-html="content" class="am-fade" ng-if="docready"></div>
+						<div ng-class="{'hidden-lg': sideindex.length}">
+							<div ng-include="'partials/pager.html'"></div>
+						</div>
+						<div ng-include="'partials/comments.html'"></div>
 					</div>
-					<div ng-include="'partials/comments.html'"></div>
+					<div ng-include="'partials/sidenav.html'"></div>
 				</div>
-				<div ng-include="'partials/sidenav.html'"></div>
 			</div>
 		</div>
 	</div>
