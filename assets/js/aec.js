@@ -297,7 +297,15 @@
 
 		};
 
-		$scope.hoverEnter = function() {
+		$scope.hoverEnter = function(swipe) {
+			if ( typeof swipe == 'undefined' ) {
+				swipe = false;
+			}
+
+			if ( swipe ) {
+				$scope.extendedPreference = true;
+			}
+
 			$scope.extended = true;
 		};
 
@@ -313,6 +321,10 @@
 		};
 
 		$scope.switchPage = function(path) {
+			if ( $window.innerWidth <= 480 ) {
+				$scope.extendedPreference = false;
+			}
+
 			if ( !$scope.extendedPreference ) {
 				$scope.extended = false;
 			}
