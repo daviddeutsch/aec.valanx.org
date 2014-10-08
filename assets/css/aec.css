@@ -6743,8 +6743,10 @@ ul.aec-sidenav li.active > a {
   border-right: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5), 0 -3px 0 rgba(255, 255, 255, 0.5) inset, 0 8px 12px rgba(255, 255, 255, 0.1);
 }
-#home-top ul li:last-of-type a {
-  margin-right: 0;
+@media (min-width: 768px) {
+  #home-top ul li:last-of-type a {
+    margin-right: 0;
+  }
 }
 #background {
   position: absolute;
@@ -6765,6 +6767,11 @@ ul.aec-sidenav li.active > a {
   height: 100%;
   background-image: url(../img/carina-nebula-dark-red.jpg);
   min-height: 1024px;
+}
+@media (max-width: 480px) {
+  .carina-full {
+    min-height: 1412px;
+  }
 }
 .carina-inject-mystic-mt {
   background-image: url(../img/carina-nebula-mystic-mt.jpg);
