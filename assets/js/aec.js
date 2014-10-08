@@ -293,8 +293,9 @@
 				$scope.extendedPreference = false;
 			}
 
-			$scope.extended = $scope.extendedPreference;
-
+			if ( swipe && ($window.innerWidth > 480) ) {
+				$scope.extended = $scope.extendedPreference;
+			}
 		};
 
 		$scope.hoverEnter = function(swipe) {
