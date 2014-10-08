@@ -293,11 +293,20 @@
 				$scope.extendedPreference = false;
 			}
 
-			$scope.extended = $scope.extendedPreference;
-
+			if ( swipe && ($window.innerWidth > 480) ) {
+				$scope.extended = $scope.extendedPreference;
+			}
 		};
 
-		$scope.hoverEnter = function() {
+		$scope.hoverEnter = function(swipe) {
+			if ( typeof swipe == 'undefined' ) {
+				swipe = false;
+			}
+
+			if ( swipe ) {
+				$scope.extendedPreference = true;
+			}
+
 			$scope.extended = true;
 		};
 
@@ -313,6 +322,10 @@
 		};
 
 		$scope.switchPage = function(path) {
+			if ( $window.innerWidth <= 480 ) {
+				$scope.extendedPreference = false;
+			}
+
 			if ( !$scope.extendedPreference ) {
 				$scope.extended = false;
 			}
@@ -539,7 +552,7 @@
 	angular.module('aecApp').controller('StatsCtrl', StatsCtrl);
 
 
-	function DocService( $rootScope, $http, $compile, $q, $sce )
+	function DocService( $rootScope, $http, $compile, $q, $sce, $state )
 	{
 		var self = this,
 			headerid = 0;
@@ -579,9 +592,10 @@
 
 			this.renderer.link = function (href, title, text) {
 				if ( href.substr(0, 4) != 'http' ) {
-					return '<a href ui-sref="docs({path:\'' + href + '\'})">' + text + '</a>'
+					return '<a href="#!' + $state.href('docs', {path: href}) + '">' + text + '</a>';
+					//return '<a href ui-sref="docs({path:\'' + href + '\'})">' + text + '</a>';
 				} else {
-					return '<a href="' + href + '" target="_blank">' + text + '</a>'
+					return '<a href="' + href + '" target="_blank">' + text + '</a>';
 				}
 			};
 
@@ -800,7 +814,7 @@
 		}
 	}
 
-	DocService.$inject = ['$rootScope', '$http', '$compile', '$q', '$sce'];
+	DocService.$inject = ['$rootScope', '$http', '$compile', '$q', '$sce', '$state'];
 	angular.module('aecApp').service('Docs', DocService);
 
 })();

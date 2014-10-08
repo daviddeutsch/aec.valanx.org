@@ -4,6 +4,8 @@
 
 The newer releases of AEC (0.14 and above) have an import feature. It is accessible by going to AEC Central, then clicking on the Import icon.
 
+TODO: Interface Images
+
 To prepare you import file, it must be in CSV format with NO column headings. The fields that AEC will import are:
 
 |Field        |Description|
@@ -33,6 +35,8 @@ Assign Plan: You can choose a plan to have all of the users being imported in th
 When you are ready to import, click on the Apply icon.
 
 ## Exporting
+
+TODO: Interface Images
 
 To get to the export function go to AEC Central--> Export
 
