@@ -67,6 +67,6 @@ class mi_email_simple extends MI
 }
 ```
 
+Once you have your file, you also need to put it into the right folder. Since we named our class `mi_email_simple`, the folder within /micro_integrations needs to be called `email_simple` and the file `email_simple.php`.
 
-
-TODO:
+That's all you need to do!
