@@ -295,6 +295,8 @@
 
 			if ( swipe && ($window.innerWidth > 480) ) {
 				$scope.extended = $scope.extendedPreference;
+			} else if ( !swipe ) {
+				$scope.extended = $scope.extendedPreference;
 			}
 		};
 
