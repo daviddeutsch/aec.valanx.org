@@ -6811,6 +6811,7 @@ ul.aec-sidenav li.active > a {
   clear: both;
   color: #fff;
   text-shadow: 0 2px 2px #000000;
+  overflow: hidden;
   /*border-top: 40px solid rgba(255,255,255,0.5);
 	border-bottom: 40px solid rgba(255,255,255,0.5);*/
 }
