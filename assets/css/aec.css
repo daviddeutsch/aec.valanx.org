@@ -6304,6 +6304,12 @@ a {
 a:hover {
   color: #d43f3a;
 }
+section {
+  margin-top: 96px;
+}
+section h2 {
+  margin-bottom: 96px;
+}
 .fa {
   vertical-align: middle;
 }
@@ -6342,6 +6348,7 @@ img.fullwidth {
   border-bottom: 1px solid #eee;
   padding-bottom: 4px;
   font-weight: 500;
+  margin-bottom: 12px;
 }
 #documentation-full h3 {
   font-size: 23px;
@@ -6804,9 +6811,8 @@ ul.aec-sidenav li.active > a {
   background-image: url(../img/carina-nebula-colorful.jpg);
 }
 .content-bg-container {
-  float: left;
   position: relative;
-  margin: 96px 0;
+  margin: 96px 0 0;
   padding-bottom: 42px;
   left: 0;
   clear: both;
