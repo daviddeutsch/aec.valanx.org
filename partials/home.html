@@ -82,8 +82,37 @@
 <div class="container">
 	<div class="row">
 		<section>
+			<h2 class="text-center">What can you do with it?</h2>
+			<div class="col-md-9">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4>Charge for access to parts of your website</h4>
+					</div>
+					<div class="panel-body">
+						<p>With AEC, it is dead simple to ask for a registration fee. Just create a basic membership plan and integrate AEC with your registration. New users will have to pay to get in and existing users will be asked to pay on their next login.</p>
+					</div>
+				</div>
+
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4>Collect donations on your blog</h4>
+					</div>
+					<div class="panel-body">
+						<p>Since all the restrictions AEC imposes can be made optional, it is simple to make registration payments voluntary. And with the Donation MI, you can even let your users decide what they want to pay.</p>
+					</div>
+				</div>
+
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4>Sell Downloads</h4>
+					</div>
+					<div class="panel-body">
+						<p>Through its component Integration, AEC gives you the power to influence other software packages. So if you want to sell downloads from within DocMan - You can do just that!</p>
+					</div>
+				</div>
+
+			</div>
 			<div class="col-md-3">
-				<h2>&nbsp;</h2>
 				<div class="popover top-right popover-static">
 					<div class="arrow"></div>
 					<div class="popover-content">
@@ -151,37 +180,6 @@
 				<br/>
 
 				<p>Find more user voices on the AEC on the <a href="http://extensions.joomla.org/extensions/10723">Joomla Extensions directory</a></p>
-			</div>
-			<div class="col-md-9">
-				<h2 class="text-center">What can you do with it?</h2>
-
-				<div class="panel panel-info">
-					<div class="panel-heading">
-						<h4>Charge for access to parts of your website</h4>
-					</div>
-					<div class="panel-body">
-						<p>With AEC, it is dead simple to ask for a registration fee. Just create a basic membership plan and integrate AEC with your registration. New users will have to pay to get in and existing users will be asked to pay on their next login.</p>
-					</div>
-				</div>
-
-				<div class="panel panel-info">
-					<div class="panel-heading">
-						<h4>Collect donations on your blog</h4>
-					</div>
-					<div class="panel-body">
-						<p>Since all the restrictions AEC imposes can be made optional, it is simple to make registration payments voluntary. And with the Donation MI, you can even let your users decide what they want to pay.</p>
-					</div>
-				</div>
-
-				<div class="panel panel-info">
-					<div class="panel-heading">
-						<h4>Sell Downloads</h4>
-					</div>
-					<div class="panel-body">
-						<p>Through its component Integration, AEC gives you the power to influence other software packages. So if you want to sell downloads from within DocMan - You can do just that!</p>
-					</div>
-				</div>
-
 			</div>
 		</section>
 	</div>
@@ -273,7 +271,7 @@
 						<div class="col-md-6">
 							<ul class="nav nav-pills">
 								<li ng-repeat="node in types" ng-class="{'active': node.handle == type}">
-									<a ng-click="toggleType(node.handle)">{{node.handle}}</a>
+									<a ng-click="toggleType(node.handle)">{{map[node.handle]}}</a>
 								</li>
 							</ul>
 						</div>
@@ -293,7 +291,7 @@
 							<br/>
 							<ul class="nav nav-pills text-center">
 								<li ng-if="type">
-									<a href="#" ng-click="toggleType('')">{{type}} &times;</a>
+									<a href="#" ng-click="toggleType('')">{{map[type]}} &times;</a>
 								</li>
 								<li ng-if="type && searchText">
 									<a href="" disabled="disabled"><strong>+</strong></a>
@@ -349,8 +347,14 @@
 					<br/>
 				</div>
 				<div class="col-md-12">
+					<div ng-if="(processors|filter:searchText).length > 40">
+						<p
+							class="text-muted text-center">
+							(displaying 40 of {{(processors|filter:searchText).length}} processors)
+						</p>
+					</div>
 					<ul id="processors-list">
-						<li ng-repeat="processor in processors | filter:searchText" class="am-fade-and-slide-top">
+						<li ng-repeat="processor in processors | filter:searchText | limitTo:40" class="am-fade-and-slide-top">
 							<div class="processor-sprite processor-sprite-pos-{{processor.handle}}"></div>
 							<h4>{{processor.name}}</h4>
 						</li>

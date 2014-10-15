@@ -6,46 +6,6 @@
 		]
 	},
 	{
-		"handle": "vendor",
-		"children": [
-			"acyba",
-			"pages-and-items",
-			"joomprod",
-			"valanx",
-			"qualityunit",
-			"anythingdigital",
-			"alphaplug",
-			"dioscouri",
-			"joomlapolis",
-			"joomlatools",
-			"stackideas",
-			"flexicontent",
-			"google",
-			"mosets",
-			"idevdirect",
-			"interspire",
-			"the_thinkery",
-			"instant_php",
-			"azrul",
-			"joomlaxi",
-			"joomdle",
-			"joomlaworks",
-			"mailchimp",
-			"ninjaforge",
-			"pepperjam",
-			"phoca",
-			"phpbb",
-			"redcomponent",
-			"rsgallery",
-			"rsjoomla",
-			"shareasale",
-			"sigsiu",
-			"stephan_slabihoud",
-			"vbulletin",
-			"virtuemart"
-		]
-	},
-	{
 		"handle": "user",
 		"children": [
 
@@ -133,12 +93,6 @@
 	},
 	{
 		"handle": "content",
-		"children": [
-
-		]
-	},
-	{
-		"handle": "services",
 		"children": [
 
 		]

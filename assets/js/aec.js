@@ -198,6 +198,26 @@
 		$scope.type = 'communication';
 		$scope.mis = [];
 
+		$scope.map = {
+			sharing: "Sharing",
+			user: "User Account",
+			joomla: "Joomla",
+			aec: "AEC",
+			ecommerce: "E-Commerce",
+			tracking: "Tracking",
+			communication: "Communication",
+			community: "Community",
+			calendar_events: "Calender&amp;Events",
+			basic: "Basic",
+			system: "System",
+			directory_documentation: "Directory",
+			vertical_markets: "Vertical Markets",
+			education: "Education",
+			content: "Content",
+			media: "Media",
+			service: "Services"
+		};
+
 		$http.get('mitypes.json')
 			.then(function(types){
 				$scope.types = types.data;
