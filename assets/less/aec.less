@@ -26,6 +26,9 @@ section {
 	margin-top: 96px;
 	h2 {
 		margin-bottom: 96px;
+		width: 100%;
+		padding-bottom: 12px;
+		border-bottom: 1px solid #999;
 	}
 }
 
@@ -509,7 +512,18 @@ ul.aec-sidenav {
 	position: absolute;
 	top: -40px;
 	bottom: -40px;
-	left: -60%;
+	@media (min-width: @screen-lg-min) {
+		left: -60%;
+	}
+	@media (max-width: @screen-lg-min) {
+		left: -100%;
+	}
+	@media (max-width: @screen-md-min) {
+		left: -130%;
+	}
+	@media (max-width: @screen-sm-min) {
+		left: -180%;
+	}
 }
 
 .slash-constraint-right {
@@ -522,7 +536,18 @@ ul.aec-sidenav {
 	position: absolute;
 	top: -40px;
 	bottom: -40px;
-	right: -50%;
+	@media (min-width: @screen-lg-min) {
+		right: -50%;
+	}
+	@media (max-width: @screen-lg-min) {
+		right: -90%;
+	}
+	@media (max-width: @screen-md-min) {
+		right: -120%;
+	}
+	@media (max-width: @screen-sm-min) {
+		right: -160%;
+	}
 }
 
 .carina {
