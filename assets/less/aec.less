@@ -22,16 +22,51 @@ a {
 	}
 }
 
+strong {
+	font-weight: 600;
+}
+
 section {
 	margin-top: 96px;
 	h2 {
 		margin-bottom: 96px;
 		width: 100%;
 		padding-bottom: 12px;
-		border-bottom: 1px solid #999;
+		font-weight: 200;
+		strong {
+			font-weight: 400;
+		}
+	}
+	h3 {
+		font-weight: 200;
+	}
+
+	&.soft-gradient {
+		#gradient > .vertical(@start-color: transparent; @end-color: rgba(0,0,0,.035); @start-percent: 0%; @end-percent: 50%);
+		padding: 24px 0 42px;
+	}
+
+	&.soft {
+		background: rgba(0,0,0,.02);
+		padding: 24px 0 42px;
 	}
 }
 
+.panel-headless {
+	.panel-heading {
+		background: transparent;
+		border-bottom: 1px solid #ddd;
+		text-align: center;
+
+		h3 {
+			font-weight: 400;
+		}
+	}
+
+	&.panel-info .panel-heading {
+		color: @brand-info;
+	}
+}
 
 .fa {
 	vertical-align: middle;
@@ -92,13 +127,14 @@ img.fullwidth {
 		width: 100%;
 		border-bottom: 1px solid #eee;
 		padding-bottom: 4px;
-		font-weight: 500;
+		font-weight: 200;
 		margin-bottom: 12px;
 	}
 
 	h3 {
 		font-size: ceil((@font-size-h3 * 0.8));
-		font-weight: 600;
+		font-weight: 400;
+		margin: 36px 0 24px;
 	}
 
 	p {
@@ -136,13 +172,13 @@ ul.aec-sidenav {
 	li {
 		a {
 			display: block;
-			font-weight: 500;
+			font-weight: 400;
 			color: #999;
 			padding: 4px 15px;
 			&:focus,
 			&:hover {
 				padding-right: 12px;
-				font-weight: 700;
+				font-weight: 600;
 				color: #B94846;
 				background-color: transparent;
 				border-left: 1px solid #B94846;
@@ -168,7 +204,7 @@ ul.aec-sidenav {
 			&:focus > a,
 			&:hover > a,
 			& > a {
-				font-weight: 700;
+				font-weight: 500;
 				color: #B94846;
 				background-color: transparent;
 				border-left: 1px solid #B94846;
