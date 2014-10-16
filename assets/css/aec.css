@@ -6289,6 +6289,10 @@ legend {
 .modal .close {
   color: #333333;
 }
+body {
+  text-rendering: optimizelegibility;
+  -moz-font-feature-settings: "liga", "kern";
+}
 a a:focus,
 a:active,
 button,
@@ -6308,6 +6312,9 @@ strong {
 }
 section {
   margin-top: 96px;
+}
+section p {
+  line-height: 1.45;
 }
 section h2 {
   margin-bottom: 96px;
