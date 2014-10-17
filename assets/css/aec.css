@@ -6311,6 +6311,7 @@ strong {
   font-weight: 600;
 }
 img.outline-icon {
+  display: block;
   width: 240px;
   max-width: 100%;
   margin: 0 auto;
@@ -6345,6 +6346,9 @@ section.soft {
   background: rgba(0, 0, 0, 0.02);
   padding: 24px 0 42px;
 }
+.panel-headless {
+  background: transparent;
+}
 .panel-headless .panel-heading {
   background: transparent;
   border-bottom: 1px solid #ddd;
@@ -6352,6 +6356,9 @@ section.soft {
 }
 .panel-headless .panel-heading h3 {
   font-weight: 400;
+}
+.panel-headless .panel-body {
+  background: #fff;
 }
 .panel-headless.panel-info .panel-heading {
   color: #5bc0de;
