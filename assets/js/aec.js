@@ -207,7 +207,7 @@
 			tracking: "Tracking",
 			communication: "Communication",
 			community: "Community",
-			calendar_events: "Calender&amp;Events",
+			calendar_events: "Calender&Events",
 			basic: "Basic",
 			system: "System",
 			directory_documentation: "Directory",
