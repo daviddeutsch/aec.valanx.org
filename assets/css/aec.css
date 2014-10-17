@@ -6312,6 +6312,7 @@ strong {
 }
 img.outline-icon {
   width: 240px;
+  max-width: 100%;
   margin: 0 auto;
 }
 section {
