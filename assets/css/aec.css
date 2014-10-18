@@ -6323,7 +6323,7 @@ section p {
   line-height: 1.45;
 }
 section h2 {
-  margin-bottom: 96px;
+  margin-bottom: 32px;
   width: 100%;
   padding-bottom: 12px;
   font-weight: 200;
@@ -6345,6 +6345,14 @@ section.soft-gradient {
 section.soft {
   background: rgba(0, 0, 0, 0.02);
   padding: 24px 0 42px;
+}
+section .progress {
+  -webkit-transition: width 2s ease;
+  -o-transition: width 2s ease;
+  transition: width 2s ease;
+}
+section .progress-bar-info {
+  opacity: 0.5;
 }
 .panel-headless {
   background: transparent;
@@ -7267,14 +7275,6 @@ ul.aec-sidenav li.active > a {
   left: inherit;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
   display: block;
-}
-section .progress {
-  -webkit-transition: width 2s ease;
-  -o-transition: width 2s ease;
-  transition: width 2s ease;
-}
-section .progress-bar-info {
-  opacity: 0.5;
 }
 @-webkit-keyframes pulse {
   from {
