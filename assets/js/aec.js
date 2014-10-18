@@ -24,9 +24,6 @@
 				views: {
 					"main": {
 						templateUrl: 'partials/home.html'
-					},
-					"background": {
-						templateUrl: 'partials/carina.html'
 					}
 				}
 			})
@@ -36,9 +33,6 @@
 				views: {
 					"main": {
 						templateUrl: 'partials/doc.html'
-					},
-					"background": {
-						templateUrl: 'partials/empty.html'
 					}
 				}
 			})
@@ -48,9 +42,6 @@
 				views: {
 					"main": {
 						templateUrl: 'partials/stats.html'
-					},
-					"background": {
-						templateUrl: 'partials/empty.html'
 					}
 				}
 			})
@@ -79,9 +70,9 @@
 	 *
 	 * @desc Data to prepare when we run the application
 	 */
-	function AppRun( $rootScope, $state, $location )
+	function AppRun( $rootScope, $state, $location, $timeout )
 	{
-		$rootScope.$state = $state;
+		$rootScope.fresh = true;
 
 		$rootScope.$on(
 			'$stateChangeStart',
@@ -113,7 +104,7 @@
 					href: angular.element(),
 					offset: 0,
 					duration: 800,
-					easing: 'easeOutQuint'
+					easing: 'easeOutCirc'
 				}, attrs);
 
 				settings.href = settings.href.replace('#','');
@@ -149,21 +140,48 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function HomeCtrl( $rootScope )
+	function HomeCtrl( $rootScope, $window, $timeout )
 	{
 		$rootScope.loading = false;
 
 		$rootScope.$broadcast('backHome');
 
-		// TODO: Probably want to replace this with something smarter in the future
-		angular.element('html, body').animate(
-			{scrollTop: 0},
-			200,
-			'easeInOutQuint'
-		);
+		if ( !$rootScope.fresh ) {
+			angular.element('html, body').animate(
+				{scrollTop: 0},
+				200,
+				'easeInOutQuint'
+			);
+		} else {
+			$rootScope.fresh = false;
+		}
+
+		var scroll = function(start) {
+			var window = angular.element($window);
+
+			var pos = window.scrollTop(),
+				height = window.innerHeight();
+
+			var splash = angular.element('#splash');
+
+			if ( pos == 0 ) {
+				splash.addClass("splash-start");
+
+				splash.css("height", '');
+			} else if ( (pos > 0) && (pos < height) ) {
+				splash.removeClass("splash-start");
+
+				splash.css("height", Math.max(height - (pos*pos), 0) + 'px');
+			}
+		};
+
+		angular.element($window).bind("scroll", function() {
+			$timeout(scroll, 100);
+		});
+
 	}
 
-	HomeCtrl.$inject = ['$rootScope'];
+	HomeCtrl.$inject = ['$rootScope', '$window', '$timeout'];
 	angular.module('aecApp').controller('HomeCtrl', HomeCtrl);
 
 
@@ -256,6 +274,8 @@
 			id = 0,
 			affix,
 			pageload;
+
+		$rootScope.fresh = false;
 
 		$scope.path = '';
 		$scope.indexFilter = '';
@@ -452,7 +472,7 @@
 				animation: 'am-fade-and-slide-left',
 				backdrop: false,
 				keyboard: false,
-				container: '#background'
+				container: '#wrap'
 			});
 
 		resize(true);

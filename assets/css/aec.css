@@ -6809,13 +6809,8 @@ ul.aec-sidenav li.active > a {
     margin-right: 0;
   }
 }
-#background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
 .fullwidth-background {
-  position: absolute;
+  position: relative;
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -6889,18 +6884,27 @@ ul.aec-sidenav li.active > a {
 .carina-full {
   height: 100%;
   background-image: url(../img/carina-nebula-dark-red.jpg);
-  min-height: 1024px;
-}
-@media (max-width: 480px) {
-  .carina-full {
-    min-height: 1412px;
-  }
 }
 .carina-inject-mystic-mt {
   background-image: url(../img/carina-nebula-mystic-mt.jpg);
 }
 .carina-inject-colorful {
   background-image: url(../img/carina-nebula-colorful.jpg);
+}
+#splash {
+  overflow: hidden;
+}
+#start {
+  position: absolute;
+  top: 40px;
+}
+.splash-start {
+  min-height: 1024px;
+}
+@media (max-width: 480px) {
+  .splash-start {
+    min-height: 1412px;
+  }
 }
 .content-bg-container {
   position: relative;

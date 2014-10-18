@@ -47,18 +47,13 @@
 </head>
 
 <body ng-app="aecApp" id="ng-app">
-	<div>
-		<div id="background">
-			<div ui-view="background" class="am-fade"></div>
-		</div>
-		<div id="foreground" class="page-{{$state.$current.name}}">
-			<div ui-view="main" class="am-fade"></div>
-			<p class="text-center text-clear" ng-show="loading">
-				<br/>
-				<i class="fa fa-cloud-download fa-2x pulse"></i>
-				<br/>
-			</p>
-		</div>
+	<div id="wrap" class="page-{{$state.$current.name}}">
+		<div ui-view="main" class="am-fade"></div>
+		<p class="text-center text-clear" ng-show="loading">
+			<br/>
+			<i class="fa fa-cloud-download fa-2x pulse"></i>
+			<br/>
+		</p>
 	</div>
 </body>
 
