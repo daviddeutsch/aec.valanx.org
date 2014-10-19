@@ -96,12 +96,23 @@
 	</div>
 </section>
 
-<section class="soft-gradient">
+<section class="soft-gradient"
+		 id="applications"
+		 class="text-center"
+		 zum-waypoint="applications"
+		 down="flags.on"
+		 up="flags.off"
+		 offset="70%"
+	>
 	<div class="container">
 		<div class="row">
 			<h2 class="text-center">What you can do with AEC</h2>
 			<div class="col-md-6">
-				<div class="panel panel-info panel-headless">
+				<div
+					class="panel panel-info panel-headless am-fade-and-slide-left"
+					ng-show="applications.flags.on"
+					ng-hide="!applications.flags.on"
+					>
 					<div class="panel-heading">
 						<img src="assets/img/business-arrows-06.png" alt="" class="outline-icon"/>
 						<h3>Charge for access to your site</h3>
@@ -112,7 +123,11 @@
 				</div>
 			</div>
 			<div class="col-md-6">
-				<div class="panel panel-info panel-headless">
+				<div
+					class="panel panel-info panel-headless am-fade-and-slide-right am-delay-1"
+					ng-show="applications.flags.on"
+					ng-hide="!applications.flags.on"
+					>
 					<div class="panel-heading">
 						<img src="assets/img/network-sharing-03.png" alt="" class="outline-icon"/>
 						<h3>Sell Downloads</h3>
@@ -124,7 +139,11 @@
 			</div>
 			<div class="col-md-12"></div>
 			<div class="col-md-6">
-				<div class="panel panel-info panel-headless">
+				<div
+					class="panel panel-info panel-headless am-fade-and-slide-left am-delay-2"
+					ng-show="applications.flags.on"
+					ng-hide="!applications.flags.on"
+					>
 					<div class="panel-heading">
 						<img src="assets/img/food-15.png" alt="" class="outline-icon"/>
 						<h3>Collect donations on your blog</h3>
@@ -135,7 +154,11 @@
 				</div>
 			</div>
 			<div class="col-md-6">
-				<div class="panel panel-info panel-headless">
+				<div
+					class="panel panel-info panel-headless am-fade-and-slide-right am-delay-1"
+					ng-show="applications.flags.on"
+					ng-hide="!applications.flags.on"
+					>
 					<div class="panel-heading">
 						<img src="assets/img/hierarchy-09.png" alt="" class="outline-icon"/>
 						<h3>Take control of accounts</h3>
@@ -155,7 +178,7 @@
 	zum-waypoint="uservoices"
 	down="flags.on"
 	up="flags.off"
-	offset="40%"
+	offset="50%"
 	>
 	<div class="container">
 		<div class="row">

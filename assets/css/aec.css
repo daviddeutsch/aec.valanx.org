@@ -6357,6 +6357,9 @@ section .progress-bar-info {
 section#uservoices {
   min-height: 500px;
 }
+section#applications {
+  min-height: 500px;
+}
 .panel-headless {
   background: transparent;
 }
