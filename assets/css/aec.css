@@ -6354,6 +6354,9 @@ section .progress {
 section .progress-bar-info {
   opacity: 0.5;
 }
+section#uservoices {
+  min-height: 500px;
+}
 .panel-headless {
   background: transparent;
 }
@@ -7335,4 +7338,10 @@ ul.aec-sidenav li.active > a {
   -webkit-animation: pulse 1s infinite;
   -o-animation: pulse 1s infinite;
   animation: pulse 1s infinite;
+}
+.am-delay-1 {
+  animation-delay: 200ms;
+}
+.am-delay-2 {
+  animation-delay: 400ms;
 }

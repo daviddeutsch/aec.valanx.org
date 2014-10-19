@@ -3,7 +3,7 @@
 	angular.module('aecApp', [
 		'ngAnimate', 'ngTouch', 'ui.router',
 		'ct.ui.router.extras', 'mgcrea.ngStrap',
-		'ngDisqus', 'hc.marked'
+		'ngDisqus', 'hc.marked', 'zumba.angular-waypoints'
 	]);
 
 	/**
@@ -142,9 +142,25 @@
 	 */
 	function HomeCtrl( $rootScope, $window, $timeout )
 	{
+		var refreshed = false;
+
 		$rootScope.loading = false;
 
 		$rootScope.$broadcast('backHome');
+
+		var refreshWP = function(force) {
+			if ( typeof force == 'undefined') {
+				force = false;
+			}
+
+			if ( !refreshed || force ) {
+				$.waypoints('refresh');
+
+				if ( !force ) {
+					refreshed = true;
+				}
+			}
+		};
 
 		if ( !$rootScope.fresh ) {
 			angular.element('html, body').animate(
@@ -154,6 +170,8 @@
 			);
 		} else {
 			$rootScope.fresh = false;
+
+			refreshWP(true);
 		}
 
 		var scroll = function(start) {
@@ -168,10 +186,14 @@
 				splash.addClass("splash-start");
 
 				splash.css("height", '');
+
+				refreshed = false;
 			} else if ( (pos > 0) && (pos < height) ) {
 				splash.removeClass("splash-start");
 
 				splash.css("height", Math.max(height - (pos*pos), 0) + 'px');
+			} else if ( pos > height ) {
+				refreshWP();
 			}
 		};
 
