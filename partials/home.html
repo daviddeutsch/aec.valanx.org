@@ -443,44 +443,44 @@
 							Narrow down your results
 						</div>
 						<div class="panel-body am-fade" ng-hide="!integrations.flags.on">
-							<div class="col-md-6">
-								<ul class="nav nav-pills">
-									<li ng-repeat="node in types" ng-class="{'active': node.handle == type}">
-										<a ng-click="toggleType(node.handle)">{{map[node.handle]}}</a>
-									</li>
-								</ul>
-							</div>
-							<div class="col-md-6">
-								<br/>
-								<div class="form-group form-focus">
+							<div class="col-md-12">
+								<div class="col-md-6">
+									<br/>
 									<div class="input-group">
-										<div class="input-group-addon"><i class="fa fa-search"></i></div>
-										<input type="text"
-											   class="text-center form-control"
-											   ng-model="searchText"
-											   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 180, 'blur': 0} }"
-											   placeholder="search" />
-										<div class="input-group-addon">{{(mis | filter:{type: type} | filter:searchText).length}} Integrations</div>
+										<ui-select ng-model="selection.type" class="form-control" theme="selectize">
+											<ui-select-match placeholder="Select or search a type of integration...">{{map[$select.selected.handle]}}</ui-select-match>
+											<ui-select-choices repeat="node in types | filter: $select.search">
+												<div ng-bind="map[node.handle] | highlight: $select.search"></div>
+											</ui-select-choices>
+										</ui-select>
+
+									<span class="input-group-btn">
+										<button ng-click="selection.type = undefined" class="btn btn-default">
+											<span class="fa fa-trash"></span>
+										</button>
+									</span>
 									</div>
 								</div>
-								<br/>
-								<ul class="nav nav-pills text-center">
-									<li ng-if="type">
-										<a href="#" ng-click="toggleType('')">{{map[type]}} &times;</a>
-									</li>
-									<li ng-if="type && searchText">
-										<a href="" disabled="disabled"><strong>+</strong></a>
-									</li>
-									<li ng-if="searchText">
-										<a href="#" ng-click="eraseSearch()">{{searchText}} &times;</a>
-									</li>
-								</ul>
+								<div class="col-md-6">
+									<br/>
+									<div class="form-group form-focus">
+										<div class="input-group">
+											<div class="input-group-addon"><i class="fa fa-search"></i></div>
+											<input type="text"
+												   class="text-center form-control"
+												   ng-model="selection.searchText"
+												   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 180, 'blur': 0} }"
+												   placeholder="search" />
+											<div class="input-group-addon">{{(mis | filter:{type: selection.type.handle} | filter:selection.searchText).length}} Integrations</div>
+										</div>
+									</div>
+								</div>
 							</div>
 
 							<div class="col-md-12">
 								<div
 									class="col-md-3 am-fade-and-slide-top"
-									ng-repeat="mi in mis | filter:{type: type} | filter:searchText"
+									ng-repeat="mi in mis | filter:{type: selection.type.handle} | filter:selection.searchText"
 									ng-hide="!integrations.flags.on"
 									>
 									<div>
