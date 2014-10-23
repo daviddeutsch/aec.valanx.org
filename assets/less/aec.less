@@ -602,12 +602,11 @@ ul.aec-sidenav {
 	display: block;
 	float: left;
 	width: 1555px;
-	height: 125%;
+	min-height: 100%;
 	position: absolute;
-	top: -40px;
-	bottom: -40px;
+	top: 0;
 	@media (min-width: @screen-lg-min) {
-		right: -50%;
+		right: @screen-lg-min - 1555px - (@screen-lg-min / 3);
 	}
 	@media (max-width: @screen-lg-min) {
 		right: -90%;

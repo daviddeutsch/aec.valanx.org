@@ -6871,14 +6871,13 @@ ul.aec-sidenav li.active > a {
   display: block;
   float: left;
   width: 1555px;
-  height: 125%;
+  min-height: 100%;
   position: absolute;
-  top: -40px;
-  bottom: -40px;
+  top: 0;
 }
 @media (min-width: 1200px) {
   .slash-constraint-right {
-    right: -50%;
+    right: -755px;
   }
 }
 @media (max-width: 1200px) {
