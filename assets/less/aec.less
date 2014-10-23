@@ -587,17 +587,18 @@ ul.aec-sidenav {
 	position: absolute;
 	top: -40px;
 	bottom: -40px;
-	@media (min-width: @screen-lg-min) {
-		left: -60%;
-	}
-	@media (max-width: @screen-lg-min) {
-		left: -100%;
-	}
-	@media (max-width: @screen-md-min) {
-		left: -130%;
-	}
+
 	@media (max-width: @screen-sm-min) {
-		left: -180%;
+		display: none;
+	}
+	@media (min-width: @screen-sm-min) {
+		left: @screen-sm-min - 1555px - (@screen-sm-min * 0.75);
+	}
+	@media (min-width: @screen-md-min) {
+		left: @screen-md-min - 1555px - (@screen-md-min * 0.75);
+	}
+	@media (min-width: @screen-lg-min) {
+		left: @screen-lg-min - 1555px - (@screen-lg-min * 0.75);
 	}
 }
 
@@ -610,17 +611,18 @@ ul.aec-sidenav {
 	min-height: 100%;
 	position: absolute;
 	top: 0;
-	@media (min-width: @screen-lg-min) {
-		right: @screen-lg-min - 1555px - (@screen-lg-min / 3);
-	}
-	@media (max-width: @screen-lg-min) {
-		right: -90%;
-	}
-	@media (max-width: @screen-md-min) {
-		right: -120%;
-	}
+
 	@media (max-width: @screen-sm-min) {
-		right: -160%;
+		display: none;
+	}
+	@media (min-width: @screen-sm-min) {
+		right: @screen-sm-min - 1555px - (@screen-sm-min / 2);
+	}
+	@media (min-width: @screen-md-min) {
+		right: @screen-md-min - 1555px - (@screen-md-min / 2);
+	}
+	@media (min-width: @screen-lg-min) {
+		right: @screen-lg-min - 1555px - (@screen-lg-min / 1.65);
 	}
 }
 
