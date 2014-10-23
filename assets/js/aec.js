@@ -3,7 +3,8 @@
 	angular.module('aecApp', [
 		'ngAnimate', 'ngTouch', 'ui.router',
 		'ct.ui.router.extras', 'mgcrea.ngStrap',
-		'ngDisqus', 'hc.marked', 'zumba.angular-waypoints'
+		'ngDisqus', 'hc.marked', 'zumba.angular-waypoints',
+		'ui.select'
 	]);
 
 	/**
@@ -11,7 +12,7 @@
 	 *
 	 * @desc Set up the Application
 	 */
-	function AppCfg( $urlRouterProvider, $stateProvider, $locationProvider, $disqusProvider, $popoverProvider )
+	function AppCfg( $urlRouterProvider, $stateProvider, $locationProvider, $disqusProvider, $popoverProvider, uiSelectConfig )
 	{
 		$urlRouterProvider
 			.otherwise('/');
@@ -59,9 +60,11 @@
 			trigger: 'hover',
 			placement: 'bottom'
 		});
+
+		uiSelectConfig.theme = 'selectize';
 	}
 
-	AppCfg.$inject = ['$urlRouterProvider', '$stateProvider', '$locationProvider', '$disqusProvider', '$popoverProvider'];
+	AppCfg.$inject = ['$urlRouterProvider', '$stateProvider', '$locationProvider', '$disqusProvider', '$popoverProvider', 'uiSelectConfig'];
 	angular.module('aecApp').config(AppCfg);
 
 
@@ -234,8 +237,13 @@
 	function IntegrationsCtrl( $scope, $http )
 	{
 		$scope.types = {};
-		$scope.searchText = '';
-		$scope.type = 'communication';
+		$scope.selection = {
+			searchText: '',
+			type: {
+				handle: 'communication'
+			}
+		};
+
 		$scope.mis = [];
 
 		$scope.map = {
@@ -270,14 +278,14 @@
 
 		$scope.toggleType = function(type) {
 			if ( $scope.type == type ) {
-				$scope.type = '';
+				$scope.selection.type = '';
 			} else {
-				$scope.type = type;
+				$scope.selection.type = type;
 			}
 		};
 
 		$scope.eraseSearch = function(type) {
-			$scope.searchText = '';
+			$scope.selection.searchText = '';
 		};
 	}
 
