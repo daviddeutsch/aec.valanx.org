@@ -99,13 +99,13 @@
 	angular.module('aecApp').run(AppRun);
 
 
-	function scrollOnClickDirective($location) {
+	function scrollOnClickDirective($rootScope, $timeout, $location) {
 		return {
 			restrict: 'A',
 			link: function(scope, $elm, attrs) {
 				var settings = angular.extend({
 					href: angular.element(),
-					offset: 0,
+					offset: -100,
 					duration: 800,
 					easing: 'easeOutCirc'
 				}, attrs);
@@ -125,17 +125,25 @@
 						scroll = $elm.offset().top + Number(settings.offset);
 					}
 
+					$rootScope.scrolling = true;
+
 					angular.element('html, body').animate(
 						{scrollTop: scroll},
 						settings.duration,
-						settings.easing
+						settings.easing,
+						function() {
+							$timeout(function(){
+								$rootScope.scrolling = false;
+							}, 200);
+
+						}
 					);
 				});
 			}
 		}
 	}
 
-	scrollOnClickDirective.$inject = ['$location'];
+	scrollOnClickDirective.$inject = ['$rootScope', '$timeout', '$location'];
 	angular.module('aecApp').directive('scrollOnClick', scrollOnClickDirective);
 
 	/**
@@ -143,13 +151,16 @@
 	 *
 	 * @desc Controls Behavior on a doc screen
 	 */
-	function HomeCtrl( $rootScope, $window, $timeout )
+	function HomeCtrl( $rootScope, $scope, $window, $timeout )
 	{
 		var refreshed = false;
 
 		$rootScope.loading = false;
 
 		$rootScope.$broadcast('backHome');
+
+		$rootScope.scrolling = false;
+		$scope.lastScroll = angular.element($window).scrollTop();
 
 		var refreshWP = function(force) {
 			if ( typeof force == 'undefined') {
@@ -177,36 +188,40 @@
 			refreshWP(true);
 		}
 
-		var scroll = function(start) {
+		var scroll = function(event) {
 			var window = angular.element($window);
 
 			var pos = window.scrollTop(),
 				height = window.innerHeight();
 
-			var splash = angular.element('#splash');
+			//var splash = angular.element('#splash');
 
-			if ( pos == 0 ) {
-				splash.addClass("splash-start");
-
-				splash.css("height", '');
-
+			if ( (pos == 0) && !$rootScope.scrolling ) {
 				refreshed = false;
-			} else if ( (pos > 0) && (pos < height) ) {
-				splash.removeClass("splash-start");
 
-				splash.css("height", Math.max(height - (pos*pos), 0) + 'px');
-			} else if ( pos > height ) {
+				$rootScope.scrolling = false;
+			} else if ( (pos > 0) && (pos < (height+100)) && (pos > $scope.lastScroll) && !$rootScope.scrolling ) {
+				window.scrollTop( height );
+
+				$rootScope.scrolling = true;
+			} else if ( (pos > height) && !$rootScope.scrolling ) {
 				refreshWP();
+
+				$rootScope.scrolling = false;
 			}
+
+			$scope.lastScroll = window.scrollTop();
 		};
 
-		angular.element($window).bind("scroll", function() {
-			$timeout(scroll, 100);
+		angular.element($window).bind("scroll", function(e) {
+			$timeout(function(){
+				scroll(e);
+			}, 300);
 		});
 
 	}
 
-	HomeCtrl.$inject = ['$rootScope', '$window', '$timeout'];
+	HomeCtrl.$inject = ['$rootScope', '$scope', '$window', '$timeout'];
 	angular.module('aecApp').controller('HomeCtrl', HomeCtrl);
 
 

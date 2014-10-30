@@ -7214,10 +7214,6 @@ ul.aec-sidenav li.active > a {
 #splash {
   overflow: hidden;
 }
-#start {
-  position: absolute;
-  top: 40px;
-}
 .splash-start {
   min-height: 1024px;
 }
@@ -7654,4 +7650,11 @@ ul.aec-sidenav li.active > a {
 }
 .am-delay-2 {
   animation-delay: 400ms;
+}
+.selectize-control {
+  margin-top: 4px;
+}
+.form-group .selectize-input {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
