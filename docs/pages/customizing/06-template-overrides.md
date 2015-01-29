@@ -2,6 +2,8 @@
 
 Template overrides are a powerful tool in Joomla to customize what output an extension (be it a standard extension in Joomla or one by a third-party developer like AEC) shows on the Frontend.
 
+## Overrides in Joomla
+
 The basic premise is that every component splits up the pages that are delivered to the user in the frontend have their own, separate HTML files that get called up and used when that page is requested. That makes it simple to then take the next step: Overriding individual pages.
 
 The short version of how to do that is: Emulate the structure of the component you want to change in a new directory within your template /html directory. When either Joomla or the Components loads a view, it first checks the template /html directory - if it finds an override, it will display that override. Otherwise, it will load and display the standard view.
@@ -27,3 +29,4 @@ Overriding partials works exactly the same way as you are used to with standard 
 TODO: Pick a good example (ThankYou page?)
 
 TODO: Write that example
+
