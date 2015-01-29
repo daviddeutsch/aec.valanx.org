@@ -73,7 +73,7 @@
 	 *
 	 * @desc Data to prepare when we run the application
 	 */
-	function AppRun( $rootScope, $state, $location, $timeout )
+	function AppRun( $rootScope, $state, $location )
 	{
 		$rootScope.fresh = true;
 
