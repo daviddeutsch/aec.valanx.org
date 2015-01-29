@@ -7337,8 +7337,30 @@ ul.aec-sidenav li.active > a {
   width: 100%;
 }
 #comments {
+  -webkit-transition: opacity 400ms ease-in-out;
+  -o-transition: opacity 400ms ease-in-out;
+  transition: opacity 400ms ease-in-out;
   margin-top: 112px;
   min-height: 400px;
+}
+#comments hr {
+  border-top: 12px groove #999;
+}
+@media (min-width: 1200px) {
+  #comments {
+    opacity: 0.4;
+  }
+  #comments p,
+  #comments h4 {
+    opacity: 0.3;
+  }
+  #comments:hover {
+    opacity: 1;
+  }
+  #comments:hover p,
+  #comments:hover h4 {
+    opacity: 1;
+  }
 }
 .processor-sprite {
   width: 120px;

@@ -779,8 +779,31 @@ ul.aec-sidenav {
 }
 
 #comments {
+	.transition(opacity 400ms ease-in-out);
+
 	margin-top: 112px;
 	min-height: 400px;
+
+	hr {
+		border-top: 12px groove #999;
+	}
+
+	@media (min-width: @screen-lg-min) {
+		opacity: 0.4;
+
+		p, h4 {
+			opacity: 0.3;
+		}
+
+		&:hover {
+			opacity: 1;
+
+			p, h4 {
+				opacity: 1;
+			}
+
+		}
+	}
 }
 
 .processor-sprite {
