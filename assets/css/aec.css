@@ -7213,10 +7213,6 @@ ul.aec-sidenav li.active > a {
 #splash {
   overflow: hidden;
 }
-#start {
-  position: absolute;
-  top: 40px;
-}
 .splash-start {
   min-height: 1024px;
 }
@@ -7339,8 +7335,30 @@ ul.aec-sidenav li.active > a {
   width: 100%;
 }
 #comments {
+  -webkit-transition: opacity 400ms ease-in-out;
+  -o-transition: opacity 400ms ease-in-out;
+  transition: opacity 400ms ease-in-out;
   margin-top: 112px;
   min-height: 400px;
+}
+#comments hr {
+  border-top: 12px solid #eee;
+}
+@media (min-width: 1200px) {
+  #comments {
+    opacity: 0.4;
+  }
+  #comments p,
+  #comments h4 {
+    opacity: 0.3;
+  }
+  #comments:hover {
+    opacity: 1;
+  }
+  #comments:hover p,
+  #comments:hover h4 {
+    opacity: 1;
+  }
 }
 .processor-sprite {
   width: 120px;
@@ -7652,4 +7670,11 @@ ul.aec-sidenav li.active > a {
 }
 .am-delay-2 {
   animation-delay: 400ms;
+}
+.selectize-control {
+  margin-top: 4px;
+}
+.form-group .selectize-input {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
