@@ -7344,7 +7344,7 @@ ul.aec-sidenav li.active > a {
   min-height: 400px;
 }
 #comments hr {
-  border-top: 12px groove #999;
+  border-top: 12px solid #eee;
 }
 @media (min-width: 1200px) {
   #comments {
