@@ -2,11 +2,11 @@
 
 ## Payment Plans first or second
 
-AEC Does not handle registration, it redirects to and wraps around the registration process of either the Joomla core registration or a registration component such as JomSocial, or Community Builder.
+AEC does not handle registration, it redirects to and wraps around the registration process of either the Joomla core registration or a registration component such as JomSocial, or Community Builder.
 
-(2) You have the option to skip the confirmation page if you so wish.  The advantages of having the confirmation page is it gives the user the ability to change plans before going to checkout.  To skip the confirmation page, in the AEC settings shown above, set skip confirmation to YES.
+You have the option to skip the confirmation page if you so wish. The advantage of having the confirmation page is it gives the user the ability to change plans before going to checkout.
 
-(3) Joomla, by default, sends out an account activation email to the user to confirm the registration.  You can override this globally by turning off this feature.   In the Joomla back end go to Site---> Global Configuration--->System tab
+Joomla, by default, sends out an account activation email to the user to confirm the registration.  You can override this globally by turning off this feature. In the Joomla administration go to Site---> Global Configuration--->System tab
 
 Change the setting from Yes to No for New User Account Activation.
 
@@ -14,9 +14,11 @@ You can also do this on a per plan setting in AEC.  Go to AEC Central--->Plans, 
 
 Set Override Activation to Yes as shown above.  You can also turn off the Joomla default welcome email as shown above with the setting Override Registration Email to Yes.
 
-(4) If the user fails to checkout fully with a successful payment, when he returns to the site and logs in, he will be prompted by AEC to either go to the checkout page again, or to cancel the invoice. If he chooses to cancel he will be prompted to pick a plan again, but will NOT have to register again.
+If the user fails to checkout fully with a successful payment, when he returns to the site and logs in, he will be prompted by AEC to either go to the checkout page again, or to cancel the invoice. If he chooses to cancel he will be prompted to pick a plan again, but will NOT have to register again.
 
 ## Payment Plans on first Login
+
+TODO: Finish this section
 
 ## Cancelling a recurring payment
 
@@ -34,4 +36,4 @@ If the user sees just print  |cancel, that would be an active subscription, clic
 
 ## Hierarchical Payment Plans
 
-TODO: Yeah, this.
+TODO: Finish this section

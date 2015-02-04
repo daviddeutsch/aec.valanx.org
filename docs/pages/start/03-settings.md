@@ -6,7 +6,7 @@
 
 ## Access
 
-If you want AEC to always **require a membership** when a user logs in, choose to "require subscription". You can also choose whether regular **Administrators and Managers can access the AEC backend**.
+If you want AEC to always **require a membership** when a user logs in, choose to "require subscription". You can also choose whether regular **Administrators and Managers can access the AEC administration**.
 
 ## Payment Processors
 
