@@ -477,6 +477,12 @@
 						$scope.showComments = ($scope.path != 'start/welcome') && ($scope.path != '');
 
 						$scope.docready = true;
+
+						$("img").unveil(200);
+
+						$timeout(function(){
+							$("img").unveil(200);
+						}, 100);
 					}, 60);
 
 					// Still have not figured out why .loading = false above "sometimes" fails
@@ -695,7 +701,7 @@
 					.replace('../../../', '')
 					.replace('../../', 'docs/');
 
-				return '<img src="' + src + '" alt="' + text + '"/>'
+				return '<img data-src="' + src + '" alt="' + text + '"/>'
 			};
 
 			marked.setOptions({
