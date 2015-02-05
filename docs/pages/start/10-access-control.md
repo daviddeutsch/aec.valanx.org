@@ -2,7 +2,11 @@
 
 ## AEC does not control access
 
-This may be counter-intuitive, but AEC itself does not carry out access restrictions. This has two reasons - first, Joomla already has a very capable access control system and it is an accepted convention for any extension to make the most use of it. Second, we do not want to lock you into AEC by adding our own access control - even if you remove AEC from your CMS, the access restrictions that have been put in place through AEC will remain.
+This may be counter-intuitive, but AEC itself does not carry out access restrictions. This has two reasons:
+
+**First**, Joomla already has a very capable access control system and it is an accepted convention for any extension to make the most use of it.
+
+**Second**, we do not want to lock you into AEC by adding our own access control - even if you remove AEC from your system, the access restrictions that have been put in place through AEC will remain.
 
 ## Access Control in Joomla
 
