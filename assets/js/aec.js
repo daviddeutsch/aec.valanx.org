@@ -255,7 +255,7 @@
 	 */
 	function IntegrationsCtrl( $scope, $http )
 	{
-		$scope.types = {};
+		$scope.types = [];
 		$scope.selection = {
 			searchText: '',
 			type: {
