@@ -54,6 +54,10 @@ This can be helpful, for instance, when you're writing your own processor as one
 
 To upgrade from an older version of AEC, **simply install the new version over the old one**. Everything will be preserved and/or upgraded.
 
+### ...while upgrading Joomla
+
+If you are also upgrading from an earlier Joomla version to the latest Joomla 3.x, simply ensure that your AEC database tables make it over and that they are being updated (usually the database collation/encoding has to be switched to utf8) like all the others. You might want to use a migration guide like the one in the [official joomla documentation](https://docs.joomla.org/Joomla_1.5_to_3.x_Step_by_Step_Migration).
+
 ## Uninstalling
 
 To make sure that you don't erase your whole customer database by accident, AEC has a little security feature - if you want to actually get rid of all your data, you have to set these two settings to Yes first.
