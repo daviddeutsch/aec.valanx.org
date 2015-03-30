@@ -8,7 +8,7 @@ The basic premise is that every component splits up the pages that are delivered
 
 The short version of how to do that is: Emulate the structure of the component you want to change in a new directory within your template /html directory. When either Joomla or the Components loads a view, it first checks the template /html directory - if it finds an override, it will display that override. Otherwise, it will load and display the standard view.
 
-[This page](https://docs.joomla.org/How_to_override_the_output_from_the_Joomla!_core) in the official Joomla documentation explains the principle in detail.
+[This page](https://docs.joomla.org/How_to_override_the_output_from_the_Joomla!_core) in the official Joomla documentation explains it in more detail.
 
 ## Overrides in AEC
 
@@ -26,7 +26,15 @@ Overriding partials works exactly the same way as you are used to with standard 
 
 ## Example
 
-TODO: Pick a good example (ThankYou page?)
+Say you want to edit the user info block on the confirmation page. >ou look through the template structure of the component where you try to override something, find the file that corresponds to the page you want to modify and create an exact same file like that in your /html directory in your site template.
 
-TODO: Write that example
+So for our example, you find out that in the AEC template structure, there is this file:
+
+tmpl/etacarinae/confirmation/tmpl/info.php
+
+That has the partial that you want to modify. To override it, you can now copy and paste the file to:
+
+/path/to/your/template/html/com_acctexp/confirmation/tmpl/info.php
+
+And modify it to your hearts content.
 
