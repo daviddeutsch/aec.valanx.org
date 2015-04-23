@@ -14,6 +14,10 @@ post_max_size = 5M
 
 You may also have no access to the php.ini file. If that is the case, you may have a corresponding setting in your server configuration console - if not, you need to contact customer support for this.
 
+##  Fatal error: Allowed memory size of X bytes exhausted (tried to allocate 32 bytes)
+
+Particularly the installation process of AEC needs a good chunk of memory. You can temporarily increase the memory size in your server settings if AEC fails with the error noted above. Contact your server provider if you don't know how you can (you may not have permission to do so depending on your hosting contract).s
+
 ## "Is AEC breaking something?"
 
 Not all problems that are in some way related to AEC (particularly access restrictions and hickups during the signup process) are not necessarily caused by AEC.
